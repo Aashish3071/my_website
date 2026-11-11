@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "34DB2BA49E0F02E4B42FF68B"
+               BlueprintIdentifier = "21B348018E96F6E78D1A0A19"
                BuildableName = "AuraDrive.app"
                BlueprintName = "AuraDrive"
                ReferencedContainer = "container:AuraDrive.xcodeproj">
@@ -30,7 +30,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34DB2BA49E0F02E4B42FF68B"
+            BlueprintIdentifier = "21B348018E96F6E78D1A0A19"
             BuildableName = "AuraDrive.app"
             BlueprintName = "AuraDrive"
             ReferencedContainer = "container:AuraDrive.xcodeproj">
@@ -41,7 +41,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DC2AD2E5E38D1E1C7A9FF50E"
+               BlueprintIdentifier = "C95BC3DD9B2296E5B2902FE8"
                BuildableName = "AuraDriveTests.xctest"
                BlueprintName = "AuraDriveTests"
                ReferencedContainer = "container:AuraDrive.xcodeproj">
@@ -51,7 +51,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "344E20335847AC5ECEC01B74"
+               BlueprintIdentifier = "F5C93DFF53ED48346246AA96"
                BuildableName = "AuraDriveUITests.xctest"
                BlueprintName = "AuraDriveUITests"
                ReferencedContainer = "container:AuraDrive.xcodeproj">
@@ -73,7 +73,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34DB2BA49E0F02E4B42FF68B"
+            BlueprintIdentifier = "21B348018E96F6E78D1A0A19"
             BuildableName = "AuraDrive.app"
             BlueprintName = "AuraDrive"
             ReferencedContainer = "container:AuraDrive.xcodeproj">
@@ -90,7 +90,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34DB2BA49E0F02E4B42FF68B"
+            BlueprintIdentifier = "21B348018E96F6E78D1A0A19"
             BuildableName = "AuraDrive.app"
             BlueprintName = "AuraDrive"
             ReferencedContainer = "container:AuraDrive.xcodeproj">

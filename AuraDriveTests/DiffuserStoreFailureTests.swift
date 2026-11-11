@@ -11,12 +11,13 @@ private final class FakeDiffuserService: DiffuserService {
     var failingCommands: (DiffuserCommand) -> Bool = { _ in false }
     private(set) var disconnectCount = 0
     private(set) var sentCommands: [DiffuserCommand] = []
+    var status = DiffuserStatus(isOn: false, intensity: 3, fragranceLevel: 0.5)
 
     func discover() async throws -> [DiscoveredDiffuser] { [] }
 
     func connect(to id: UUID) async throws -> DiffuserStatus {
         try await Task.sleep(for: connectDelay)
-        return DiffuserStatus(isOn: false, intensity: 3, fragranceLevel: 0.5)
+        return status
     }
 
     func disconnect(from id: UUID) {
@@ -32,7 +33,16 @@ private final class FakeDiffuserService: DiffuserService {
     }
 
     func readStatus(of id: UUID) async throws -> DiffuserStatus {
-        DiffuserStatus(isOn: false, intensity: 3, fragranceLevel: 0.5)
+        status
+    }
+}
+
+@MainActor
+private final class FakeFragranceAlerts: FragranceAlerting {
+    private(set) var alertedLevels: [Int] = []
+
+    func fragranceBecameLow(for diffuser: Diffuser) {
+        alertedLevels.append(diffuser.fragrancePercent)
     }
 }
 
@@ -46,6 +56,35 @@ struct DiffuserStoreFailureTests {
 
     private func makeStore(service: FakeDiffuserService) -> DiffuserStore {
         DiffuserStore(service: service, persistence: DiffuserPersistence(defaults: makeDefaults()))
+    }
+
+    @Test func lowFragranceAlertFiresOnceEachTimeTheLevelDropsLow() async {
+        let service = FakeDiffuserService()
+        let alerts = FakeFragranceAlerts()
+        let store = DiffuserStore(
+            service: service,
+            persistence: DiffuserPersistence(defaults: makeDefaults()),
+            alerts: alerts
+        )
+        store.add(demo)
+        await store.connect(demo.id)
+        #expect(alerts.alertedLevels.isEmpty)
+
+        service.status.fragranceLevel = 0.15
+        await store.refreshStatus(of: demo.id)
+        #expect(alerts.alertedLevels == [15])
+
+        // Still low: no second alert.
+        service.status.fragranceLevel = 0.1
+        await store.refreshStatus(of: demo.id)
+        #expect(alerts.alertedLevels == [15])
+
+        // New cartridge, then low again: alert again.
+        service.status.fragranceLevel = 1
+        await store.refreshStatus(of: demo.id)
+        service.status.fragranceLevel = 0.12
+        await store.refreshStatus(of: demo.id)
+        #expect(alerts.alertedLevels == [15, 12])
     }
 
     @Test func failedCommandUndoesOnlyItsOwnChange() async throws {

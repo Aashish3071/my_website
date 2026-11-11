@@ -35,6 +35,8 @@ enum AccessibilityID {
 
     enum Settings {
         static let doneButton = "settings.done"
+        static let lowFragranceAlertsToggle = "settings.lowFragranceAlerts"
+        static let privacyPolicyLink = "settings.privacyPolicy"
     }
 }
 

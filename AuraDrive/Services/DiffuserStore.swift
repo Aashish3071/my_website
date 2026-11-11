@@ -15,11 +15,17 @@ final class DiffuserStore {
 
     @ObservationIgnored private let service: any DiffuserService
     @ObservationIgnored private let persistence: DiffuserPersistence
+    @ObservationIgnored private let alerts: (any FragranceAlerting)?
     @ObservationIgnored private var sleepTimerTasks: [UUID: Task<Void, Never>] = [:]
 
-    init(service: any DiffuserService, persistence: DiffuserPersistence) {
+    init(
+        service: any DiffuserService,
+        persistence: DiffuserPersistence,
+        alerts: (any FragranceAlerting)? = nil
+    ) {
         self.service = service
         self.persistence = persistence
+        self.alerts = alerts
         diffusers = persistence.load()
         restoreSleepTimers()
     }
@@ -201,9 +207,13 @@ final class DiffuserStore {
 
     private func apply(_ status: DiffuserStatus, to id: UUID) {
         guard let index = index(of: id) else { return }
+        let wasLow = diffusers[index].isFragranceLow
         diffusers[index].isOn = status.isOn
         diffusers[index].intensity = status.intensity
         diffusers[index].fragranceLevel = status.fragranceLevel
+        if !wasLow, diffusers[index].isFragranceLow {
+            alerts?.fragranceBecameLow(for: diffusers[index])
+        }
         if !status.isOn {
             diffusers[index].sleepTimerEnd = nil
         }

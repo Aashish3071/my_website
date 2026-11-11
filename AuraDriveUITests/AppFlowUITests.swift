@@ -126,6 +126,23 @@ final class AppFlowUITests: XCTestCase {
         try auditAccessibility(of: app)
     }
 
+    @MainActor
+    func testSettingsAndPrivacyPolicyPassAccessibilityAudit() throws {
+        let app = launchApp()
+        app.buttons[AccessibilityID.Welcome.getStartedButton].tap()
+
+        let settings = app.buttons[AccessibilityID.DiffuserList.settingsButton]
+        XCTAssertTrue(settings.waitForExistence(timeout: 5))
+        settings.tap()
+
+        XCTAssertTrue(app.switches[AccessibilityID.Settings.lowFragranceAlertsToggle].waitForExistence(timeout: 5))
+        try auditAccessibility(of: app)
+
+        app.buttons[AccessibilityID.Settings.privacyPolicyLink].tap()
+        XCTAssertTrue(app.staticTexts["What the app collects"].waitForExistence(timeout: 5))
+        try auditAccessibility(of: app)
+    }
+
     // MARK: Helpers
 
     /// Runs Xcode's accessibility audit and, on failure, names each element at
