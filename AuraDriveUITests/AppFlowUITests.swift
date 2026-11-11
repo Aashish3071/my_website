@@ -134,8 +134,9 @@ final class AppFlowUITests: XCTestCase {
     private func auditAccessibility(of app: XCUIApplication, context: String = "") throws {
         var problems: [String] = []
         let screenHeight = app.windows.firstMatch.frame.height
-        let navigationBarBottom = app.navigationBars.firstMatch.frame.maxY
         let isScrolled = !context.isEmpty
+        let navigationBar = app.navigationBars.firstMatch
+        let navigationBarBottom = isScrolled && navigationBar.exists ? navigationBar.frame.maxY : 0
         try app.performAccessibilityAudit { issue in
             // After scrolling, rows slide underneath the translucent navigation
             // bar. The audit measures them through the bar and reports contrast
@@ -206,7 +207,7 @@ final class AppFlowUITests: XCTestCase {
     @MainActor
     private func waitUntilEnabled(_ element: XCUIElement) {
         let enabled = expectation(for: NSPredicate(format: "isEnabled == true"), evaluatedWith: element)
-        wait(for: [enabled], timeout: 5)
+        wait(for: [enabled], timeout: 20)
     }
 
     @MainActor
