@@ -160,6 +160,22 @@ final class AppFlowUITests: XCTestCase {
         context: String = "",
         falseContrastReports: Set<String> = []
     ) throws {
+        do {
+            try runAudit(of: app, context: context, falseContrastReports: falseContrastReports)
+        } catch let error as NSError
+            where error.domain == "com.apple.xcode.xctest.accessibilityAudit" && error.code == -56 {
+            // "Audit failed to complete in time": the audit gave up on a slow
+            // machine before reporting anything. Try once more.
+            try runAudit(of: app, context: context, falseContrastReports: falseContrastReports)
+        }
+    }
+
+    @MainActor
+    private func runAudit(
+        of app: XCUIApplication,
+        context: String,
+        falseContrastReports: Set<String>
+    ) throws {
         var problems: [String] = []
         let screenHeight = app.windows.firstMatch.frame.height
         let isScrolled = !context.isEmpty
