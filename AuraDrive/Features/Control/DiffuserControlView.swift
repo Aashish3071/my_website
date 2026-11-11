@@ -8,6 +8,7 @@ struct DiffuserControlView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var isShowingDetails = false
     @State private var isConfirmingCartridgeReset = false
+    @State private var isChoosingSleepTimer = false
 
     private static let sleepTimerOptions = [15, 30, 60, 120]
 
@@ -113,9 +114,9 @@ struct DiffuserControlView: View {
             .padding(.vertical, Spacing.xxs)
             .disabled(!isConnected)
         } header: {
-            Text("Intensity")
+            SectionHeader("Intensity")
         } footer: {
-            Text("Higher levels release more fragrance and use the cartridge faster.")
+            SectionFooter("Higher levels release more fragrance and use the cartridge faster.")
         }
     }
 
@@ -133,9 +134,9 @@ struct DiffuserControlView: View {
                 }
             }
         } header: {
-            Text("Interval mode")
+            SectionHeader("Interval mode")
         } footer: {
-            Text("The diffuser runs, pauses, and repeats. This makes the fragrance last longer.")
+            SectionFooter("The diffuser runs, pauses, and repeats. This makes the fragrance last longer.")
         }
         .disabled(!isConnected)
     }
@@ -152,22 +153,27 @@ struct DiffuserControlView: View {
                     store.setSleepTimer(minutes: nil, for: diffuserID)
                 }
             } else {
-                Menu {
+                Button("Set Sleep Timer") {
+                    isChoosingSleepTimer = true
+                }
+                .disabled(!isConnected || !diffuser.isOn)
+                .confirmationDialog(
+                    "Turn the diffuser off after",
+                    isPresented: $isChoosingSleepTimer,
+                    titleVisibility: .visible
+                ) {
                     ForEach(Self.sleepTimerOptions, id: \.self) { minutes in
                         Button(Self.title(forMinutes: minutes)) {
                             store.setSleepTimer(minutes: minutes, for: diffuserID)
                         }
                     }
-                } label: {
-                    Label("Set Sleep Timer", systemImage: "timer")
-                        .frame(maxWidth: .infinity, minHeight: Layout.minimumTapTarget, alignment: .leading)
+                    Button("Cancel", role: .cancel) {}
                 }
-                .disabled(!isConnected || !diffuser.isOn)
             }
         } header: {
-            Text("Sleep timer")
+            SectionHeader("Sleep timer")
         } footer: {
-            Text("Turns the diffuser off after a set time. Available while the diffuser is on and the app is open.")
+            SectionFooter("Turns the diffuser off after a set time. Available while the diffuser is on and the app is open.")
         }
     }
 
@@ -211,7 +217,7 @@ struct DiffuserControlView: View {
                 Text("Only do this after fitting a new cartridge.")
             }
         } header: {
-            Text("Fragrance")
+            SectionHeader("Fragrance")
         }
     }
 

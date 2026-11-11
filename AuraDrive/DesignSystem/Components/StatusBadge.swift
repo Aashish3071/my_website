@@ -29,12 +29,17 @@ struct StatusBadge: View {
     let text: LocalizedStringKey
 
     var body: some View {
-        Label(text, systemImage: kind.symbolName)
-            .font(AppFont.caption.weight(.semibold))
-            .foregroundStyle(kind.color)
-            .padding(.horizontal, Spacing.xs)
-            .padding(.vertical, Spacing.xxs)
-            .background(kind.color.opacity(0.1), in: Capsule())
-            .accessibilityElement(children: .combine)
+        HStack(alignment: .firstTextBaseline, spacing: Spacing.xxs) {
+            Image(systemName: kind.symbolName)
+                .accessibilityHidden(true)
+            Text(text)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .font(AppFont.caption.weight(.semibold))
+        .foregroundStyle(kind.color)
+        .padding(.horizontal, Spacing.xs)
+        .padding(.vertical, Spacing.xxs)
+        .background(kind.color.opacity(0.1), in: RoundedRectangle(cornerRadius: Spacing.s, style: .continuous))
+        .accessibilityElement(children: .combine)
     }
 }

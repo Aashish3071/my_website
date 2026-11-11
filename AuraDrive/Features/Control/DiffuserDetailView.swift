@@ -18,8 +18,8 @@ struct DiffuserDetailView: View {
                         .onSubmit(saveName)
                         .accessibilityIdentifier(AccessibilityID.Details.nameField)
                 } header: {
-                    Text("Name")
-                }
+            SectionHeader("Name")
+        }
 
                 if let diffuser = store.diffuser(withID: diffuserID) {
                     Section {
@@ -28,8 +28,8 @@ struct DiffuserDetailView: View {
                             Text(store.connectionState(for: diffuserID).title)
                         }
                     } header: {
-                        Text("About")
-                    }
+            SectionHeader("About")
+        }
                 }
 
                 Section {

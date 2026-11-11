@@ -14,16 +14,16 @@ struct SettingsView: View {
                 Section {
                     LabeledContent("Version", value: appVersion)
                 } header: {
-                    Text("About")
-                }
+            SectionHeader("About")
+        }
 
                 Section {
                     Text("This version of the app controls a built-in demo diffuser. Support for real diffusers over Bluetooth will be added in a later version.")
                         .font(AppFont.callout)
                         .foregroundStyle(AppColor.textPrimary)
                 } header: {
-                    Text("Demo mode")
-                }
+            SectionHeader("Demo mode")
+        }
 
                 Section {
                     Button("Show Welcome Screen Again") {

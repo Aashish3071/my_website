@@ -43,7 +43,7 @@ struct AddDiffuserView: View {
             }
             .accessibilityElement(children: .combine)
         } footer: {
-            Text("Make sure your diffuser is switched on and close to your iPhone.")
+            SectionFooter("Make sure your diffuser is switched on and close to your iPhone.")
         }
     }
 
@@ -73,9 +73,9 @@ struct AddDiffuserView: View {
                 .accessibilityIdentifier(AccessibilityID.AddDiffuser.result)
             }
         } header: {
-            Text("Nearby diffusers")
+            SectionHeader("Nearby diffusers")
         } footer: {
-            Text("This version of the app works with a built-in demo diffuser.")
+            SectionFooter("This version of the app works with a built-in demo diffuser.")
         }
     }
 
