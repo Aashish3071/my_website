@@ -183,19 +183,23 @@ struct DiffuserControlView: View {
     private func fragranceSection(_ diffuser: Diffuser) -> some View {
         Section {
             VStack(alignment: .leading, spacing: Spacing.s) {
-                ProgressView(value: diffuser.fragranceLevel) {
-                    Text("Fragrance remaining")
-                        .font(AppFont.body)
-                        .foregroundStyle(AppColor.textPrimary)
-                } currentValueLabel: {
-                    Text("\(diffuser.fragrancePercent)%")
-                        .font(AppFont.headline)
-                        .foregroundStyle(AppColor.textPrimary)
+                ViewThatFits(in: .horizontal) {
+                    HStack(alignment: .firstTextBaseline) {
+                        fragranceTitle
+                        Spacer(minLength: Spacing.s)
+                        fragranceValue(diffuser)
+                    }
+                    VStack(alignment: .leading, spacing: Spacing.xxs) {
+                        fragranceTitle
+                        fragranceValue(diffuser)
+                    }
                 }
-                .tint(diffuser.isFragranceLow ? AppColor.warning : AppColor.brandPrimary)
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel("Fragrance remaining")
-                .accessibilityValue("\(diffuser.fragrancePercent) percent")
+                .accessibilityElement(children: .combine)
+
+                // The bar repeats the percentage above, so VoiceOver skips it.
+                ProgressView(value: diffuser.fragranceLevel)
+                    .tint(diffuser.isFragranceLow ? AppColor.warning : AppColor.brandPrimary)
+                    .accessibilityHidden(true)
 
                 if diffuser.isFragranceLow {
                     StatusBadge(kind: .warning, text: "Fragrance low. Replace the cartridge soon.")
@@ -222,6 +226,18 @@ struct DiffuserControlView: View {
         } header: {
             SectionHeader("Fragrance")
         }
+    }
+
+    private var fragranceTitle: some View {
+        Text("Fragrance remaining")
+            .font(AppFont.body)
+            .foregroundStyle(AppColor.textPrimary)
+    }
+
+    private func fragranceValue(_ diffuser: Diffuser) -> some View {
+        Text("\(diffuser.fragrancePercent)%")
+            .font(AppFont.headline)
+            .foregroundStyle(AppColor.textPrimary)
     }
 
     // MARK: Bindings

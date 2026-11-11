@@ -126,6 +126,7 @@ final class AppFlowUITests: XCTestCase {
                 return true
             }
             var parts = [context, issue.compactDescription, issue.detailedDescription].filter { !$0.isEmpty }
+            parts.append("audit type \(issue.auditType.rawValue)")
             if let element = issue.element {
                 parts.append("element type \(element.elementType.rawValue)")
                 parts.append("label '\(element.label)'")
