@@ -17,7 +17,9 @@ struct SettingsView: View {
                 helpSection
 
                 Section {
-                    LabeledContent("Version", value: appVersion)
+                    LabeledContent("Version") {
+                        Text(appVersion).foregroundStyle(AppColor.textSecondary)
+                    }
                 } header: {
                     SectionHeader("About")
                 }

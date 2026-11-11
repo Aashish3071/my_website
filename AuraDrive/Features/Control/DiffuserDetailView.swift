@@ -23,9 +23,13 @@ struct DiffuserDetailView: View {
 
                 if let diffuser = store.diffuser(withID: diffuserID) {
                     Section {
-                        LabeledContent("Firmware version", value: diffuser.firmwareVersion)
+                        // The system's grey for values falls short of 4.5:1 contrast.
+                        LabeledContent("Firmware version") {
+                            Text(diffuser.firmwareVersion).foregroundStyle(AppColor.textSecondary)
+                        }
                         LabeledContent("Status") {
                             Text(store.connectionState(for: diffuserID).title)
+                                .foregroundStyle(AppColor.textSecondary)
                         }
                     } header: {
             SectionHeader("About")

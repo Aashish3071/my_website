@@ -153,7 +153,8 @@ final class AppFlowUITests: XCTestCase {
         let screenHeight = app.windows.firstMatch.frame.height
         let isScrolled = !context.isEmpty
         let navigationBar = app.navigationBars.firstMatch
-        let navigationBarBottom = isScrolled && navigationBar.exists ? navigationBar.frame.maxY : 0
+        let navigationBarFrame = navigationBar.exists ? navigationBar.frame : .zero
+        let navigationBarBottom = isScrolled ? navigationBarFrame.maxY : 0
         try app.performAccessibilityAudit { issue in
             // After scrolling, rows slide underneath the translucent navigation
             // bar. The audit measures them through the bar and reports contrast
@@ -163,6 +164,14 @@ final class AppFlowUITests: XCTestCase {
             if isScrolled {
                 guard let element = issue.element else { return true }
                 if element.frame.minY < navigationBarBottom { return true }
+            }
+            // iOS keeps text buttons in the navigation bar, such as Done, at a
+            // fixed size on purpose and offers the Large Content Viewer instead
+            // (press and hold to see the label enlarged).
+            if issue.auditType == .dynamicType,
+               let element = issue.element,
+               navigationBarFrame.contains(element.frame) {
+                return true
             }
             // The audit's text-size check enlarges the text and re-measures each
             // element. Rows near the bottom of the screen get pushed off screen
