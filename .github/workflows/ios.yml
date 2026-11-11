@@ -36,14 +36,6 @@ jobs:
             -resultBundlePath TestResults.xcresult \
             2>&1 | xcbeautify --renderer github-actions
 
-      - name: Describe the settings screenshot (diagnostic)
-        if: failure()
-        run: |
-          xcrun xcresulttool export attachments --path TestResults.xcresult --output-path shots || exit 0
-          FILE=$(python3 -c "import json;m=json.load(open('shots/manifest.json'));print(next(a['exportedFileName'] for t in m for a in t['attachments'] if 'settings-audit' in a.get('suggestedHumanReadableName','')))") || exit 0
-          python3 -m venv venv && ./venv/bin/pip install --quiet pillow
-          ./venv/bin/python scripts/describe_screenshot.py "shots/$FILE"
-
       - name: Upload test results
         if: failure()
         uses: actions/upload-artifact@v4
