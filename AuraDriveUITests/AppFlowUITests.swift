@@ -11,14 +11,14 @@ final class AppFlowUITests: XCTestCase {
     func testWelcomeScreenPassesAccessibilityAudit() throws {
         let app = launchApp()
         XCTAssertTrue(app.staticTexts[AccessibilityID.Welcome.title].waitForExistence(timeout: 5))
-        try app.performAccessibilityAudit()
+        try auditAccessibility(of: app)
     }
 
     @MainActor
     func testWelcomeScreenPassesAccessibilityAuditAtLargestTextSize() throws {
         let app = launchApp(largestTextSize: true)
         XCTAssertTrue(app.staticTexts[AccessibilityID.Welcome.title].waitForExistence(timeout: 5))
-        try app.performAccessibilityAudit()
+        try auditAccessibility(of: app)
     }
 
     // MARK: Main flow
@@ -66,14 +66,14 @@ final class AppFlowUITests: XCTestCase {
         let app = launchApp()
         app.buttons[AccessibilityID.Welcome.getStartedButton].tap()
         XCTAssertTrue(app.buttons[AccessibilityID.DiffuserList.emptyAddButton].waitForExistence(timeout: 5))
-        try app.performAccessibilityAudit()
+        try auditAccessibility(of: app)
     }
 
     @MainActor
     func testDiffuserListPassesAccessibilityAudit() throws {
         let app = launchApp()
         addDemoDiffuser(in: app)
-        try app.performAccessibilityAudit()
+        try auditAccessibility(of: app)
     }
 
     @MainActor
@@ -85,7 +85,7 @@ final class AppFlowUITests: XCTestCase {
         let power = app.switches[AccessibilityID.Control.powerToggle]
         XCTAssertTrue(power.waitForExistence(timeout: 5))
         waitUntilEnabled(power)
-        try app.performAccessibilityAudit()
+        try auditAccessibility(of: app)
     }
 
     @MainActor
@@ -97,10 +97,29 @@ final class AppFlowUITests: XCTestCase {
         let power = app.switches[AccessibilityID.Control.powerToggle]
         XCTAssertTrue(power.waitForExistence(timeout: 5))
         waitUntilEnabled(power)
-        try app.performAccessibilityAudit()
+        try auditAccessibility(of: app)
     }
 
     // MARK: Helpers
+
+    /// Runs Xcode's accessibility audit and, on failure, names each element at
+    /// fault so the problem can be found without opening the result bundle.
+    @MainActor
+    private func auditAccessibility(of app: XCUIApplication) throws {
+        var problems: [String] = []
+        try app.performAccessibilityAudit { issue in
+            var parts = [issue.compactDescription, issue.detailedDescription]
+            if let element = issue.element {
+                parts.append("element type \(element.elementType.rawValue)")
+                parts.append("label '\(element.label)'")
+                parts.append("identifier '\(element.identifier)'")
+                parts.append("frame \(element.frame)")
+            }
+            problems.append(parts.joined(separator: " | "))
+            return true
+        }
+        XCTAssertTrue(problems.isEmpty, problems.joined(separator: " || "))
+    }
 
     @MainActor
     private func launchApp(largestTextSize: Bool = false) -> XCUIApplication {
