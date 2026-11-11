@@ -86,6 +86,10 @@ final class AppFlowUITests: XCTestCase {
         XCTAssertTrue(power.waitForExistence(timeout: 5))
         waitUntilEnabled(power)
         try auditAccessibility(of: app)
+
+        // The screen is longer than the display, so audit the lower half too.
+        app.swipeUp()
+        try auditAccessibility(of: app, context: "after scrolling down")
     }
 
     @MainActor
@@ -105,10 +109,10 @@ final class AppFlowUITests: XCTestCase {
     /// Runs Xcode's accessibility audit and, on failure, names each element at
     /// fault so the problem can be found without opening the result bundle.
     @MainActor
-    private func auditAccessibility(of app: XCUIApplication) throws {
+    private func auditAccessibility(of app: XCUIApplication, context: String = "") throws {
         var problems: [String] = []
         try app.performAccessibilityAudit { issue in
-            var parts = [issue.compactDescription, issue.detailedDescription]
+            var parts = [context, issue.compactDescription, issue.detailedDescription].filter { !$0.isEmpty }
             if let element = issue.element {
                 parts.append("element type \(element.elementType.rawValue)")
                 parts.append("label '\(element.label)'")

@@ -152,11 +152,14 @@ struct DiffuserControlView: View {
                 Button("Cancel Timer") {
                     store.setSleepTimer(minutes: nil, for: diffuserID)
                 }
+            } else if !isConnected || !diffuser.isOn {
+                Text("Turn the diffuser on to set a sleep timer.")
+                    .font(AppFont.body)
+                    .foregroundStyle(AppColor.textSecondary)
             } else {
                 Button("Set Sleep Timer") {
                     isChoosingSleepTimer = true
                 }
-                .disabled(!isConnected || !diffuser.isOn)
                 .confirmationDialog(
                     "Turn the diffuser off after",
                     isPresented: $isChoosingSleepTimer,
@@ -173,7 +176,7 @@ struct DiffuserControlView: View {
         } header: {
             SectionHeader("Sleep timer")
         } footer: {
-            SectionFooter("Turns the diffuser off after a set time. Available while the diffuser is on and the app is open.")
+            SectionFooter("Turns the diffuser off after a set time. The timer runs while the app is open.")
         }
     }
 
