@@ -138,6 +138,10 @@ final class AppFlowUITests: XCTestCase {
         XCTAssertTrue(app.switches[AccessibilityID.Settings.lowFragranceAlertsToggle].waitForExistence(timeout: 5))
         // Let the sheet finish sliding in; text measured mid-animation is blurred.
         sleep(2)
+        let screenshot = XCTAttachment(screenshot: app.screenshot())
+        screenshot.name = "settings-audit"
+        screenshot.lifetime = .keepAlways
+        add(screenshot)
         try auditAccessibility(of: app)
 
         app.buttons[AccessibilityID.Settings.privacyPolicyLink].tap()
