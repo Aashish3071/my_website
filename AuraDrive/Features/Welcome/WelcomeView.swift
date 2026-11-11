@@ -1,9 +1,10 @@
 import SwiftUI
 
-/// First screen. A placeholder until onboarding and device pairing are built.
+/// First screen, shown until the user taps Get Started.
 struct WelcomeView: View {
+    var onGetStarted: () -> Void
+
     @ScaledMetric(relativeTo: .largeTitle) private var heroIconSize: CGFloat = 72
-    @State private var isShowingComingSoon = false
 
     var body: some View {
         ScrollView {
@@ -55,9 +56,7 @@ struct WelcomeView: View {
         }
         .background(AppColor.groupedBackground)
         .safeAreaInset(edge: .bottom) {
-            Button("Get Started") {
-                isShowingComingSoon = true
-            }
+            Button("Get Started", action: onGetStarted)
             .buttonStyle(.primary)
             .accessibilityHint("Starts setting up your diffuser.")
             .accessibilityIdentifier(AccessibilityID.Welcome.getStartedButton)
@@ -68,11 +67,6 @@ struct WelcomeView: View {
             .background(.bar)
         }
         .toolbar(.hidden, for: .navigationBar)
-        .alert("Coming soon", isPresented: $isShowingComingSoon) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text("Device pairing will be added in the next milestone.")
-        }
     }
 }
 
@@ -106,11 +100,11 @@ private struct FeatureRow: View {
 }
 
 #Preview("Light") {
-    NavigationStack { WelcomeView() }
+    NavigationStack { WelcomeView {} }
 }
 
 #Preview("Dark, largest text") {
-    NavigationStack { WelcomeView() }
+    NavigationStack { WelcomeView {} }
         .preferredColorScheme(.dark)
         .dynamicTypeSize(.accessibility5)
 }
