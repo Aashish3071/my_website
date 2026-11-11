@@ -134,7 +134,18 @@ final class AppFlowUITests: XCTestCase {
     private func auditAccessibility(of app: XCUIApplication, context: String = "") throws {
         var problems: [String] = []
         let screenHeight = app.windows.firstMatch.frame.height
+        let navigationBarBottom = app.navigationBars.firstMatch.frame.maxY
+        let isScrolled = !context.isEmpty
         try app.performAccessibilityAudit { issue in
+            // After scrolling, rows slide underneath the translucent navigation
+            // bar. The audit measures them through the bar and reports contrast
+            // and text-size problems that are not there when the row is in the
+            // open (the same rows pass in the unscrolled audit). Some of these
+            // reports carry no element at all.
+            if isScrolled {
+                guard let element = issue.element else { return true }
+                if element.frame.minY < navigationBarBottom { return true }
+            }
             // The audit's text-size check enlarges the text and re-measures each
             // element. Rows near the bottom of the screen get pushed off screen
             // and are reported as "partially unsupported" whatever they contain
