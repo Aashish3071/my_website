@@ -136,10 +136,13 @@ final class AppFlowUITests: XCTestCase {
         settings.tap()
 
         XCTAssertTrue(app.switches[AccessibilityID.Settings.lowFragranceAlertsToggle].waitForExistence(timeout: 5))
+        // Let the sheet finish sliding in; text measured mid-animation is blurred.
+        sleep(2)
         try auditAccessibility(of: app)
 
         app.buttons[AccessibilityID.Settings.privacyPolicyLink].tap()
         XCTAssertTrue(app.staticTexts["What the app collects"].waitForExistence(timeout: 5))
+        sleep(1)
         try auditAccessibility(of: app)
     }
 
@@ -153,8 +156,9 @@ final class AppFlowUITests: XCTestCase {
         let screenHeight = app.windows.firstMatch.frame.height
         let isScrolled = !context.isEmpty
         let navigationBar = app.navigationBars.firstMatch
-        let navigationBarFrame = navigationBar.exists ? navigationBar.frame : .zero
-        let navigationBarBottom = isScrolled ? navigationBarFrame.maxY : 0
+        let navigationBarBottom = isScrolled && navigationBar.exists ? navigationBar.frame.maxY : 0
+        // A sheet has its own navigation bar on top of the one behind it.
+        let navigationBarFrames = app.navigationBars.allElementsBoundByIndex.map(\.frame)
         try app.performAccessibilityAudit { issue in
             // After scrolling, rows slide underneath the translucent navigation
             // bar. The audit measures them through the bar and reports contrast
@@ -170,7 +174,7 @@ final class AppFlowUITests: XCTestCase {
             // (press and hold to see the label enlarged).
             if issue.auditType == .dynamicType,
                let element = issue.element,
-               navigationBarFrame.contains(element.frame) {
+               navigationBarFrames.contains(where: { $0.intersects(element.frame) }) {
                 return true
             }
             // The audit's text-size check enlarges the text and re-measures each
