@@ -80,14 +80,20 @@ final class DiffuserStore {
         connectionStates[id] = .connecting
         do {
             let status = try await service.connect(to: id)
+            guard diffuser(withID: id) != nil else {
+                // Forgotten while the connection was being made.
+                service.disconnect(from: id)
+                connectionStates[id] = nil
+                return
+            }
             apply(status, to: id)
             connectionStates[id] = .connected
             announce("\(name) connected")
-        } catch is CancellationError {
-            connectionStates[id] = .disconnected
         } catch {
-            connectionStates[id] = .disconnected
-            report(error)
+            connectionStates[id] = diffuser(withID: id) == nil ? nil : .disconnected
+            if !(error is CancellationError) {
+                report(error)
+            }
         }
     }
 
@@ -103,29 +109,44 @@ final class DiffuserStore {
 
     func setPower(_ isOn: Bool, for id: UUID) async {
         guard let current = diffuser(withID: id), current.isOn != isOn else { return }
-        if !isOn { cancelSleepTimerTask(for: id) }
         let succeeded = await send(.setPower(isOn), to: id) { diffuser in
             diffuser.isOn = isOn
             if !isOn { diffuser.sleepTimerEnd = nil }
+        } revert: { diffuser in
+            diffuser.isOn = current.isOn
+            diffuser.sleepTimerEnd = current.sleepTimerEnd
         }
-        if succeeded {
-            announce(isOn ? "\(current.name) turned on" : "\(current.name) turned off")
-        }
+        guard succeeded else { return }
+        if !isOn { cancelSleepTimerTask(for: id) }
+        announce(isOn ? "\(current.name) turned on" : "\(current.name) turned off")
     }
 
     func setIntensity(_ intensity: Int, for id: UUID) async {
         let clamped = min(max(intensity, Diffuser.intensityRange.lowerBound), Diffuser.intensityRange.upperBound)
         guard let current = diffuser(withID: id), current.intensity != clamped else { return }
-        await send(.setIntensity(clamped), to: id) { $0.intensity = clamped }
+        await send(.setIntensity(clamped), to: id) {
+            $0.intensity = clamped
+        } revert: {
+            $0.intensity = current.intensity
+        }
     }
 
     func setInterval(_ interval: IntervalSettings, for id: UUID) async {
         guard let current = diffuser(withID: id), current.interval != interval else { return }
-        await send(.setInterval(interval), to: id) { $0.interval = interval }
+        await send(.setInterval(interval), to: id) {
+            $0.interval = interval
+        } revert: {
+            $0.interval = current.interval
+        }
     }
 
     func resetFragranceLevel(for id: UUID) async {
-        await send(.resetFragranceLevel, to: id) { $0.fragranceLevel = 1 }
+        guard let current = diffuser(withID: id) else { return }
+        await send(.resetFragranceLevel, to: id) {
+            $0.fragranceLevel = 1
+        } revert: {
+            $0.fragranceLevel = current.fragranceLevel
+        }
     }
 
     /// Starts a timer that turns the diffuser off after `minutes`. Pass `nil` to cancel.
@@ -152,15 +173,16 @@ final class DiffuserStore {
     }
 
     /// Applies `change` straight away so the screen responds instantly, then
-    /// sends the command. If the command fails, the change is undone.
+    /// sends the command. If the command fails, `revert` undoes that change
+    /// only, so anything else that changed in the meantime is kept.
     @discardableResult
     private func send(
         _ command: DiffuserCommand,
         to id: UUID,
-        applying change: (inout Diffuser) -> Void
+        applying change: (inout Diffuser) -> Void,
+        revert: (inout Diffuser) -> Void
     ) async -> Bool {
         guard let index = index(of: id) else { return false }
-        let previous = diffusers[index]
         change(&diffusers[index])
         do {
             try await service.send(command, to: id)
@@ -168,7 +190,7 @@ final class DiffuserStore {
             return true
         } catch {
             if let index = self.index(of: id) {
-                diffusers[index] = previous
+                revert(&diffusers[index])
             }
             if !(error is CancellationError) {
                 report(error)
@@ -207,11 +229,8 @@ final class DiffuserStore {
     private func restoreSleepTimers() {
         for index in diffusers.indices {
             guard let end = diffusers[index].sleepTimerEnd else { continue }
-            if end > Date() {
-                scheduleSleepTimer(for: diffusers[index].id, end: end)
-            } else {
-                diffusers[index].sleepTimerEnd = nil
-            }
+            // A timer that ran out while the app was closed fires straight away.
+            scheduleSleepTimer(for: diffusers[index].id, end: end)
         }
     }
 

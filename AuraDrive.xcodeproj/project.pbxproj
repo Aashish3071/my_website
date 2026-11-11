@@ -7,104 +7,106 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A2213C651E9972BD80E92E8 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AF7853E154B629F42E8563 /* WelcomeView.swift */; };
-		228CC7D8AD6EA195ADE71C5A /* ConnectionState+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8970A6109B5D567AC15F02 /* ConnectionState+Display.swift */; };
-		253099BC48B1798812E8D7D5 /* DiffuserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E084ACC1A8D9555E27D17DB8 /* DiffuserStore.swift */; };
-		2A2A63866F6313DC6F9555F3 /* DiffuserPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455D86FDB3A80B916F1535A0 /* DiffuserPersistence.swift */; };
-		2EB718817DD64C38B26F01E9 /* AuraDriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF9A455563C7EE08DB4290D /* AuraDriveApp.swift */; };
-		3355251F7208C2981FDDF6E7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B0E4D5691341B8A7E985A3 /* SettingsView.swift */; };
-		37837E8DF91A44B720342198 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C7A3BAFFE7756B5B12B23 /* ButtonStyles.swift */; };
-		405AEB48E05519C22E654FC0 /* SimulatedDiffuserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D211C8134D5CE2F87966DE0 /* SimulatedDiffuserService.swift */; };
-		5A1ADD3B173222A80A8AB874 /* Diffuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C8D7B333CEE43879F51089 /* Diffuser.swift */; };
-		62B37E5E6F794C114FA757F8 /* MotionSafeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9177F6BF3CD85D0B8C6DC35 /* MotionSafeAnimation.swift */; };
-		65B078916692C7C3C84392C1 /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1E3DD0BFD1E1BC8517A4DF /* StatusBadge.swift */; };
-		6602A679A9F2CA8081E6174A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ADAE522A47CCB4A7BD58C9 /* Card.swift */; };
-		77AA765972F526DF7F3EBC46 /* DiffuserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA240EE313F49C0B3723E4C /* DiffuserService.swift */; };
-		8E67517F01AB35D71768A0B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6CC8E2A60E53E8F0D99C0EA /* Assets.xcassets */; };
-		91F00C07C11C1121442E3191 /* DiffuserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F993AA843292FD90EDC85975 /* DiffuserDetailView.swift */; };
-		9BFF699D8C00FC76F0DBE1ED /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B35E6649F69F54EC9E8918 /* RootView.swift */; };
-		A93396E471F6D9389BDF5B5D /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56903886050D5AD6D3E8B23D /* AccessibilityIdentifiers.swift */; };
-		B64E217D8E1C690405363848 /* AddDiffuserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7E52A536CF2375FE4BA5DC /* AddDiffuserView.swift */; };
-		CE5BC5EA3E4692D952D07873 /* DesignSystemPreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBC109FBF39DB4EFB3187C /* DesignSystemPreviews.swift */; };
-		DE417670A137E92614A17FCB /* DiffuserControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2EC5010F551CF58171ACF /* DiffuserControlView.swift */; };
-		E5C1D02DF38DD8D770D66FFE /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB9363A11C7477B0DDAE00F /* AppColor.swift */; };
-		E90F64510576A6ABCA20EA8E /* AppFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E41DE72E22A865F9E3BE16 /* AppFlowUITests.swift */; };
-		EC36EC543E9BBC982EB1AFB0 /* DiffuserStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359193DA73D5C44C8F79840 /* DiffuserStoreTests.swift */; };
-		ED1498119CA09C431F24EE70 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56903886050D5AD6D3E8B23D /* AccessibilityIdentifiers.swift */; };
-		EF63890ACEAED951190AB904 /* SectionText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F81AF1F0B362C1FF6FDB00 /* SectionText.swift */; };
-		F3C17CE3AFC60F921F205BA1 /* ColorContrastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85503807DE20BC596B644E /* ColorContrastTests.swift */; };
-		F731B161730008C72B67A0C9 /* DiffuserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E283306C7A4B854C501918D /* DiffuserListView.swift */; };
-		F9D4249D7F588CF6BD4CE25D /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C586147F66D70804F8867DEA /* Layout.swift */; };
-		FC3242EEF198B24D14DEA27F /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFAE0E4A96F43A0EDAFFB04 /* AppFont.swift */; };
+		02073DCE66D2A5D345BD9941 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB16886D55F93E136B0597DC /* AccessibilityIdentifiers.swift */; };
+		044BDC0DEB42ECE921340BC4 /* AuraDriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55203E2F1F869A1F10F7E5E3 /* AuraDriveApp.swift */; };
+		04E096D767F0DFA15F5F3BCD /* DiffuserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C00A8E08CF7C3D31064A6D /* DiffuserListView.swift */; };
+		0CB4EA4113DF485D5C957118 /* AddDiffuserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76255FFDD06E843AFD0A12B8 /* AddDiffuserView.swift */; };
+		11F20B0C55EC15F3DB4699FD /* DiffuserPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035547A4BA2B4DA45321974D /* DiffuserPersistence.swift */; };
+		1E8A5E8F766CC7A1E36799DC /* ConnectionState+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98235A62A7FEB45A66B314F8 /* ConnectionState+Display.swift */; };
+		1ED03F305BEC232DDD20EDD2 /* AppFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD76B430C458D06FD806CC /* AppFlowUITests.swift */; };
+		264A524ACCC04A13BF9E4AD1 /* SectionText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60758204316D2916A595809E /* SectionText.swift */; };
+		3177951890FC0833E6F95187 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0C075C847A86DD31F0F73 /* AppFont.swift */; };
+		4460A9DF6B97029BBBCAF4D5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD527D062A18ECDCEC65C6B9 /* Card.swift */; };
+		4A0CDED8CD3625AE95F41138 /* ColorContrastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD02B76E28ADE4E427A28E /* ColorContrastTests.swift */; };
+		55CB6A439F39B6A90933C87D /* DesignSystemPreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DE7C84D718CA41A6DFA1B7 /* DesignSystemPreviews.swift */; };
+		5616E4DC40F34A81A934394B /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF5298A2B42E0213F762BEE /* ButtonStyles.swift */; };
+		57382F6B812701D0B7AB9833 /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D688A17438E560A4E789280 /* StatusBadge.swift */; };
+		6A7B88D02A4D9A252154EA4C /* DiffuserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD99C2BBFFE1E3B2E6E5DD49 /* DiffuserDetailView.swift */; };
+		756F953A1BA7D1300FF96A31 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB16886D55F93E136B0597DC /* AccessibilityIdentifiers.swift */; };
+		7B4A7BFB7F827904AB37AC10 /* DiffuserControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294BB734CDD2BA163293B23 /* DiffuserControlView.swift */; };
+		7E94DF4F8937371C66ED74EC /* DiffuserStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDEE7AA3224E015BBC49CC6 /* DiffuserStoreTests.swift */; };
+		80F709C7C0729E24A18F42C2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4476A91F249ECD9ED25C53 /* SettingsView.swift */; };
+		81827B497298321E99A98304 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAE18B5739AB166B336D61 /* WelcomeView.swift */; };
+		873D221579F3AD5487EB2C3C /* DiffuserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63689D68260D8350C384EE45 /* DiffuserService.swift */; };
+		AA2AAD3F3A62F1A3764B2C09 /* DiffuserStoreFailureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7625B5FB2DC63D7591C5B33A /* DiffuserStoreFailureTests.swift */; };
+		C0BC463346B2758F2D9C24F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F6DFFB7998BE4B185F18570 /* Assets.xcassets */; };
+		CBB4151EA8F62F65E6C4B2DC /* Diffuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5149DD1026A45353B3A2CCAD /* Diffuser.swift */; };
+		CD33DE7A3B8EFB1ABA826DBB /* SimulatedDiffuserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DBFD1DC5756A1FCE80F6FB /* SimulatedDiffuserService.swift */; };
+		D4E4275FCCF92B9E760BAE3C /* MotionSafeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61813481F1E7B9167C16EDE /* MotionSafeAnimation.swift */; };
+		DF1375CDE6601F6DBC14FCEC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DA1685FEB96B840AC0EBC2 /* RootView.swift */; };
+		E9FEC1809170C93D469ABBAE /* DiffuserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05D449CAD950D570B08A97D /* DiffuserStore.swift */; };
+		EA51A314328DFBC2B6A20574 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F4EA55F7FD3F9D8B31813D /* AppColor.swift */; };
+		FFAE91155EC33C154BDF6531 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777F301DE628B72748F54B /* Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		59B141ED7F4060EF7E2CE1FD /* PBXContainerItemProxy */ = {
+		EECF9F076FF661D7031015B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AD49CCEAE4F730491323ABF8 /* Project object */;
+			containerPortal = B93AC041EF06280801A26977 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 44C99F0BCC1FE1DC2BAB76A2;
+			remoteGlobalIDString = 34DB2BA49E0F02E4B42FF68B;
 			remoteInfo = AuraDrive;
 		};
-		DDAE051A9D30C4571533DB7F /* PBXContainerItemProxy */ = {
+		F57FD6748EDBCFF010E14AB1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AD49CCEAE4F730491323ABF8 /* Project object */;
+			containerPortal = B93AC041EF06280801A26977 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 44C99F0BCC1FE1DC2BAB76A2;
+			remoteGlobalIDString = 34DB2BA49E0F02E4B42FF68B;
 			remoteInfo = AuraDrive;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13F81AF1F0B362C1FF6FDB00 /* SectionText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SectionText.swift; sourceTree = "<group>"; };
-		1CFAE0E4A96F43A0EDAFFB04 /* AppFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
-		28F2EC5010F551CF58171ACF /* DiffuserControlView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserControlView.swift; sourceTree = "<group>"; };
-		2D211C8134D5CE2F87966DE0 /* SimulatedDiffuserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimulatedDiffuserService.swift; sourceTree = "<group>"; };
-		2FF9A455563C7EE08DB4290D /* AuraDriveApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuraDriveApp.swift; sourceTree = "<group>"; };
-		37AF7853E154B629F42E8563 /* WelcomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		43E41DE72E22A865F9E3BE16 /* AppFlowUITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppFlowUITests.swift; sourceTree = "<group>"; };
-		455D86FDB3A80B916F1535A0 /* DiffuserPersistence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserPersistence.swift; sourceTree = "<group>"; };
-		4B1E3DD0BFD1E1BC8517A4DF /* StatusBadge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
-		4E283306C7A4B854C501918D /* DiffuserListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserListView.swift; sourceTree = "<group>"; };
-		4EDBC109FBF39DB4EFB3187C /* DesignSystemPreviews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DesignSystemPreviews.swift; sourceTree = "<group>"; };
-		5359193DA73D5C44C8F79840 /* DiffuserStoreTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserStoreTests.swift; sourceTree = "<group>"; };
-		56903886050D5AD6D3E8B23D /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
-		57B0E4D5691341B8A7E985A3 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		5A8970A6109B5D567AC15F02 /* ConnectionState+Display.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ConnectionState+Display.swift"; sourceTree = "<group>"; };
-		80AC12E85A961D00FCB3A0CE /* AuraDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuraDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		82C8D7B333CEE43879F51089 /* Diffuser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Diffuser.swift; sourceTree = "<group>"; };
-		85ADAE522A47CCB4A7BD58C9 /* Card.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		AC85503807DE20BC596B644E /* ColorContrastTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorContrastTests.swift; sourceTree = "<group>"; };
-		B4B35E6649F69F54EC9E8918 /* RootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		BFB9363A11C7477B0DDAE00F /* AppColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
-		C27FF548507C796D2B98D091 /* AuraDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuraDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C586147F66D70804F8867DEA /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
-		CB2C7A3BAFFE7756B5B12B23 /* ButtonStyles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
-		D136BFA07ABD833194C44F03 /* AuraDriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuraDriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E084ACC1A8D9555E27D17DB8 /* DiffuserStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserStore.swift; sourceTree = "<group>"; };
-		F6CC8E2A60E53E8F0D99C0EA /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F9177F6BF3CD85D0B8C6DC35 /* MotionSafeAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MotionSafeAnimation.swift; sourceTree = "<group>"; };
-		F993AA843292FD90EDC85975 /* DiffuserDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserDetailView.swift; sourceTree = "<group>"; };
-		FCA240EE313F49C0B3723E4C /* DiffuserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserService.swift; sourceTree = "<group>"; };
-		FF7E52A536CF2375FE4BA5DC /* AddDiffuserView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddDiffuserView.swift; sourceTree = "<group>"; };
+		00DA1685FEB96B840AC0EBC2 /* RootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		035547A4BA2B4DA45321974D /* DiffuserPersistence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserPersistence.swift; sourceTree = "<group>"; };
+		0F6DFFB7998BE4B185F18570 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10FD259DF89ACD9BB3AACE7F /* AuraDriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuraDriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11777F301DE628B72748F54B /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		27DBFD1DC5756A1FCE80F6FB /* SimulatedDiffuserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimulatedDiffuserService.swift; sourceTree = "<group>"; };
+		40C00A8E08CF7C3D31064A6D /* DiffuserListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserListView.swift; sourceTree = "<group>"; };
+		41F4EA55F7FD3F9D8B31813D /* AppColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		4EDEE7AA3224E015BBC49CC6 /* DiffuserStoreTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserStoreTests.swift; sourceTree = "<group>"; };
+		5149DD1026A45353B3A2CCAD /* Diffuser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Diffuser.swift; sourceTree = "<group>"; };
+		55203E2F1F869A1F10F7E5E3 /* AuraDriveApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuraDriveApp.swift; sourceTree = "<group>"; };
+		60758204316D2916A595809E /* SectionText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SectionText.swift; sourceTree = "<group>"; };
+		63689D68260D8350C384EE45 /* DiffuserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserService.swift; sourceTree = "<group>"; };
+		6764C8BAEB10A206EB953AFF /* AuraDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuraDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AF5298A2B42E0213F762BEE /* ButtonStyles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		70BD76B430C458D06FD806CC /* AppFlowUITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppFlowUITests.swift; sourceTree = "<group>"; };
+		76255FFDD06E843AFD0A12B8 /* AddDiffuserView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddDiffuserView.swift; sourceTree = "<group>"; };
+		7625B5FB2DC63D7591C5B33A /* DiffuserStoreFailureTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserStoreFailureTests.swift; sourceTree = "<group>"; };
+		8294BB734CDD2BA163293B23 /* DiffuserControlView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserControlView.swift; sourceTree = "<group>"; };
+		8F4476A91F249ECD9ED25C53 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		98235A62A7FEB45A66B314F8 /* ConnectionState+Display.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ConnectionState+Display.swift"; sourceTree = "<group>"; };
+		99DE7C84D718CA41A6DFA1B7 /* DesignSystemPreviews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DesignSystemPreviews.swift; sourceTree = "<group>"; };
+		9D688A17438E560A4E789280 /* StatusBadge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
+		A0C4C65B151BA44190647B32 /* AuraDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuraDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5E0C075C847A86DD31F0F73 /* AppFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		AB16886D55F93E136B0597DC /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		AD99C2BBFFE1E3B2E6E5DD49 /* DiffuserDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserDetailView.swift; sourceTree = "<group>"; };
+		B61813481F1E7B9167C16EDE /* MotionSafeAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MotionSafeAnimation.swift; sourceTree = "<group>"; };
+		C05D449CAD950D570B08A97D /* DiffuserStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserStore.swift; sourceTree = "<group>"; };
+		E1FAE18B5739AB166B336D61 /* WelcomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		E6AD02B76E28ADE4E427A28E /* ColorContrastTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorContrastTests.swift; sourceTree = "<group>"; };
+		FD527D062A18ECDCEC65C6B9 /* Card.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7EB151721E1C2527D41C226E /* Frameworks */ = {
+		607D68337F96973C8F9ECE8F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA0F1595B2F97B9346A12BB4 /* Frameworks */ = {
+		71FBCDE83E5F0B1897C2404D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D6B459824EBA5EEDC8F4F697 /* Frameworks */ = {
+		AB5BFF9E1FDF0E5720B7C723 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -114,230 +116,249 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		148A2EE78BEFCB755B9D93A8 /* AuraDriveUITests */ = {
+		002787F37A966888E1234B8A /* AddDiffuser */ = {
 			isa = PBXGroup;
 			children = (
-				43E41DE72E22A865F9E3BE16 /* AppFlowUITests.swift */,
+				76255FFDD06E843AFD0A12B8 /* AddDiffuserView.swift */,
 			);
-			name = AuraDriveUITests;
-			path = AuraDriveUITests;
+			name = AddDiffuser;
+			path = AddDiffuser;
 			sourceTree = "<group>";
 		};
-		2C3C3F2ABC8B15B84E154A2B /* DesignSystem */ = {
+		0665F953F78FAAFC59C658F7 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				88EB0BCE8AD58DF257157AE7 /* Accessibility */,
-				EBACC8AAA3104FAAFA3D4EA5 /* Components */,
-				4EDBC109FBF39DB4EFB3187C /* DesignSystemPreviews.swift */,
-				36392FBF30418AB483CE64D1 /* Theme */,
+				55203E2F1F869A1F10F7E5E3 /* AuraDriveApp.swift */,
+				00DA1685FEB96B840AC0EBC2 /* RootView.swift */,
 			);
-			name = DesignSystem;
-			path = DesignSystem;
+			name = App;
+			path = App;
 			sourceTree = "<group>";
 		};
-		36392FBF30418AB483CE64D1 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				BFB9363A11C7477B0DDAE00F /* AppColor.swift */,
-				1CFAE0E4A96F43A0EDAFFB04 /* AppFont.swift */,
-				C586147F66D70804F8867DEA /* Layout.swift */,
-			);
-			name = Theme;
-			path = Theme;
-			sourceTree = "<group>";
-		};
-		556EF9F00E5501BD0E32C1BE /* Welcome */ = {
-			isa = PBXGroup;
-			children = (
-				37AF7853E154B629F42E8563 /* WelcomeView.swift */,
-			);
-			name = Welcome;
-			path = Welcome;
-			sourceTree = "<group>";
-		};
-		63ADEC8447CBBF6965E43728 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F6CC8E2A60E53E8F0D99C0EA /* Assets.xcassets */,
-			);
-			name = Resources;
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		6C37A6B1CCD12CD2E1E109B0 /* Control */ = {
-			isa = PBXGroup;
-			children = (
-				28F2EC5010F551CF58171ACF /* DiffuserControlView.swift */,
-				F993AA843292FD90EDC85975 /* DiffuserDetailView.swift */,
-			);
-			name = Control;
-			path = Control;
-			sourceTree = "<group>";
-		};
-		88EB0BCE8AD58DF257157AE7 /* Accessibility */ = {
-			isa = PBXGroup;
-			children = (
-				56903886050D5AD6D3E8B23D /* AccessibilityIdentifiers.swift */,
-				F9177F6BF3CD85D0B8C6DC35 /* MotionSafeAnimation.swift */,
-			);
-			name = Accessibility;
-			path = Accessibility;
-			sourceTree = "<group>";
-		};
-		8E2A9E33970948DB716BC7AD = {
-			isa = PBXGroup;
-			children = (
-				970880DCA17D2B6C0D0EFB77 /* Frameworks */,
-				F01D1EBF37ABA6B85E9AA3B9 /* AuraDrive */,
-				E44F337A9A3EFA395E765B38 /* AuraDriveTests */,
-				148A2EE78BEFCB755B9D93A8 /* AuraDriveUITests */,
-				A9851721BA443D21B160DE5E /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		970880DCA17D2B6C0D0EFB77 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9A63A27F166651EB33BA560F /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9A63A27F166651EB33BA560F /* iOS */ = {
+		0D8B9C1AA6F9602CB2F3222A /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		A9851721BA443D21B160DE5E /* Products */ = {
+		184BCFEAFF5AE29799F8A411 /* AuraDriveTests */ = {
 			isa = PBXGroup;
 			children = (
-				80AC12E85A961D00FCB3A0CE /* AuraDrive.app */,
-				C27FF548507C796D2B98D091 /* AuraDriveTests.xctest */,
-				D136BFA07ABD833194C44F03 /* AuraDriveUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		BD9FCFA4254BA6D8B9C0F507 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				E9F83EC3BAE61EE301CA8E72 /* AddDiffuser */,
-				6C37A6B1CCD12CD2E1E109B0 /* Control */,
-				CE536917A0E4B66D70BC5B79 /* DiffuserList */,
-				E5D7F43A5588EFC877F915B9 /* Settings */,
-				556EF9F00E5501BD0E32C1BE /* Welcome */,
-			);
-			name = Features;
-			path = Features;
-			sourceTree = "<group>";
-		};
-		CE536917A0E4B66D70BC5B79 /* DiffuserList */ = {
-			isa = PBXGroup;
-			children = (
-				5A8970A6109B5D567AC15F02 /* ConnectionState+Display.swift */,
-				4E283306C7A4B854C501918D /* DiffuserListView.swift */,
-			);
-			name = DiffuserList;
-			path = DiffuserList;
-			sourceTree = "<group>";
-		};
-		DBA2D72DCEC6FB1FC5C40995 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				82C8D7B333CEE43879F51089 /* Diffuser.swift */,
-			);
-			name = Models;
-			path = Models;
-			sourceTree = "<group>";
-		};
-		E0A28D2878BF2223926CC5D0 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				455D86FDB3A80B916F1535A0 /* DiffuserPersistence.swift */,
-				FCA240EE313F49C0B3723E4C /* DiffuserService.swift */,
-				E084ACC1A8D9555E27D17DB8 /* DiffuserStore.swift */,
-				2D211C8134D5CE2F87966DE0 /* SimulatedDiffuserService.swift */,
-			);
-			name = Services;
-			path = Services;
-			sourceTree = "<group>";
-		};
-		E44F337A9A3EFA395E765B38 /* AuraDriveTests */ = {
-			isa = PBXGroup;
-			children = (
-				AC85503807DE20BC596B644E /* ColorContrastTests.swift */,
-				5359193DA73D5C44C8F79840 /* DiffuserStoreTests.swift */,
+				E6AD02B76E28ADE4E427A28E /* ColorContrastTests.swift */,
+				7625B5FB2DC63D7591C5B33A /* DiffuserStoreFailureTests.swift */,
+				4EDEE7AA3224E015BBC49CC6 /* DiffuserStoreTests.swift */,
 			);
 			name = AuraDriveTests;
 			path = AuraDriveTests;
 			sourceTree = "<group>";
 		};
-		E5D7F43A5588EFC877F915B9 /* Settings */ = {
+		219BD088355E01338EAFAB30 = {
 			isa = PBXGroup;
 			children = (
-				57B0E4D5691341B8A7E985A3 /* SettingsView.swift */,
+				5F0C566291E41238B7CBA106 /* Frameworks */,
+				901F996C5438FF5AC8FC32F0 /* AuraDrive */,
+				184BCFEAFF5AE29799F8A411 /* AuraDriveTests */,
+				41DA09B815C10B5C0B8A3BFE /* AuraDriveUITests */,
+				5A17D5A1BA21E43ABD9481DD /* Products */,
 			);
-			name = Settings;
-			path = Settings;
 			sourceTree = "<group>";
 		};
-		E745583D37AB7420EB40CA77 /* App */ = {
+		2950E25FF19B2E30B8DACC9B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2FF9A455563C7EE08DB4290D /* AuraDriveApp.swift */,
-				B4B35E6649F69F54EC9E8918 /* RootView.swift */,
-			);
-			name = App;
-			path = App;
-			sourceTree = "<group>";
-		};
-		E9F83EC3BAE61EE301CA8E72 /* AddDiffuser */ = {
-			isa = PBXGroup;
-			children = (
-				FF7E52A536CF2375FE4BA5DC /* AddDiffuserView.swift */,
-			);
-			name = AddDiffuser;
-			path = AddDiffuser;
-			sourceTree = "<group>";
-		};
-		EBACC8AAA3104FAAFA3D4EA5 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				CB2C7A3BAFFE7756B5B12B23 /* ButtonStyles.swift */,
-				85ADAE522A47CCB4A7BD58C9 /* Card.swift */,
-				13F81AF1F0B362C1FF6FDB00 /* SectionText.swift */,
-				4B1E3DD0BFD1E1BC8517A4DF /* StatusBadge.swift */,
+				6AF5298A2B42E0213F762BEE /* ButtonStyles.swift */,
+				FD527D062A18ECDCEC65C6B9 /* Card.swift */,
+				60758204316D2916A595809E /* SectionText.swift */,
+				9D688A17438E560A4E789280 /* StatusBadge.swift */,
 			);
 			name = Components;
 			path = Components;
 			sourceTree = "<group>";
 		};
-		F01D1EBF37ABA6B85E9AA3B9 /* AuraDrive */ = {
+		2D5B8EFDAE266A3A11705EFD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E745583D37AB7420EB40CA77 /* App */,
-				2C3C3F2ABC8B15B84E154A2B /* DesignSystem */,
-				BD9FCFA4254BA6D8B9C0F507 /* Features */,
-				DBA2D72DCEC6FB1FC5C40995 /* Models */,
-				63ADEC8447CBBF6965E43728 /* Resources */,
-				E0A28D2878BF2223926CC5D0 /* Services */,
+				0F6DFFB7998BE4B185F18570 /* Assets.xcassets */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		382877A22433FC6247FCFF46 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8F4476A91F249ECD9ED25C53 /* SettingsView.swift */,
+			);
+			name = Settings;
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		41DA09B815C10B5C0B8A3BFE /* AuraDriveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				70BD76B430C458D06FD806CC /* AppFlowUITests.swift */,
+			);
+			name = AuraDriveUITests;
+			path = AuraDriveUITests;
+			sourceTree = "<group>";
+		};
+		5A17D5A1BA21E43ABD9481DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0C4C65B151BA44190647B32 /* AuraDrive.app */,
+				6764C8BAEB10A206EB953AFF /* AuraDriveTests.xctest */,
+				10FD259DF89ACD9BB3AACE7F /* AuraDriveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F0C566291E41238B7CBA106 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D8B9C1AA6F9602CB2F3222A /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		60BD3C749CECEBC7FF27BAB4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				035547A4BA2B4DA45321974D /* DiffuserPersistence.swift */,
+				63689D68260D8350C384EE45 /* DiffuserService.swift */,
+				C05D449CAD950D570B08A97D /* DiffuserStore.swift */,
+				27DBFD1DC5756A1FCE80F6FB /* SimulatedDiffuserService.swift */,
+			);
+			name = Services;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		901F996C5438FF5AC8FC32F0 /* AuraDrive */ = {
+			isa = PBXGroup;
+			children = (
+				0665F953F78FAAFC59C658F7 /* App */,
+				AA6BD69A6129E30C1713ACE0 /* DesignSystem */,
+				DBC23490ED5F0EB907E12005 /* Features */,
+				DAF229EEBFF26A40785B980A /* Models */,
+				2D5B8EFDAE266A3A11705EFD /* Resources */,
+				60BD3C749CECEBC7FF27BAB4 /* Services */,
 			);
 			name = AuraDrive;
 			path = AuraDrive;
 			sourceTree = "<group>";
 		};
+		9D3B3F4E79DBD326C8DD8531 /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				AB16886D55F93E136B0597DC /* AccessibilityIdentifiers.swift */,
+				B61813481F1E7B9167C16EDE /* MotionSafeAnimation.swift */,
+			);
+			name = Accessibility;
+			path = Accessibility;
+			sourceTree = "<group>";
+		};
+		AA6BD69A6129E30C1713ACE0 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				9D3B3F4E79DBD326C8DD8531 /* Accessibility */,
+				2950E25FF19B2E30B8DACC9B /* Components */,
+				99DE7C84D718CA41A6DFA1B7 /* DesignSystemPreviews.swift */,
+				F415DDEE837E6DB98498AA93 /* Theme */,
+			);
+			name = DesignSystem;
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		D61091FF2D64F03912AD0540 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				E1FAE18B5739AB166B336D61 /* WelcomeView.swift */,
+			);
+			name = Welcome;
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		DAF229EEBFF26A40785B980A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5149DD1026A45353B3A2CCAD /* Diffuser.swift */,
+			);
+			name = Models;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DBC23490ED5F0EB907E12005 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				002787F37A966888E1234B8A /* AddDiffuser */,
+				F6A21C5C8A1A7B290E9CE238 /* Control */,
+				E5EA0CCEE8B8D5F1B30A8D61 /* DiffuserList */,
+				382877A22433FC6247FCFF46 /* Settings */,
+				D61091FF2D64F03912AD0540 /* Welcome */,
+			);
+			name = Features;
+			path = Features;
+			sourceTree = "<group>";
+		};
+		E5EA0CCEE8B8D5F1B30A8D61 /* DiffuserList */ = {
+			isa = PBXGroup;
+			children = (
+				98235A62A7FEB45A66B314F8 /* ConnectionState+Display.swift */,
+				40C00A8E08CF7C3D31064A6D /* DiffuserListView.swift */,
+			);
+			name = DiffuserList;
+			path = DiffuserList;
+			sourceTree = "<group>";
+		};
+		F415DDEE837E6DB98498AA93 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				41F4EA55F7FD3F9D8B31813D /* AppColor.swift */,
+				A5E0C075C847A86DD31F0F73 /* AppFont.swift */,
+				11777F301DE628B72748F54B /* Layout.swift */,
+			);
+			name = Theme;
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		F6A21C5C8A1A7B290E9CE238 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				8294BB734CDD2BA163293B23 /* DiffuserControlView.swift */,
+				AD99C2BBFFE1E3B2E6E5DD49 /* DiffuserDetailView.swift */,
+			);
+			name = Control;
+			path = Control;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		44C99F0BCC1FE1DC2BAB76A2 /* AuraDrive */ = {
+		344E20335847AC5ECEC01B74 /* AuraDriveUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 62BFBC53D64725D5D42107A0 /* Build configuration list for PBXNativeTarget "AuraDrive" */;
+			buildConfigurationList = 286FBE82F55AD539D83C7871 /* Build configuration list for PBXNativeTarget "AuraDriveUITests" */;
 			buildPhases = (
-				159BD0BA12F3B780D1BC6896 /* Sources */,
-				BA0F1595B2F97B9346A12BB4 /* Frameworks */,
-				93FE9557C083FE6068CC9AA6 /* Resources */,
+				91D05449C41752FCF1A4FC96 /* Sources */,
+				AB5BFF9E1FDF0E5720B7C723 /* Frameworks */,
+				2F3EAC8C4AA7CB88E2BB39E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7454C3C9A28C18D9A6C70BC7 /* PBXTargetDependency */,
+			);
+			name = AuraDriveUITests;
+			productName = AuraDriveUITests;
+			productReference = 10FD259DF89ACD9BB3AACE7F /* AuraDriveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		34DB2BA49E0F02E4B42FF68B /* AuraDrive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED9AE93077C40950971CB4D8 /* Build configuration list for PBXNativeTarget "AuraDrive" */;
+			buildPhases = (
+				7A396D8FECB55BFD8E320940 /* Sources */,
+				607D68337F96973C8F9ECE8F /* Frameworks */,
+				40E527F2A85CBEFD3B9D1245 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -345,68 +366,50 @@
 			);
 			name = AuraDrive;
 			productName = AuraDrive;
-			productReference = 80AC12E85A961D00FCB3A0CE /* AuraDrive.app */;
+			productReference = A0C4C65B151BA44190647B32 /* AuraDrive.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D2DE67DC725FFAA02743EA62 /* AuraDriveUITests */ = {
+		DC2AD2E5E38D1E1C7A9FF50E /* AuraDriveTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AF78376859490529842562C /* Build configuration list for PBXNativeTarget "AuraDriveUITests" */;
+			buildConfigurationList = 8C574D23EB1CE9EBC800F126 /* Build configuration list for PBXNativeTarget "AuraDriveTests" */;
 			buildPhases = (
-				045C7D279B22EE20B02F3E8F /* Sources */,
-				7EB151721E1C2527D41C226E /* Frameworks */,
-				9431A140254A8CEB90B5F157 /* Resources */,
+				0218879EEE0E644B9B75D6C0 /* Sources */,
+				71FBCDE83E5F0B1897C2404D /* Frameworks */,
+				29F7B3BCD885B87DA7F678D4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				47C764385C5D909F0140F3E3 /* PBXTargetDependency */,
-			);
-			name = AuraDriveUITests;
-			productName = AuraDriveUITests;
-			productReference = D136BFA07ABD833194C44F03 /* AuraDriveUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		E33B5118E9EF8BBFD46DF0D2 /* AuraDriveTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 84AF0B4B812E8D6D6ADE136C /* Build configuration list for PBXNativeTarget "AuraDriveTests" */;
-			buildPhases = (
-				5DAB85D424390D2C21F0D348 /* Sources */,
-				D6B459824EBA5EEDC8F4F697 /* Frameworks */,
-				F11C8DCC82F999668EF56B6E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				220F5ED6795958C98C447E3B /* PBXTargetDependency */,
+				6A77FD4DD5F4DA6F55259782 /* PBXTargetDependency */,
 			);
 			name = AuraDriveTests;
 			productName = AuraDriveTests;
-			productReference = C27FF548507C796D2B98D091 /* AuraDriveTests.xctest */;
+			productReference = 6764C8BAEB10A206EB953AFF /* AuraDriveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AD49CCEAE4F730491323ABF8 /* Project object */ = {
+		B93AC041EF06280801A26977 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					44C99F0BCC1FE1DC2BAB76A2 = {
+					344E20335847AC5ECEC01B74 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 34DB2BA49E0F02E4B42FF68B;
+					};
+					34DB2BA49E0F02E4B42FF68B = {
 						CreatedOnToolsVersion = 16.0;
 					};
-					D2DE67DC725FFAA02743EA62 = {
+					DC2AD2E5E38D1E1C7A9FF50E = {
 						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 44C99F0BCC1FE1DC2BAB76A2;
-					};
-					E33B5118E9EF8BBFD46DF0D2 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = 44C99F0BCC1FE1DC2BAB76A2;
+						TestTargetID = 34DB2BA49E0F02E4B42FF68B;
 					};
 				};
 			};
-			buildConfigurationList = DE93119086EB401ABDD94D61 /* Build configuration list for PBXProject "AuraDrive" */;
+			buildConfigurationList = A6A367FF9F005BD5CB57E9E0 /* Build configuration list for PBXProject "AuraDrive" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -414,114 +417,115 @@
 				en,
 				Base,
 			);
-			mainGroup = 8E2A9E33970948DB716BC7AD;
+			mainGroup = 219BD088355E01338EAFAB30;
 			minimizedProjectReferenceProxies = 0;
 			preferredProjectObjectVersion = 100;
-			productRefGroup = A9851721BA443D21B160DE5E /* Products */;
+			productRefGroup = 5A17D5A1BA21E43ABD9481DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				44C99F0BCC1FE1DC2BAB76A2 /* AuraDrive */,
-				E33B5118E9EF8BBFD46DF0D2 /* AuraDriveTests */,
-				D2DE67DC725FFAA02743EA62 /* AuraDriveUITests */,
+				34DB2BA49E0F02E4B42FF68B /* AuraDrive */,
+				DC2AD2E5E38D1E1C7A9FF50E /* AuraDriveTests */,
+				344E20335847AC5ECEC01B74 /* AuraDriveUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		93FE9557C083FE6068CC9AA6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8E67517F01AB35D71768A0B4 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9431A140254A8CEB90B5F157 /* Resources */ = {
+		29F7B3BCD885B87DA7F678D4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F11C8DCC82F999668EF56B6E /* Resources */ = {
+		2F3EAC8C4AA7CB88E2BB39E9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40E527F2A85CBEFD3B9D1245 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0BC463346B2758F2D9C24F7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		045C7D279B22EE20B02F3E8F /* Sources */ = {
+		0218879EEE0E644B9B75D6C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED1498119CA09C431F24EE70 /* AccessibilityIdentifiers.swift in Sources */,
-				E90F64510576A6ABCA20EA8E /* AppFlowUITests.swift in Sources */,
+				4A0CDED8CD3625AE95F41138 /* ColorContrastTests.swift in Sources */,
+				AA2AAD3F3A62F1A3764B2C09 /* DiffuserStoreFailureTests.swift in Sources */,
+				7E94DF4F8937371C66ED74EC /* DiffuserStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		159BD0BA12F3B780D1BC6896 /* Sources */ = {
+		7A396D8FECB55BFD8E320940 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EB718817DD64C38B26F01E9 /* AuraDriveApp.swift in Sources */,
-				9BFF699D8C00FC76F0DBE1ED /* RootView.swift in Sources */,
-				A93396E471F6D9389BDF5B5D /* AccessibilityIdentifiers.swift in Sources */,
-				62B37E5E6F794C114FA757F8 /* MotionSafeAnimation.swift in Sources */,
-				37837E8DF91A44B720342198 /* ButtonStyles.swift in Sources */,
-				6602A679A9F2CA8081E6174A /* Card.swift in Sources */,
-				EF63890ACEAED951190AB904 /* SectionText.swift in Sources */,
-				65B078916692C7C3C84392C1 /* StatusBadge.swift in Sources */,
-				CE5BC5EA3E4692D952D07873 /* DesignSystemPreviews.swift in Sources */,
-				E5C1D02DF38DD8D770D66FFE /* AppColor.swift in Sources */,
-				FC3242EEF198B24D14DEA27F /* AppFont.swift in Sources */,
-				F9D4249D7F588CF6BD4CE25D /* Layout.swift in Sources */,
-				B64E217D8E1C690405363848 /* AddDiffuserView.swift in Sources */,
-				DE417670A137E92614A17FCB /* DiffuserControlView.swift in Sources */,
-				91F00C07C11C1121442E3191 /* DiffuserDetailView.swift in Sources */,
-				228CC7D8AD6EA195ADE71C5A /* ConnectionState+Display.swift in Sources */,
-				F731B161730008C72B67A0C9 /* DiffuserListView.swift in Sources */,
-				3355251F7208C2981FDDF6E7 /* SettingsView.swift in Sources */,
-				0A2213C651E9972BD80E92E8 /* WelcomeView.swift in Sources */,
-				5A1ADD3B173222A80A8AB874 /* Diffuser.swift in Sources */,
-				2A2A63866F6313DC6F9555F3 /* DiffuserPersistence.swift in Sources */,
-				77AA765972F526DF7F3EBC46 /* DiffuserService.swift in Sources */,
-				253099BC48B1798812E8D7D5 /* DiffuserStore.swift in Sources */,
-				405AEB48E05519C22E654FC0 /* SimulatedDiffuserService.swift in Sources */,
+				044BDC0DEB42ECE921340BC4 /* AuraDriveApp.swift in Sources */,
+				DF1375CDE6601F6DBC14FCEC /* RootView.swift in Sources */,
+				02073DCE66D2A5D345BD9941 /* AccessibilityIdentifiers.swift in Sources */,
+				D4E4275FCCF92B9E760BAE3C /* MotionSafeAnimation.swift in Sources */,
+				5616E4DC40F34A81A934394B /* ButtonStyles.swift in Sources */,
+				4460A9DF6B97029BBBCAF4D5 /* Card.swift in Sources */,
+				264A524ACCC04A13BF9E4AD1 /* SectionText.swift in Sources */,
+				57382F6B812701D0B7AB9833 /* StatusBadge.swift in Sources */,
+				55CB6A439F39B6A90933C87D /* DesignSystemPreviews.swift in Sources */,
+				EA51A314328DFBC2B6A20574 /* AppColor.swift in Sources */,
+				3177951890FC0833E6F95187 /* AppFont.swift in Sources */,
+				FFAE91155EC33C154BDF6531 /* Layout.swift in Sources */,
+				0CB4EA4113DF485D5C957118 /* AddDiffuserView.swift in Sources */,
+				7B4A7BFB7F827904AB37AC10 /* DiffuserControlView.swift in Sources */,
+				6A7B88D02A4D9A252154EA4C /* DiffuserDetailView.swift in Sources */,
+				1E8A5E8F766CC7A1E36799DC /* ConnectionState+Display.swift in Sources */,
+				04E096D767F0DFA15F5F3BCD /* DiffuserListView.swift in Sources */,
+				80F709C7C0729E24A18F42C2 /* SettingsView.swift in Sources */,
+				81827B497298321E99A98304 /* WelcomeView.swift in Sources */,
+				CBB4151EA8F62F65E6C4B2DC /* Diffuser.swift in Sources */,
+				11F20B0C55EC15F3DB4699FD /* DiffuserPersistence.swift in Sources */,
+				873D221579F3AD5487EB2C3C /* DiffuserService.swift in Sources */,
+				E9FEC1809170C93D469ABBAE /* DiffuserStore.swift in Sources */,
+				CD33DE7A3B8EFB1ABA826DBB /* SimulatedDiffuserService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5DAB85D424390D2C21F0D348 /* Sources */ = {
+		91D05449C41752FCF1A4FC96 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3C17CE3AFC60F921F205BA1 /* ColorContrastTests.swift in Sources */,
-				EC36EC543E9BBC982EB1AFB0 /* DiffuserStoreTests.swift in Sources */,
+				756F953A1BA7D1300FF96A31 /* AccessibilityIdentifiers.swift in Sources */,
+				1ED03F305BEC232DDD20EDD2 /* AppFlowUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		220F5ED6795958C98C447E3B /* PBXTargetDependency */ = {
+		6A77FD4DD5F4DA6F55259782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AuraDrive;
-			target = 44C99F0BCC1FE1DC2BAB76A2 /* AuraDrive */;
-			targetProxy = 59B141ED7F4060EF7E2CE1FD /* PBXContainerItemProxy */;
+			target = 34DB2BA49E0F02E4B42FF68B /* AuraDrive */;
+			targetProxy = EECF9F076FF661D7031015B4 /* PBXContainerItemProxy */;
 		};
-		47C764385C5D909F0140F3E3 /* PBXTargetDependency */ = {
+		7454C3C9A28C18D9A6C70BC7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AuraDrive;
-			target = 44C99F0BCC1FE1DC2BAB76A2 /* AuraDrive */;
-			targetProxy = DDAE051A9D30C4571533DB7F /* PBXContainerItemProxy */;
+			target = 34DB2BA49E0F02E4B42FF68B /* AuraDrive */;
+			targetProxy = F57FD6748EDBCFF010E14AB1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		155E63A7E9827B36E58455A9 /* Release */ = {
+		0662588C3F9920D58D5A0812 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -543,153 +547,7 @@
 			};
 			name = Release;
 		};
-		51B79D9FFDF67737F21E027C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = AuraDrive;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "AuraDrive uses Bluetooth to connect to and control your car fragrance diffuser.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		60D2F73D3426990D62369995 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = AuraDrive;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "AuraDrive uses Bluetooth to connect to and control your car fragrance diffuser.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		7E39A6720CFAE7ABC513052C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 6.0;
-			};
-			name = Release;
-		};
-		991AAE46B5A0A131CD8028EC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AuraDrive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AuraDrive";
-			};
-			name = Debug;
-		};
-		99B3BC5F386EDEC347B533A2 /* Debug */ = {
+		22787BB8E7120041887A48D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -752,9 +610,44 @@
 			};
 			name = Debug;
 		};
-		9D70909C1B8F9DCFF0B7C0DF /* Debug */ = {
+		3D90E6DCC284111AA4DEF4E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AuraDrive;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "AuraDrive uses Bluetooth to connect to and control your car fragrance diffuser.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		446FC0F24ED93645DF53DAEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -762,17 +655,17 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive.uitests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = AuraDrive;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AuraDrive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AuraDrive";
 			};
 			name = Debug;
 		};
-		F182C94D382B5D31E49EBB02 /* Release */ = {
+		477360523846F73ED4309ECF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -793,46 +686,157 @@
 			};
 			name = Release;
 		};
+		7BD670E6C798A8EEABDEFEFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AuraDrive;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "AuraDrive uses Bluetooth to connect to and control your car fragrance diffuser.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA59F52ED0521AA843AD76C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = AuraDrive;
+			};
+			name = Debug;
+		};
+		AB4789D030F0FB31A9CDF883 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1AF78376859490529842562C /* Build configuration list for PBXNativeTarget "AuraDriveUITests" */ = {
+		286FBE82F55AD539D83C7871 /* Build configuration list for PBXNativeTarget "AuraDriveUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F182C94D382B5D31E49EBB02 /* Release */,
-				9D70909C1B8F9DCFF0B7C0DF /* Debug */,
+				477360523846F73ED4309ECF /* Release */,
+				AA59F52ED0521AA843AD76C7 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		62BFBC53D64725D5D42107A0 /* Build configuration list for PBXNativeTarget "AuraDrive" */ = {
+		8C574D23EB1CE9EBC800F126 /* Build configuration list for PBXNativeTarget "AuraDriveTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				51B79D9FFDF67737F21E027C /* Release */,
-				60D2F73D3426990D62369995 /* Debug */,
+				0662588C3F9920D58D5A0812 /* Release */,
+				446FC0F24ED93645DF53DAEF /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84AF0B4B812E8D6D6ADE136C /* Build configuration list for PBXNativeTarget "AuraDriveTests" */ = {
+		A6A367FF9F005BD5CB57E9E0 /* Build configuration list for PBXProject "AuraDrive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				155E63A7E9827B36E58455A9 /* Release */,
-				991AAE46B5A0A131CD8028EC /* Debug */,
+				22787BB8E7120041887A48D1 /* Debug */,
+				AB4789D030F0FB31A9CDF883 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DE93119086EB401ABDD94D61 /* Build configuration list for PBXProject "AuraDrive" */ = {
+		ED9AE93077C40950971CB4D8 /* Build configuration list for PBXNativeTarget "AuraDrive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				99B3BC5F386EDEC347B533A2 /* Debug */,
-				7E39A6720CFAE7ABC513052C /* Release */,
+				7BD670E6C798A8EEABDEFEFE /* Release */,
+				3D90E6DCC284111AA4DEF4E5 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = AD49CCEAE4F730491323ABF8 /* Project object */;
+	rootObject = B93AC041EF06280801A26977 /* Project object */;
 }
