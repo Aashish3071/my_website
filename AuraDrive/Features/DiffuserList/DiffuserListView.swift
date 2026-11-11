@@ -84,6 +84,7 @@ private struct DiffuserRow: View {
             Text(diffuser.name)
                 .font(AppFont.headline)
                 .foregroundStyle(AppColor.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
 
             StatusBadge(kind: connectionState.badgeKind, text: connectionState.title)
 

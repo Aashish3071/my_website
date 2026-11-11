@@ -12,13 +12,18 @@ struct AuraDriveApp: App {
             defaults.removeObject(forKey: StorageKey.hasCompletedOnboarding)
             defaults.removeObject(forKey: DiffuserPersistence.storageKey)
             defaults.removeObject(forKey: SimulatedDiffuserService.storageKey)
+            defaults.removeObject(forKey: LowFragranceNotifier.enabledKey)
         }
         let service = SimulatedDiffuserService(
             defaults: defaults,
             responseDelay: isUITesting ? .milliseconds(50) : .milliseconds(500)
         )
         _store = State(
-            initialValue: DiffuserStore(service: service, persistence: DiffuserPersistence(defaults: defaults))
+            initialValue: DiffuserStore(
+                service: service,
+                persistence: DiffuserPersistence(defaults: defaults),
+                alerts: LowFragranceNotifier(defaults: defaults)
+            )
         )
     }
 

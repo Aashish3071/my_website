@@ -13,6 +13,8 @@ iOS app for controlling a car fragrance diffuser. Native SwiftUI, English only.
 - Interval mode (run for X seconds, pause for Y seconds)
 - Sleep timer (15 minutes to 2 hours)
 - Fragrance level with a low-cartridge warning and a reset after replacing the cartridge
+- Optional notification when a cartridge is running low
+- Privacy policy and a support link in Settings
 - Settings are saved on the phone between launches
 
 ## Requirements
@@ -65,6 +67,8 @@ targets, use Xcode's rename (click the project name in the navigator).
 
 ## Still to do before release
 
-- App icon (1024 × 1024) in `Assets.xcassets/AppIcon`
 - Bluetooth implementation of `DiffuserService` (see above)
-- Privacy policy URL and App Store listing
+- Replace the placeholder support address in `AuraDrive/App/AppLinks.swift`
+- Replace the placeholder app icon (`scripts/generate_app_icon.py` draws the current one)
+- Fill in and publish `docs/PRIVACY_POLICY.md`; complete `docs/APP_STORE_LISTING.md`
+- Set the signing team and the real bundle identifier

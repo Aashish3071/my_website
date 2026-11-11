@@ -24,6 +24,7 @@ enum AccessibilityID {
         static let powerToggle = "control.power"
         static let intensitySlider = "control.intensity"
         static let detailsButton = "control.details"
+        static let replaceCartridgeButton = "control.replaceCartridge"
     }
 
     enum Details {
@@ -34,6 +35,8 @@ enum AccessibilityID {
 
     enum Settings {
         static let doneButton = "settings.done"
+        static let lowFragranceAlertsToggle = "settings.lowFragranceAlerts"
+        static let privacyPolicyLink = "settings.privacyPolicy"
     }
 }
 

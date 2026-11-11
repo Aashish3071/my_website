@@ -145,7 +145,8 @@ struct DiffuserControlView: View {
         Section {
             if let end = diffuser.sleepTimerEnd {
                 LabeledContent("Turns off in") {
-                    Text(end, style: .timer)
+                    // Counts down and stops at zero instead of counting back up.
+                    Text(timerInterval: min(Date.now, end)...end, countsDown: true)
                         .monospacedDigit()
                         .foregroundStyle(AppColor.textPrimary)
                 }
@@ -211,6 +212,7 @@ struct DiffuserControlView: View {
                 isConfirmingCartridgeReset = true
             }
             .disabled(!isConnected)
+            .accessibilityIdentifier(AccessibilityID.Control.replaceCartridgeButton)
             .confirmationDialog(
                 "Reset the fragrance level to 100%?",
                 isPresented: $isConfirmingCartridgeReset,
