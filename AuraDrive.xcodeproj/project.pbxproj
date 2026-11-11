@@ -1,0 +1,732 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		095443CFD93EAD19A727AAB3 /* DesignSystemPreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2F7CAB991DC13DAAF36E2C /* DesignSystemPreviews.swift */; };
+		2A62A40A0B104ED3696B19F5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160890EAFB7F5C289F0CEFC /* Card.swift */; };
+		50F31E5DF09C405446AD3A68 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B764D33E185169574221EC67 /* WelcomeView.swift */; };
+		57DD1CDB18097A958567A834 /* ColorContrastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1871BE9E2AC6A4806D690BA /* ColorContrastTests.swift */; };
+		5CB142EB8272D2F3511D9607 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D16D387BC7E23B3D07A7BC /* AccessibilityIdentifiers.swift */; };
+		651316BEC2E310BA4629A6D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D35720D2EC431E61ECFC6638 /* Assets.xcassets */; };
+		95C855993EBB49360CD97F56 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D16D387BC7E23B3D07A7BC /* AccessibilityIdentifiers.swift */; };
+		96BDC8B62DD70C7BF475A950 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B412BE1BFFED7BB35A2932 /* ButtonStyles.swift */; };
+		A528DDCABF42DC0D4B353A03 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77406DD74209CCBE17A357D /* Layout.swift */; };
+		B190F9CFA092E517CF69DDCA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCA7A0DEC3423A9454BE4DF /* RootView.swift */; };
+		B7E8B892EFBFC52B6BE14451 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262783CC945F34CC265C74F6 /* AppColor.swift */; };
+		CCC3393CAF1A8797687532EA /* WelcomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4E877933A1B717EFBFD694 /* WelcomeUITests.swift */; };
+		D3391CF4AB28A92E0C1E835D /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ED43867CF1D339D02B099F /* StatusBadge.swift */; };
+		DF8C30985B2D9532405E85C8 /* AuraDriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47CA4E5B6A70C2E17D12B4 /* AuraDriveApp.swift */; };
+		EBD54DD759A6BF619F7633E8 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32B50E6426DF3D8A3D57D3 /* AppFont.swift */; };
+		ECDE26E5B384369C41D3D387 /* MotionSafeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40FF6C5E4FD0921CFE4D4F8 /* MotionSafeAnimation.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		588C21749D196B75348C5285 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06BF17166499B16F96A7934A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8705BDE711C56645F6D0E3BF;
+			remoteInfo = AuraDrive;
+		};
+		710B6FB0BD838DB759590C26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06BF17166499B16F96A7934A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8705BDE711C56645F6D0E3BF;
+			remoteInfo = AuraDrive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A2F7CAB991DC13DAAF36E2C /* DesignSystemPreviews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DesignSystemPreviews.swift; sourceTree = "<group>"; };
+		262783CC945F34CC265C74F6 /* AppColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		28FF2D132A3689A3448548D9 /* AuraDriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuraDriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4160890EAFB7F5C289F0CEFC /* Card.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		60337B0560A56FC5B357355F /* AuraDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuraDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69ED43867CF1D339D02B099F /* StatusBadge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
+		7CCA7A0DEC3423A9454BE4DF /* RootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		89D16D387BC7E23B3D07A7BC /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		9C4E877933A1B717EFBFD694 /* WelcomeUITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WelcomeUITests.swift; sourceTree = "<group>"; };
+		A77406DD74209CCBE17A357D /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		B2B412BE1BFFED7BB35A2932 /* ButtonStyles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		B764D33E185169574221EC67 /* WelcomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		BE47CA4E5B6A70C2E17D12B4 /* AuraDriveApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuraDriveApp.swift; sourceTree = "<group>"; };
+		C1871BE9E2AC6A4806D690BA /* ColorContrastTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorContrastTests.swift; sourceTree = "<group>"; };
+		D35720D2EC431E61ECFC6638 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE32B50E6426DF3D8A3D57D3 /* AppFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		EEF67D5A6F0032E6F63AE629 /* AuraDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuraDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F40FF6C5E4FD0921CFE4D4F8 /* MotionSafeAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MotionSafeAnimation.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E41F5D3301D8D0F7B650200 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55AE9B67AFC67955CB812D43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDE5372AB079DB046956F1C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30D347FEC49715C3F65E5F82 /* AuraDrive */ = {
+			isa = PBXGroup;
+			children = (
+				BCE9E1D4D6313F4AAFDF6B6A /* App */,
+				977AE993480D0A38CD53B36B /* DesignSystem */,
+				C6AAA78A4345E366774473C0 /* Features */,
+				72353D58F0945E6EBA7AB4DD /* Resources */,
+			);
+			name = AuraDrive;
+			path = AuraDrive;
+			sourceTree = "<group>";
+		};
+		392962F113206434DD20AEDD /* AuraDriveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9C4E877933A1B717EFBFD694 /* WelcomeUITests.swift */,
+			);
+			name = AuraDriveUITests;
+			path = AuraDriveUITests;
+			sourceTree = "<group>";
+		};
+		4036414DC73CEB5B85C6F965 = {
+			isa = PBXGroup;
+			children = (
+				7C68A7AA937750A6D793692F /* Frameworks */,
+				30D347FEC49715C3F65E5F82 /* AuraDrive */,
+				910BFC39AD58375622354276 /* AuraDriveTests */,
+				392962F113206434DD20AEDD /* AuraDriveUITests */,
+				785E6C38DE1D618F8E9B7813 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65246FC9FED21702AED65155 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				B764D33E185169574221EC67 /* WelcomeView.swift */,
+			);
+			name = Welcome;
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		72353D58F0945E6EBA7AB4DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D35720D2EC431E61ECFC6638 /* Assets.xcassets */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		785E6C38DE1D618F8E9B7813 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60337B0560A56FC5B357355F /* AuraDrive.app */,
+				EEF67D5A6F0032E6F63AE629 /* AuraDriveTests.xctest */,
+				28FF2D132A3689A3448548D9 /* AuraDriveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7C68A7AA937750A6D793692F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98123BC518CDFF912D4782C7 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		910BFC39AD58375622354276 /* AuraDriveTests */ = {
+			isa = PBXGroup;
+			children = (
+				C1871BE9E2AC6A4806D690BA /* ColorContrastTests.swift */,
+			);
+			name = AuraDriveTests;
+			path = AuraDriveTests;
+			sourceTree = "<group>";
+		};
+		977AE993480D0A38CD53B36B /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				FB13F0CF6CDFA2BEA9D78C45 /* Accessibility */,
+				BFB78514A639B75FE89A3BFE /* Components */,
+				0A2F7CAB991DC13DAAF36E2C /* DesignSystemPreviews.swift */,
+				A5C0430C738727C07AC6D52F /* Theme */,
+			);
+			name = DesignSystem;
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		98123BC518CDFF912D4782C7 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A5C0430C738727C07AC6D52F /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				262783CC945F34CC265C74F6 /* AppColor.swift */,
+				EE32B50E6426DF3D8A3D57D3 /* AppFont.swift */,
+				A77406DD74209CCBE17A357D /* Layout.swift */,
+			);
+			name = Theme;
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		BCE9E1D4D6313F4AAFDF6B6A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BE47CA4E5B6A70C2E17D12B4 /* AuraDriveApp.swift */,
+				7CCA7A0DEC3423A9454BE4DF /* RootView.swift */,
+			);
+			name = App;
+			path = App;
+			sourceTree = "<group>";
+		};
+		BFB78514A639B75FE89A3BFE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B2B412BE1BFFED7BB35A2932 /* ButtonStyles.swift */,
+				4160890EAFB7F5C289F0CEFC /* Card.swift */,
+				69ED43867CF1D339D02B099F /* StatusBadge.swift */,
+			);
+			name = Components;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C6AAA78A4345E366774473C0 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				65246FC9FED21702AED65155 /* Welcome */,
+			);
+			name = Features;
+			path = Features;
+			sourceTree = "<group>";
+		};
+		FB13F0CF6CDFA2BEA9D78C45 /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				89D16D387BC7E23B3D07A7BC /* AccessibilityIdentifiers.swift */,
+				F40FF6C5E4FD0921CFE4D4F8 /* MotionSafeAnimation.swift */,
+			);
+			name = Accessibility;
+			path = Accessibility;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BF26D08FDF7F39EC810B1E3 /* AuraDriveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C66798CFB401C9D9C537D37 /* Build configuration list for PBXNativeTarget "AuraDriveTests" */;
+			buildPhases = (
+				01FE3AD752FD10AE7E6D7F5C /* Sources */,
+				55AE9B67AFC67955CB812D43 /* Frameworks */,
+				DE03CC9D2452D732FB2BDAAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B12D0351D7CB76A6FEAB2475 /* PBXTargetDependency */,
+			);
+			name = AuraDriveTests;
+			productName = AuraDriveTests;
+			productReference = EEF67D5A6F0032E6F63AE629 /* AuraDriveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		66225640595E7218B664B635 /* AuraDriveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6407DC02AA8DBAAB844F4D13 /* Build configuration list for PBXNativeTarget "AuraDriveUITests" */;
+			buildPhases = (
+				AD0A315D34D98EF0C603B446 /* Sources */,
+				BDE5372AB079DB046956F1C8 /* Frameworks */,
+				D76C279C03DB7BC0BFE901F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A69A947EEB88AB4C7190B550 /* PBXTargetDependency */,
+			);
+			name = AuraDriveUITests;
+			productName = AuraDriveUITests;
+			productReference = 28FF2D132A3689A3448548D9 /* AuraDriveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		8705BDE711C56645F6D0E3BF /* AuraDrive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7F922CACD648CBF4C1630D0 /* Build configuration list for PBXNativeTarget "AuraDrive" */;
+			buildPhases = (
+				13FE77C9073A76A6844CBE2D /* Sources */,
+				0E41F5D3301D8D0F7B650200 /* Frameworks */,
+				C1B520AE208124780E4BC845 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AuraDrive;
+			productName = AuraDrive;
+			productReference = 60337B0560A56FC5B357355F /* AuraDrive.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06BF17166499B16F96A7934A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					2BF26D08FDF7F39EC810B1E3 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 8705BDE711C56645F6D0E3BF;
+					};
+					66225640595E7218B664B635 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 8705BDE711C56645F6D0E3BF;
+					};
+					8705BDE711C56645F6D0E3BF = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 6BEC80FD2E96C84BEE69EE4D /* Build configuration list for PBXProject "AuraDrive" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4036414DC73CEB5B85C6F965;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 100;
+			productRefGroup = 785E6C38DE1D618F8E9B7813 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8705BDE711C56645F6D0E3BF /* AuraDrive */,
+				2BF26D08FDF7F39EC810B1E3 /* AuraDriveTests */,
+				66225640595E7218B664B635 /* AuraDriveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C1B520AE208124780E4BC845 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				651316BEC2E310BA4629A6D3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D76C279C03DB7BC0BFE901F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE03CC9D2452D732FB2BDAAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01FE3AD752FD10AE7E6D7F5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57DD1CDB18097A958567A834 /* ColorContrastTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13FE77C9073A76A6844CBE2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF8C30985B2D9532405E85C8 /* AuraDriveApp.swift in Sources */,
+				B190F9CFA092E517CF69DDCA /* RootView.swift in Sources */,
+				5CB142EB8272D2F3511D9607 /* AccessibilityIdentifiers.swift in Sources */,
+				ECDE26E5B384369C41D3D387 /* MotionSafeAnimation.swift in Sources */,
+				96BDC8B62DD70C7BF475A950 /* ButtonStyles.swift in Sources */,
+				2A62A40A0B104ED3696B19F5 /* Card.swift in Sources */,
+				D3391CF4AB28A92E0C1E835D /* StatusBadge.swift in Sources */,
+				095443CFD93EAD19A727AAB3 /* DesignSystemPreviews.swift in Sources */,
+				B7E8B892EFBFC52B6BE14451 /* AppColor.swift in Sources */,
+				EBD54DD759A6BF619F7633E8 /* AppFont.swift in Sources */,
+				A528DDCABF42DC0D4B353A03 /* Layout.swift in Sources */,
+				50F31E5DF09C405446AD3A68 /* WelcomeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD0A315D34D98EF0C603B446 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95C855993EBB49360CD97F56 /* AccessibilityIdentifiers.swift in Sources */,
+				CCC3393CAF1A8797687532EA /* WelcomeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A69A947EEB88AB4C7190B550 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AuraDrive;
+			target = 8705BDE711C56645F6D0E3BF /* AuraDrive */;
+			targetProxy = 588C21749D196B75348C5285 /* PBXContainerItemProxy */;
+		};
+		B12D0351D7CB76A6FEAB2475 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AuraDrive;
+			target = 8705BDE711C56645F6D0E3BF /* AuraDrive */;
+			targetProxy = 710B6FB0BD838DB759590C26 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0DA1D8DE92DECAA826628007 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = AuraDrive;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		21028784559C074676269623 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = AuraDrive;
+			};
+			name = Debug;
+		};
+		3E33540321356D3B7CD9B163 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AuraDrive;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "AuraDrive uses Bluetooth to connect to and control your car fragrance diffuser.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		894BD4021DAD78C47B3E2BE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		9FDD99C9966E9B52B0771928 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AuraDrive;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "AuraDrive uses Bluetooth to connect to and control your car fragrance diffuser.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C73048C811F02756E38879D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AuraDrive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AuraDrive";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C87249E0A5377453315FF2BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AuraDrive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AuraDrive";
+			};
+			name = Debug;
+		};
+		D3933A4B89ED8C955FE02C79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C66798CFB401C9D9C537D37 /* Build configuration list for PBXNativeTarget "AuraDriveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C73048C811F02756E38879D1 /* Release */,
+				C87249E0A5377453315FF2BC /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6407DC02AA8DBAAB844F4D13 /* Build configuration list for PBXNativeTarget "AuraDriveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DA1D8DE92DECAA826628007 /* Release */,
+				21028784559C074676269623 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BEC80FD2E96C84BEE69EE4D /* Build configuration list for PBXProject "AuraDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				894BD4021DAD78C47B3E2BE9 /* Debug */,
+				D3933A4B89ED8C955FE02C79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7F922CACD648CBF4C1630D0 /* Build configuration list for PBXNativeTarget "AuraDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FDD99C9966E9B52B0771928 /* Release */,
+				3E33540321356D3B7CD9B163 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06BF17166499B16F96A7934A /* Project object */;
+}
