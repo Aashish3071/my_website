@@ -39,6 +39,28 @@ final class AppFlowUITests: XCTestCase {
         waitForValue("1", of: power)
     }
 
+    /// The control screen is longer than the display. Its last control must be
+    /// reachable by scrolling.
+    @MainActor
+    func testControlScreenScrollsToTheLastControl() throws {
+        let app = launchApp()
+        addDemoDiffuser(in: app)
+        app.buttons[AccessibilityID.DiffuserList.row].tap()
+
+        let power = app.switches[AccessibilityID.Control.powerToggle]
+        XCTAssertTrue(power.waitForExistence(timeout: 5))
+        waitUntilEnabled(power)
+
+        let replaceCartridge = app.buttons[AccessibilityID.Control.replaceCartridgeButton]
+        for _ in 0..<5 where !(replaceCartridge.exists && replaceCartridge.isHittable) {
+            app.swipeUp()
+        }
+        XCTAssertTrue(replaceCartridge.exists && replaceCartridge.isHittable, "Could not scroll to the last control")
+
+        replaceCartridge.tap()
+        XCTAssertTrue(app.buttons["Reset Level"].waitForExistence(timeout: 5))
+    }
+
     @MainActor
     func testForgettingADiffuserReturnsToTheEmptyList() throws {
         let app = launchApp()

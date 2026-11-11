@@ -211,6 +211,7 @@ struct DiffuserControlView: View {
                 isConfirmingCartridgeReset = true
             }
             .disabled(!isConnected)
+            .accessibilityIdentifier(AccessibilityID.Control.replaceCartridgeButton)
             .confirmationDialog(
                 "Reset the fragrance level to 100%?",
                 isPresented: $isConfirmingCartridgeReset,
