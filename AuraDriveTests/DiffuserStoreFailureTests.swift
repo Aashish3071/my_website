@@ -6,6 +6,8 @@ import Testing
 /// store does when things go wrong.
 @MainActor
 private final class FakeDiffuserService: DiffuserService {
+    var availability: BluetoothAvailability = .poweredOn
+    var onEvent: (@MainActor (DiffuserServiceEvent) -> Void)?
     var connectDelay: Duration = .zero
     var sendDelay: Duration = .zero
     var failingCommands: (DiffuserCommand) -> Bool = { _ in false }

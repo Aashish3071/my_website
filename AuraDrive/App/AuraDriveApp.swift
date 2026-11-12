@@ -14,10 +14,17 @@ struct AuraDriveApp: App {
             defaults.removeObject(forKey: SimulatedDiffuserService.storageKey)
             defaults.removeObject(forKey: LowFragranceNotifier.enabledKey)
         }
-        let service = SimulatedDiffuserService(
+        let demo = SimulatedDiffuserService(
             defaults: defaults,
             responseDelay: isUITesting ? .milliseconds(50) : .milliseconds(500)
         )
+        // UI tests use only the demo diffuser, so no Bluetooth permission prompt can appear.
+        let service: any DiffuserService = isUITesting
+            ? demo
+            : CombinedDiffuserService(
+                demo: demo,
+                bluetooth: BluetoothDiffuserService(transport: CoreBluetoothTransport())
+            )
         _store = State(
             initialValue: DiffuserStore(
                 service: service,

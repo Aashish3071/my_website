@@ -4,7 +4,11 @@ import Foundation
 /// connected, switched on and off, and its fragrance slowly runs down while on.
 @MainActor
 final class SimulatedDiffuserService: DiffuserService {
-    static let demoDiffuser = DiscoveredDiffuser(
+    /// The demo diffuser doesn't use Bluetooth, so it is always available.
+    var availability: BluetoothAvailability { .poweredOn }
+    var onEvent: (@MainActor (DiffuserServiceEvent) -> Void)?
+
+    nonisolated static let demoDiffuser = DiscoveredDiffuser(
         id: UUID(uuidString: "0A7D1F5E-3C2B-4E61-9A84-5D1E6F2B7C90")!,
         name: "Demo Diffuser",
         firmwareVersion: "1.0.0"

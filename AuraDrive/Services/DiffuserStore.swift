@@ -10,6 +10,7 @@ import SwiftUI
 final class DiffuserStore {
     private(set) var diffusers: [Diffuser] = []
     private(set) var connectionStates: [UUID: ConnectionState] = [:]
+    private(set) var bluetoothAvailability: BluetoothAvailability
     /// Set when something fails. The root view shows it in an alert.
     var errorMessage: String?
 
@@ -17,17 +18,28 @@ final class DiffuserStore {
     @ObservationIgnored private let persistence: DiffuserPersistence
     @ObservationIgnored private let alerts: (any FragranceAlerting)?
     @ObservationIgnored private var sleepTimerTasks: [UUID: Task<Void, Never>] = [:]
+    /// Waits between reconnection attempts. The app gives up after the last one.
+    @ObservationIgnored private let reconnectDelays: [Duration]
+    @ObservationIgnored private var reconnectTasks: [UUID: Task<Void, Never>] = [:]
+    /// Diffusers that have been connected, and so are reconnected automatically.
+    @ObservationIgnored private var autoReconnectIDs: Set<UUID> = []
 
     init(
         service: any DiffuserService,
         persistence: DiffuserPersistence,
-        alerts: (any FragranceAlerting)? = nil
+        alerts: (any FragranceAlerting)? = nil,
+        reconnectDelays: [Duration] = [.seconds(1), .seconds(2), .seconds(4), .seconds(8), .seconds(16)]
     ) {
         self.service = service
         self.persistence = persistence
         self.alerts = alerts
+        self.reconnectDelays = reconnectDelays
+        bluetoothAvailability = service.availability
         diffusers = persistence.load()
         restoreSleepTimers()
+        service.onEvent = { [weak self] event in
+            self?.handle(event)
+        }
     }
 
     // MARK: Reading
@@ -66,6 +78,8 @@ final class DiffuserStore {
 
     func remove(_ id: UUID) {
         cancelSleepTimerTask(for: id)
+        stopReconnecting(id)
+        autoReconnectIDs.remove(id)
         service.disconnect(from: id)
         connectionStates[id] = nil
         diffusers.removeAll { $0.id == id }
@@ -94,6 +108,7 @@ final class DiffuserStore {
             }
             apply(status, to: id)
             connectionStates[id] = .connected
+            autoReconnectIDs.insert(id)
             announce("\(name) connected")
         } catch {
             connectionStates[id] = diffuser(withID: id) == nil ? nil : .disconnected
@@ -211,6 +226,9 @@ final class DiffuserStore {
         diffusers[index].isOn = status.isOn
         diffusers[index].intensity = status.intensity
         diffusers[index].fragranceLevel = status.fragranceLevel
+        if let version = status.firmwareVersion {
+            diffusers[index].firmwareVersion = version
+        }
         if !wasLow, diffusers[index].isFragranceLow {
             alerts?.fragranceBecameLow(for: diffusers[index])
         }
@@ -232,6 +250,85 @@ final class DiffuserStore {
 
     private func announce(_ message: String) {
         AccessibilityNotification.Announcement(message).post()
+    }
+
+    // MARK: Events and reconnecting
+
+    private func handle(_ event: DiffuserServiceEvent) {
+        switch event {
+        case .availabilityChanged(let availability):
+            bluetoothAvailability = availability
+            guard availability == .poweredOn else { return }
+            for id in autoReconnectIDs where connectionState(for: id) == .disconnected {
+                startReconnecting(id)
+            }
+
+        case .connectionLost(let id):
+            guard let diffuser = diffuser(withID: id) else { return }
+            connectionStates[id] = .disconnected
+            announce("\(diffuser.name) disconnected")
+            // With Bluetooth off, reconnecting starts when it comes back on.
+            if autoReconnectIDs.contains(id), bluetoothAvailability == .poweredOn {
+                startReconnecting(id)
+            }
+
+        case .statusChanged(let id, let status):
+            guard connectionState(for: id) == .connected else { return }
+            apply(status, to: id)
+        }
+    }
+
+    private func startReconnecting(_ id: UUID) {
+        stopReconnecting(id)
+        guard diffuser(withID: id) != nil else { return }
+        connectionStates[id] = .reconnecting
+        reconnectTasks[id] = Task { [weak self, reconnectDelays] in
+            for delay in reconnectDelays {
+                try? await Task.sleep(for: delay)
+                guard !Task.isCancelled, let self else { return }
+                guard self.bluetoothAvailability == .poweredOn else {
+                    // Tried again when Bluetooth comes back on.
+                    self.endReconnecting(id, state: .disconnected)
+                    return
+                }
+                if await self.attemptReconnect(id) { return }
+            }
+            guard !Task.isCancelled, let self else { return }
+            self.endReconnecting(id, state: .disconnected)
+            if let name = self.diffuser(withID: id)?.name {
+                self.announce("Couldn't reconnect to \(name)")
+            }
+        }
+    }
+
+    /// Returns true when reconnecting should stop: it worked, or the diffuser was forgotten.
+    private func attemptReconnect(_ id: UUID) async -> Bool {
+        guard let name = diffuser(withID: id)?.name else { return true }
+        do {
+            let status = try await service.connect(to: id)
+            guard !Task.isCancelled, diffuser(withID: id) != nil else {
+                service.disconnect(from: id)
+                return true
+            }
+            apply(status, to: id)
+            endReconnecting(id, state: .connected)
+            announce("\(name) reconnected")
+            return true
+        } catch {
+            return Task.isCancelled
+        }
+    }
+
+    private func endReconnecting(_ id: UUID, state: ConnectionState) {
+        reconnectTasks[id] = nil
+        if diffuser(withID: id) != nil {
+            connectionStates[id] = state
+        }
+    }
+
+    private func stopReconnecting(_ id: UUID) {
+        reconnectTasks[id]?.cancel()
+        reconnectTasks[id] = nil
     }
 
     // MARK: Sleep timer
