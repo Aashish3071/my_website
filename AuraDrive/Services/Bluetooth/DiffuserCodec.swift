@@ -5,9 +5,18 @@ enum DiffuserRequest: Equatable, Sendable {
     case command(DiffuserCommand)
     case status
     case firmwareVersion
+    /// Starts a firmware update of `size` bytes.
+    case firmwareUpdateBegin(size: Int, checksum: UInt32, version: String)
+    /// One piece of the firmware, starting `offset` bytes in.
+    case firmwareChunk(offset: Int, bytes: Data)
+    /// All firmware sent: check it and install it.
+    case firmwareUpdateFinish
+    /// Throw away a partly received update.
+    case firmwareUpdateAbort
 
     enum Kind: Hashable, Sendable {
         case power, intensity, interval, resetFragrance, status, firmwareVersion
+        case firmwareBegin, firmwareChunk, firmwareFinish, firmwareAbort
     }
 
     var kind: Kind {
@@ -18,6 +27,10 @@ enum DiffuserRequest: Equatable, Sendable {
         case .command(.resetFragranceLevel): .resetFragrance
         case .status: .status
         case .firmwareVersion: .firmwareVersion
+        case .firmwareUpdateBegin: .firmwareBegin
+        case .firmwareChunk: .firmwareChunk
+        case .firmwareUpdateFinish: .firmwareFinish
+        case .firmwareUpdateAbort: .firmwareAbort
         }
     }
 }
@@ -47,6 +60,8 @@ enum DiffuserMessage: Equatable, Sendable {
 /// into messages. Swapping the byte format means writing a new codec; nothing
 /// else changes.
 protocol DiffuserCodec: Sendable {
+    /// The most firmware bytes sent in one `.firmwareChunk`.
+    var maxFirmwareChunkSize: Int { get }
     func encode(_ request: DiffuserRequest) throws -> Data
     func decodeMessage(_ data: Data) throws -> DiffuserMessage
 }

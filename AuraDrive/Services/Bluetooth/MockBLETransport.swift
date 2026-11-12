@@ -17,6 +17,15 @@ final class MockBLETransport: BLETransport {
         var intensity = 3
         var interval = IntervalSettings()
         var fragrancePercent = 80
+        /// A firmware update being received.
+        var firmwareUpdate: FirmwareTransfer?
+
+        struct FirmwareTransfer {
+            let size: Int
+            let checksum: UInt32
+            let version: String
+            var received: [UInt8] = []
+        }
 
         init(id: UUID = UUID(), name: String = "Mock Diffuser") {
             self.id = id
@@ -39,6 +48,11 @@ final class MockBLETransport: BLETransport {
     var respondsToRequests = true
     /// Requests of these kinds are refused.
     var rejectedKinds: Set<DiffuserRequest.Kind> = []
+    /// Finishing a firmware update fails as if the firmware arrived damaged.
+    var failsFirmwareVerification = false
+    /// The connection drops when this many firmware chunks have arrived.
+    var dropConnectionAfterFirmwareChunks: Int?
+    private var firmwareChunksReceived = 0
 
     private let codec = PlaceholderDiffuserCodec()
 
@@ -116,6 +130,13 @@ final class MockBLETransport: BLETransport {
         }
         let request = try codec.decodeRequest(data)
         writtenRequests.append(request)
+        if case .firmwareChunk = request {
+            firmwareChunksReceived += 1
+            if firmwareChunksReceived == dropConnectionAfterFirmwareChunks {
+                dropConnection(to: id)
+                return
+            }
+        }
         guard respondsToRequests else { return }
         deliver(reply(to: request, on: peripheral), from: id)
     }
@@ -145,6 +166,28 @@ final class MockBLETransport: BLETransport {
             return .status(status(of: peripheral))
         case .firmwareVersion:
             return .firmwareVersion(peripheral.firmwareVersion)
+        case .firmwareUpdateBegin(let size, let checksum, let version):
+            peripheral.firmwareUpdate = Peripheral.FirmwareTransfer(size: size, checksum: checksum, version: version)
+        case .firmwareChunk(let offset, let bytes):
+            guard var transfer = peripheral.firmwareUpdate,
+                  offset == transfer.received.count,
+                  offset + bytes.count <= transfer.size else {
+                return .rejected(request.kind, code: 2)
+            }
+            transfer.received += [UInt8](bytes)
+            peripheral.firmwareUpdate = transfer
+        case .firmwareUpdateFinish:
+            guard let transfer = peripheral.firmwareUpdate,
+                  transfer.received.count == transfer.size,
+                  FirmwareImage.crc32(transfer.received) == transfer.checksum,
+                  !failsFirmwareVerification else {
+                peripheral.firmwareUpdate = nil
+                return .rejected(request.kind, code: 3)
+            }
+            peripheral.firmwareVersion = transfer.version
+            peripheral.firmwareUpdate = nil
+        case .firmwareUpdateAbort:
+            peripheral.firmwareUpdate = nil
         }
         return .acknowledged(request.kind)
     }

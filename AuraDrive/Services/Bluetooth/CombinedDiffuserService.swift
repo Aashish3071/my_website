@@ -46,6 +46,22 @@ final class CombinedDiffuserService: DiffuserService {
         try await service(for: id).readStatus(of: id)
     }
 
+    func beginFirmwareUpdate(on id: UUID, image: FirmwareImage) async throws -> Int {
+        try await service(for: id).beginFirmwareUpdate(on: id, image: image)
+    }
+
+    func sendFirmwareChunk(_ chunk: Data, offset: Int, to id: UUID) async throws {
+        try await service(for: id).sendFirmwareChunk(chunk, offset: offset, to: id)
+    }
+
+    func finishFirmwareUpdate(on id: UUID) async throws {
+        try await service(for: id).finishFirmwareUpdate(on: id)
+    }
+
+    func abortFirmwareUpdate(on id: UUID) {
+        service(for: id).abortFirmwareUpdate(on: id)
+    }
+
     private func service(for id: UUID) -> any DiffuserService {
         id == SimulatedDiffuserService.demoDiffuser.id ? demo : bluetooth
     }

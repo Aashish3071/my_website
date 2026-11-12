@@ -31,6 +31,10 @@ enum AccessibilityID {
         static let nameField = "details.name"
         static let forgetButton = "details.forget"
         static let doneButton = "details.done"
+        static let checkForUpdateButton = "details.checkForUpdate"
+        static let installUpdateButton = "details.installUpdate"
+        static let cancelUpdateButton = "details.cancelUpdate"
+        static let firmwareStatus = "details.firmwareStatus"
     }
 
     enum Settings {

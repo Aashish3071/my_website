@@ -14,7 +14,10 @@ struct DiffuserControlView: View {
 
     private var diffuser: Diffuser? { store.diffuser(withID: diffuserID) }
     private var connectionState: ConnectionState { store.connectionState(for: diffuserID) }
-    private var isConnected: Bool { connectionState == .connected }
+    /// Controls work only when connected and not in the middle of a firmware update.
+    private var isConnected: Bool {
+        connectionState == .connected && !store.firmwareUpdateState(for: diffuserID).isInProgress
+    }
 
     var body: some View {
         Group {

@@ -79,10 +79,23 @@ with a link to Settings when Bluetooth is off or not allowed.
   `DiffuserCodec` for the real format and pass it to `BluetoothDiffuserService` in
   `AuraDriveApp.swift`.
 
+### Firmware updates (OTA)
+
+Details → Firmware update checks for, installs and follows an update. `FirmwareUpdateMachine`
+(`Models/FirmwareUpdate.swift`) holds the allowed steps: checking, available, preparing,
+transferring (with progress), verifying, then completed or failed with a reason. The firmware is
+sent in chunks with a CRC-32 checksum, the diffuser checks it before installing, and the user can
+cancel while it's being sent. The diffuser can't be controlled during an update.
+
+**Placeholders:** `PlaceholderFirmwareSource` offers a made-up update (1.1.0) for the Demo Diffuser
+only. Real firmware has to come from the manufacturer, and the update messages in
+`PlaceholderDiffuserCodec` must be replaced with their update method.
+
 **Not yet tested on hardware.** The simulator has no Bluetooth, so `CoreBluetoothTransport` is
 only known to compile. Everything above it is tested against `MockBLETransport`. Still to do:
-firmware updates (OTA), writing messages longer than the Bluetooth packet size, and
-reconnecting while the app is in the background.
+writing messages longer than the Bluetooth packet size, faster firmware transfer (the
+placeholder waits for a reply after every 128-byte chunk), and reconnecting while the app is in
+the background.
 
 ## Renaming the app
 

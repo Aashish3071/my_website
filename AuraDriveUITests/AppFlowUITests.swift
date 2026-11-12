@@ -62,6 +62,36 @@ final class AppFlowUITests: XCTestCase {
     }
 
     @MainActor
+    func testFirmwareUpdateInstallsOnTheDemoDiffuser() throws {
+        let app = launchApp()
+        addDemoDiffuser(in: app)
+        app.buttons[AccessibilityID.DiffuserList.row].tap()
+
+        let power = app.switches[AccessibilityID.Control.powerToggle]
+        XCTAssertTrue(power.waitForExistence(timeout: 5))
+        waitUntilEnabled(power)
+        app.buttons[AccessibilityID.Control.detailsButton].tap()
+
+        let check = app.buttons[AccessibilityID.Details.checkForUpdateButton]
+        XCTAssertTrue(check.waitForExistence(timeout: 5))
+        check.tap()
+
+        let install = app.buttons[AccessibilityID.Details.installUpdateButton]
+        XCTAssertTrue(install.waitForExistence(timeout: 10))
+        install.tap()
+
+        let status = app.descendants(matching: .any)
+            .matching(identifier: AccessibilityID.Details.firmwareStatus).firstMatch
+        let finished = expectation(
+            for: NSPredicate(format: "label CONTAINS %@", "Updated to version 1.1.0"),
+            evaluatedWith: status
+        )
+        wait(for: [finished], timeout: 30)
+        sleep(1)
+        try auditAccessibility(of: app)
+    }
+
+    @MainActor
     func testForgettingADiffuserReturnsToTheEmptyList() throws {
         let app = launchApp()
         addDemoDiffuser(in: app)

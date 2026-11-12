@@ -11,6 +11,7 @@ final class DiffuserStore {
     private(set) var diffusers: [Diffuser] = []
     private(set) var connectionStates: [UUID: ConnectionState] = [:]
     private(set) var bluetoothAvailability: BluetoothAvailability
+    private(set) var firmwareUpdates: [UUID: FirmwareUpdateMachine] = [:]
     /// Set when something fails. The root view shows it in an alert.
     var errorMessage: String?
 
@@ -23,14 +24,19 @@ final class DiffuserStore {
     @ObservationIgnored private var reconnectTasks: [UUID: Task<Void, Never>] = [:]
     /// Diffusers that have been connected, and so are reconnected automatically.
     @ObservationIgnored private var autoReconnectIDs: Set<UUID> = []
+    @ObservationIgnored private let firmwareSource: any FirmwareSource
+    @ObservationIgnored private var availableFirmware: [UUID: FirmwareImage] = [:]
+    @ObservationIgnored private var firmwareTasks: [UUID: Task<Void, Never>] = [:]
 
     init(
         service: any DiffuserService,
         persistence: DiffuserPersistence,
         alerts: (any FragranceAlerting)? = nil,
-        reconnectDelays: [Duration] = [.seconds(1), .seconds(2), .seconds(4), .seconds(8), .seconds(16)]
+        reconnectDelays: [Duration] = [.seconds(1), .seconds(2), .seconds(4), .seconds(8), .seconds(16)],
+        firmwareSource: any FirmwareSource = PlaceholderFirmwareSource()
     ) {
         self.service = service
+        self.firmwareSource = firmwareSource
         self.persistence = persistence
         self.alerts = alerts
         self.reconnectDelays = reconnectDelays
@@ -77,6 +83,10 @@ final class DiffuserStore {
     }
 
     func remove(_ id: UUID) {
+        firmwareTasks[id]?.cancel()
+        firmwareTasks[id] = nil
+        firmwareUpdates[id] = nil
+        availableFirmware[id] = nil
         cancelSleepTimerTask(for: id)
         stopReconnecting(id)
         autoReconnectIDs.remove(id)
@@ -204,6 +214,10 @@ final class DiffuserStore {
         revert: (inout Diffuser) -> Void
     ) async -> Bool {
         guard let index = index(of: id) else { return false }
+        guard !firmwareUpdateState(for: id).isInProgress else {
+            report(FirmwareUpdateInProgressError())
+            return false
+        }
         change(&diffusers[index])
         do {
             try await service.send(command, to: id)
@@ -250,6 +264,110 @@ final class DiffuserStore {
 
     private func announce(_ message: String) {
         AccessibilityNotification.Announcement(message).post()
+    }
+
+    // MARK: Firmware updates
+
+    func firmwareUpdateState(for id: UUID) -> FirmwareUpdateState {
+        firmwareUpdates[id]?.state ?? .idle
+    }
+
+    /// Looks for newer firmware for the diffuser.
+    func checkForFirmwareUpdate(_ id: UUID) async {
+        guard let diffuser = diffuser(withID: id), transition(id, .check) else { return }
+        do {
+            if let image = try await firmwareSource.latestFirmware(for: diffuser),
+               FirmwareVersion.isNewer(image.version, than: diffuser.firmwareVersion) {
+                availableFirmware[id] = image
+                transition(id, .foundUpdate(version: image.version))
+            } else {
+                availableFirmware[id] = nil
+                transition(id, .foundNothing)
+            }
+        } catch {
+            transition(id, .fail(.failed))
+        }
+    }
+
+    /// Installs the update found by `checkForFirmwareUpdate`. Runs until it
+    /// finishes, fails or is cancelled, even if the screen is closed.
+    func installFirmwareUpdate(_ id: UUID) {
+        guard let image = availableFirmware[id], transition(id, .start) else { return }
+        guard connectionState(for: id) == .connected else {
+            transition(id, .fail(.notConnected))
+            return
+        }
+        firmwareTasks[id] = Task { [weak self] in
+            await self?.runFirmwareUpdate(image, on: id)
+        }
+    }
+
+    func cancelFirmwareUpdate(_ id: UUID) {
+        firmwareTasks[id]?.cancel()
+    }
+
+    private func runFirmwareUpdate(_ image: FirmwareImage, on id: UUID) async {
+        defer { firmwareTasks[id] = nil }
+        let bytes = [UInt8](image.data)
+        do {
+            let requestedChunkSize = try await service.beginFirmwareUpdate(on: id, image: image)
+            let chunkSize = max(1, requestedChunkSize)
+            try Task.checkCancellation()
+            transition(id, .prepared)
+
+            var offset = 0
+            while offset < bytes.count {
+                try Task.checkCancellation()
+                let end = min(offset + chunkSize, bytes.count)
+                try await service.sendFirmwareChunk(Data(bytes[offset..<end]), offset: offset, to: id)
+                offset = end
+                transition(id, .progress(Double(offset) / Double(bytes.count)))
+            }
+
+            try Task.checkCancellation()
+            transition(id, .transferFinished)
+            do {
+                try await service.finishFirmwareUpdate(on: id)
+            } catch DiffuserServiceError.commandRejected {
+                throw FirmwareUpdateError.verificationFailed
+            }
+
+            availableFirmware[id] = nil
+            if let index = index(of: id) {
+                diffusers[index].firmwareVersion = image.version
+                save()
+            }
+            transition(id, .verified(version: image.version))
+            announce("Firmware updated to version \(image.version)")
+        } catch {
+            service.abortFirmwareUpdate(on: id)
+            if error is CancellationError || Task.isCancelled {
+                transition(id, .cancel)
+            } else {
+                transition(id, .fail(Self.firmwareError(from: error)))
+            }
+            if case .failed(let reason) = firmwareUpdateState(for: id) {
+                announce(reason.message)
+            }
+        }
+    }
+
+    @discardableResult
+    private func transition(_ id: UUID, _ event: FirmwareUpdateMachine.Event) -> Bool {
+        var machine = firmwareUpdates[id] ?? FirmwareUpdateMachine()
+        guard machine.handle(event) else { return false }
+        firmwareUpdates[id] = machine
+        return true
+    }
+
+    private static func firmwareError(from error: any Error) -> FirmwareUpdateError {
+        if let error = error as? FirmwareUpdateError { return error }
+        switch error as? DiffuserServiceError {
+        case .connectionLost, .notConnected: return .connectionLost
+        case .timedOut: return .timedOut
+        case .commandRejected: return .rejected
+        default: return .failed
+        }
     }
 
     // MARK: Events and reconnecting
@@ -384,4 +502,8 @@ extension DiffuserStore {
         }
         return store
     }
+}
+
+private struct FirmwareUpdateInProgressError: LocalizedError {
+    var errorDescription: String? { "Wait for the firmware update to finish." }
 }

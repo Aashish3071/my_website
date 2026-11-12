@@ -37,6 +37,20 @@ private final class FakeDiffuserService: DiffuserService {
     func readStatus(of id: UUID) async throws -> DiffuserStatus {
         status
     }
+
+    func beginFirmwareUpdate(on id: UUID, image: FirmwareImage) async throws -> Int {
+        throw DiffuserServiceError.notConnected
+    }
+
+    func sendFirmwareChunk(_ chunk: Data, offset: Int, to id: UUID) async throws {
+        throw DiffuserServiceError.notConnected
+    }
+
+    func finishFirmwareUpdate(on id: UUID) async throws {
+        throw DiffuserServiceError.notConnected
+    }
+
+    func abortFirmwareUpdate(on id: UUID) {}
 }
 
 @MainActor

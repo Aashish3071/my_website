@@ -23,6 +23,8 @@ final class SimulatedDiffuserService: DiffuserService {
         var intensity = 3
         var fragranceLevel = 0.62
         var lastUpdated: Date
+        /// Set once the demo has been "updated"; before that it reports nothing.
+        var firmwareVersion: String?
     }
 
     private let defaults: UserDefaults
@@ -30,6 +32,7 @@ final class SimulatedDiffuserService: DiffuserService {
     private let now: () -> Date
     private var state: DeviceState
     private var isConnected = false
+    private var pendingFirmwareVersion: String?
 
     init(
         defaults: UserDefaults,
@@ -93,8 +96,38 @@ final class SimulatedDiffuserService: DiffuserService {
         return DiffuserStatus(
             isOn: state.isOn,
             intensity: state.intensity,
-            fragranceLevel: state.fragranceLevel
+            fragranceLevel: state.fragranceLevel,
+            firmwareVersion: state.firmwareVersion
         )
+    }
+
+    // MARK: Firmware updates (pretend)
+
+    func beginFirmwareUpdate(on id: UUID, image: FirmwareImage) async throws -> Int {
+        try await Task.sleep(for: responseDelay)
+        guard id == Self.demoDiffuser.id, isConnected else { throw DiffuserServiceError.notConnected }
+        pendingFirmwareVersion = image.version
+        return 2048
+    }
+
+    func sendFirmwareChunk(_ chunk: Data, offset: Int, to id: UUID) async throws {
+        try await Task.sleep(for: responseDelay / 10)
+        guard id == Self.demoDiffuser.id, isConnected, pendingFirmwareVersion != nil else {
+            throw DiffuserServiceError.notConnected
+        }
+    }
+
+    func finishFirmwareUpdate(on id: UUID) async throws {
+        try await Task.sleep(for: responseDelay * 2)
+        guard id == Self.demoDiffuser.id, isConnected else { throw DiffuserServiceError.notConnected }
+        guard let version = pendingFirmwareVersion else { throw DiffuserServiceError.commandRejected }
+        pendingFirmwareVersion = nil
+        state.firmwareVersion = version
+        save()
+    }
+
+    func abortFirmwareUpdate(on id: UUID) {
+        pendingFirmwareVersion = nil
     }
 
     /// Lowers the fragrance level for the time the diffuser has been running.
