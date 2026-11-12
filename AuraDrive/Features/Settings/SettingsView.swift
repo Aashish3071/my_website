@@ -25,11 +25,11 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    Text("This version of the app controls a built-in demo diffuser. Support for real diffusers over Bluetooth will be added in a later version.")
+                    Text("AuraDrive includes a Demo Diffuser so you can try the app without one. Add it from My Diffusers, then Add Diffuser.")
                         .font(AppFont.callout)
                         .foregroundStyle(AppColor.textPrimary)
                 } header: {
-                    SectionHeader("Demo mode")
+                    SectionHeader("Demo Diffuser")
                 }
 
                 Section {

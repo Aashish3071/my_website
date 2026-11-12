@@ -38,7 +38,7 @@ struct DiffuserControlView: View {
 
     private func controls(for diffuser: Diffuser) -> some View {
         Form {
-            connectionSection
+            connectionSection(diffuser)
             powerSection(diffuser)
             intensitySection(diffuser)
             intervalSection(diffuser)
@@ -62,11 +62,13 @@ struct DiffuserControlView: View {
 
     // MARK: Sections
 
-    private var connectionSection: some View {
+    private func connectionSection(_ diffuser: Diffuser) -> some View {
         Section {
             VStack(alignment: .leading, spacing: Spacing.s) {
                 StatusBadge(kind: connectionState.badgeKind, text: connectionState.title)
-                if connectionState == .disconnected {
+                if !diffuser.isDemo, BluetoothStatusNotice.isShown(for: store.bluetoothAvailability) {
+                    BluetoothStatusNotice(availability: store.bluetoothAvailability)
+                } else if connectionState == .disconnected {
                     Button("Reconnect") {
                         Task { await store.connect(diffuserID) }
                     }

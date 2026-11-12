@@ -35,6 +35,8 @@ enum ConnectionState: Equatable, Sendable {
     case disconnected
     case connecting
     case connected
+    /// The connection dropped and the app is trying to get it back.
+    case reconnecting
 }
 
 /// A diffuser found nearby that has not been added yet.
@@ -49,6 +51,8 @@ struct DiffuserStatus: Equatable, Sendable {
     var isOn: Bool
     var intensity: Int
     var fragranceLevel: Double
+    /// Only filled in when the diffuser reports it, usually when it connects.
+    var firmwareVersion: String? = nil
 }
 
 enum DiffuserCommand: Equatable, Sendable {

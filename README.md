@@ -51,13 +51,38 @@ scripts/                generate_project.rb rebuilds AuraDrive.xcodeproj from th
 .github/workflows/      Builds the app and runs all tests on every pull request
 ```
 
-## Connecting real hardware
+## Bluetooth
 
-Every screen talks to the `DiffuserService` protocol, never to the hardware directly.
-`SimulatedDiffuserService` is the only implementation today. To support a real diffuser, add a
-CoreBluetooth implementation of `DiffuserService` and pass it to `DiffuserStore` in
-`AuraDriveApp.swift`. No screen needs to change. This needs the device's Bluetooth protocol
-document (service and characteristic UUIDs, command format) and a test unit.
+The app offers the built-in Demo Diffuser alongside real diffusers found over Bluetooth
+(`CombinedDiffuserService`). Bluetooth starts only when the user first searches for a diffuser,
+so iOS asks for permission then.
+
+```
+Screens ─ DiffuserStore ─ DiffuserService
+                           ├─ SimulatedDiffuserService      (Demo Diffuser)
+                           └─ BluetoothDiffuserService      (requests, replies, timeouts)
+                                ├─ DiffuserCodec            (requests ⇄ bytes)
+                                └─ BLETransport             (bytes ⇄ radio)
+                                     ├─ CoreBluetoothTransport  (real iPhone)
+                                     └─ MockBLETransport        (tests)
+```
+
+`DiffuserStore` reconnects automatically when a connection drops (five attempts, 1 to 16 seconds
+apart), waits while Bluetooth is off and reconnects when it comes back on, and shows a notice
+with a link to Settings when Bluetooth is off or not allowed.
+
+**Placeholders to replace with the manufacturer's protocol document:**
+
+- `Services/Bluetooth/BLETransport.swift`, `DiffuserBLEIdentifiers`: service and characteristic
+  identifiers (currently the common Nordic UART Service).
+- `Services/Bluetooth/PlaceholderDiffuserCodec.swift`: the byte format. Write a new
+  `DiffuserCodec` for the real format and pass it to `BluetoothDiffuserService` in
+  `AuraDriveApp.swift`.
+
+**Not yet tested on hardware.** The simulator has no Bluetooth, so `CoreBluetoothTransport` is
+only known to compile. Everything above it is tested against `MockBLETransport`. Still to do:
+firmware updates (OTA), writing messages longer than the Bluetooth packet size, and
+reconnecting while the app is in the background.
 
 ## Renaming the app
 

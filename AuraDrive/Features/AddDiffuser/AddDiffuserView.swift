@@ -9,6 +9,12 @@ struct AddDiffuserView: View {
     var body: some View {
         NavigationStack {
             List {
+                if BluetoothStatusNotice.isShown(for: store.bluetoothAvailability) {
+                    Section {
+                        BluetoothStatusNotice(availability: store.bluetoothAvailability)
+                            .padding(.vertical, Spacing.xxs)
+                    }
+                }
                 if let results {
                     if results.isEmpty {
                         noResults
@@ -75,7 +81,7 @@ struct AddDiffuserView: View {
         } header: {
             SectionHeader("Nearby diffusers")
         } footer: {
-            SectionFooter("This version of the app works with a built-in demo diffuser.")
+            SectionFooter("The Demo Diffuser is built in, so you can try the app without a diffuser.")
         }
     }
 
