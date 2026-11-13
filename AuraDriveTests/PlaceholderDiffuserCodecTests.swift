@@ -12,6 +12,11 @@ private let sampleRequests: [DiffuserRequest] = [
     .command(.resetFragranceLevel),
     .status,
     .firmwareVersion,
+    .firmwareUpdateBegin(size: 98_304, checksum: 0xCBF4_3926, version: "1.1.0"),
+    .firmwareChunk(offset: 0, bytes: Data([0x00, 0xFF, 0x7E])),
+    .firmwareChunk(offset: 70_000, bytes: Data(repeating: 0xAB, count: 128)),
+    .firmwareUpdateFinish,
+    .firmwareUpdateAbort,
 ]
 
 private let sampleMessages: [DiffuserMessage] = [
@@ -53,6 +58,19 @@ struct PlaceholderDiffuserCodecTests {
         #expect(throws: DiffuserCodecError.valueOutOfRange) {
             try codec.encode(.command(.setInterval(IntervalSettings(isEnabled: true, runSeconds: 70_000, pauseSeconds: 10))))
         }
+    }
+
+    @Test func refusesFirmwareMessagesThatDontFit() {
+        #expect(throws: DiffuserCodecError.valueOutOfRange) {
+            try codec.encode(.firmwareChunk(offset: 0, bytes: Data(repeating: 0, count: 129)))
+        }
+        #expect(throws: DiffuserCodecError.valueOutOfRange) {
+            try codec.encode(.firmwareChunk(offset: 0, bytes: Data()))
+        }
+        #expect(throws: DiffuserCodecError.valueOutOfRange) {
+            try codec.encode(.firmwareUpdateBegin(size: 10, checksum: 0, version: String(repeating: "9", count: 33)))
+        }
+        #expect(codec.maxFirmwareChunkSize == 128)
     }
 
     @Test func rejectsDamagedFrames() throws {

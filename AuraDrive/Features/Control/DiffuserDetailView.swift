@@ -34,6 +34,8 @@ struct DiffuserDetailView: View {
                     } header: {
             SectionHeader("About")
         }
+
+                    FirmwareUpdateSection(diffuserID: diffuserID)
                 }
 
                 Section {

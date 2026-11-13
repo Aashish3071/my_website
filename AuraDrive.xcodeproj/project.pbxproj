@@ -7,136 +7,144 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04C319F8C6812E5BFD50F34A /* BluetoothDiffuserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EE2CF28017258DE493AF9 /* BluetoothDiffuserService.swift */; };
-		06CA286A5DE1E35E600E03DF /* BluetoothDiffuserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8C84969C78C6A4387E8C3 /* BluetoothDiffuserServiceTests.swift */; };
-		0B50DA71DA3AAE8212728E9F /* MotionSafeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37191AB9334264B963C97947 /* MotionSafeAnimation.swift */; };
-		0B54AC45328A053864BF7452 /* DiffuserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAA06887586B8F7D34E3D02 /* DiffuserStore.swift */; };
-		0FDF3D079189E173B495527C /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B272AE96B34BE89E9EBB8B5 /* AccessibilityIdentifiers.swift */; };
-		140F42115DA2B54AD090B72F /* DiffuserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDF9CC2B2343DE8078822A7 /* DiffuserService.swift */; };
-		19165009C1007B69654B6155 /* Diffuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218F632BA243041C8D03A57 /* Diffuser.swift */; };
-		1997959A9067412FDE8A75CD /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBA3EE125D6753E443606C7 /* AppFont.swift */; };
-		1E29223E799E6499C14E18F8 /* DiffuserPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB9F34ED3746DA65C7853C4 /* DiffuserPersistence.swift */; };
-		21AAB835001BABD49F0A8830 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB63DE0DE1E4A0082DE7F6 /* PrivacyPolicyView.swift */; };
-		22D418578688AA3647D841C5 /* LowFragranceNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D011BF54F2D8DD46E988E /* LowFragranceNotifier.swift */; };
-		25EA3482C1263F484C6C1B3E /* ConnectionManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F065362AB3CF173C9A75F /* ConnectionManagementTests.swift */; };
-		290F14F7D9A91D84582A0D5B /* DesignSystemPreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82884DFB21E371F32F338329 /* DesignSystemPreviews.swift */; };
-		316B765C4C593615ABDA58DD /* ConnectionState+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FCD4C4DF62D0FA220FAA1F /* ConnectionState+Display.swift */; };
-		34F6914E2383A255285F8FAF /* AddDiffuserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92594FD983E80F5C9BE514F /* AddDiffuserView.swift */; };
-		3D08C6610DA2AAD093020CC8 /* PlaceholderDiffuserCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1055EC5D70493819A16AD /* PlaceholderDiffuserCodec.swift */; };
-		40633C3ADC885FC230479C7A /* BLETransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2952AB7A536A7663884F13 /* BLETransport.swift */; };
-		4DAEFB1695A569E20D24D4D1 /* AppFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDB0F4E6D8A73CD03D72504 /* AppFlowUITests.swift */; };
-		4F7C6A3FD1AEFC75581880FB /* AppLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B69943041FEAFCC6B6B884A /* AppLinks.swift */; };
-		51371380403ECC82950C3EDF /* CoreBluetoothTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C40CE3E8AD801031B69F2D /* CoreBluetoothTransport.swift */; };
-		5523B6E05D09D998C5770DFB /* PlaceholderDiffuserCodecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A32FB59FB895ABE549C99B /* PlaceholderDiffuserCodecTests.swift */; };
-		55750C2E214D62F0C7C81746 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083702E4C0BA06F1D99F9A26 /* SettingsView.swift */; };
-		5B1B2A053FCDB5E355B55133 /* BluetoothStatusNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD3FAC3139086B761FEA1A /* BluetoothStatusNotice.swift */; };
-		5BA42B0CCAE705A9B7D0CEB9 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C31E5F23B5D738B0FF17CD /* AppColor.swift */; };
-		5CB7A00590A2A1A334486DD3 /* CombinedDiffuserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB456E09E1287A61AC8832B /* CombinedDiffuserService.swift */; };
-		6065AD7BCFE668BA2BA42BDF /* TestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDCE052A268011C6319A436 /* TestSupport.swift */; };
-		69715692938C3E40D35DFDE6 /* DiffuserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AA0466A67B31DC3B359E36 /* DiffuserListView.swift */; };
-		6B23069E18C7F87C710CF4DB /* MockBLETransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E88281DDA017C6AD049332 /* MockBLETransport.swift */; };
-		75E01E8675DC39763A20D38C /* DiffuserStoreFailureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C79368756F3CE41C5416F /* DiffuserStoreFailureTests.swift */; };
-		76CF036706947791FF94F240 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B272AE96B34BE89E9EBB8B5 /* AccessibilityIdentifiers.swift */; };
-		7DAA38473D7D4B602AE0CC94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CE07A7EB2D4039B396E7B2D /* Assets.xcassets */; };
-		95DB7E64F4F7B6B30E202928 /* SimulatedDiffuserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92820AEE13DF9205A6B8F82 /* SimulatedDiffuserService.swift */; };
-		9A288C9F16E8D12E944C84EA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E8D276BFFDEDB82159D40B /* RootView.swift */; };
-		9BF5B30F0271056F4167B216 /* SectionText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2E1AD8A61832E0FA299743 /* SectionText.swift */; };
-		A60045D0D1149479D8301AE7 /* DiffuserCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E7D8B454BF0145B8D7780 /* DiffuserCodec.swift */; };
-		ACA96CF7A6C456015DD06C29 /* DiffuserStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDE078970E76507ADC585A /* DiffuserStoreTests.swift */; };
-		BE9B06A3765CF6A025F098A5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAD78E38024D7747FD0F17C /* Card.swift */; };
-		C02A2298552E11F85E80B2D8 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D764853108FB10699D7D214A /* WelcomeView.swift */; };
-		C7CC75004F8F42EBC4BE83D3 /* DiffuserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A1D7DC9724961A56D04542 /* DiffuserDetailView.swift */; };
-		CC2D5A9A2897CC1C19F1D25E /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7378FC443A5B1CF87CEDC5A0 /* StatusBadge.swift */; };
-		DE76FFB0CD4D4C6CD8C821CC /* AuraDriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12145F22FC2E98D724A8C36C /* AuraDriveApp.swift */; };
-		E37607B45858CFB5AC984C60 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A14746316BC06180C80D5 /* ButtonStyles.swift */; };
-		E396FCD07BF94D6CD22A9AE3 /* DiffuserControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E051DEBC8931A38F950675D4 /* DiffuserControlView.swift */; };
-		EB6EEFA01BD7F310C19B08D2 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113AE9DF5804235339F8D1F /* Layout.swift */; };
-		F7C62A7307D1016E181FB2BF /* ColorContrastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F451FB00A7AF45011D4DEA9D /* ColorContrastTests.swift */; };
+		002BDF7ABAFEE9B2117EA25F /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C519543089B3E99C7AFA0C0 /* AppColor.swift */; };
+		016B9E0CE370C7E212E2126D /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC00D427837371CA90FB7CC /* StatusBadge.swift */; };
+		06443EAA218894D27D8C91AE /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D664B78E3892ABC7DC8901 /* AccessibilityIdentifiers.swift */; };
+		081D71E078B297AF99D51A82 /* PlaceholderDiffuserCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CF4AD1B8E9D32FFC61124D /* PlaceholderDiffuserCodec.swift */; };
+		0899951FAFC42F90AC6A88D5 /* LowFragranceNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75F4AF9B0C0EDCC6A03EEA7 /* LowFragranceNotifier.swift */; };
+		0E5AF32F50871013A7D9DEE5 /* PlaceholderDiffuserCodecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D20AFC3BA24232FBCF3B6 /* PlaceholderDiffuserCodecTests.swift */; };
+		151760CA93AC3D3A51A36565 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A59439878EC8EB5BF999FD /* Layout.swift */; };
+		313A7D3429D0D9EEC4A2FA7E /* BluetoothStatusNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B2E8BFC76C4BF3D565C21 /* BluetoothStatusNotice.swift */; };
+		323AD7406BBB8CAD113E9061 /* BluetoothDiffuserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C58A91E3F67C472434BDD /* BluetoothDiffuserService.swift */; };
+		37627BE9CE9D408997C25FDF /* DiffuserPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E7A24E1F0067D61D8B4157 /* DiffuserPersistence.swift */; };
+		3C5E517E26BEF85695773704 /* BLETransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B94DC48321AF8AD4B3B31C /* BLETransport.swift */; };
+		3D3627CB2EB4E47E8E547811 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B33058D05FA29CD1152D2A6 /* ButtonStyles.swift */; };
+		498AAA7219873B1EF169E4E1 /* TestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127A470D66E44198277D4F87 /* TestSupport.swift */; };
+		4C574DEC6714035889561B5F /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D664B78E3892ABC7DC8901 /* AccessibilityIdentifiers.swift */; };
+		4F53341C89FBC3438B595A68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDA21EF72B4B7709B9CA0DC /* Assets.xcassets */; };
+		5AD7593883890969FFC42F2F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAC8AD2C44EC89E2381511 /* RootView.swift */; };
+		5F615C759B50CFB7EEF1B797 /* SimulatedDiffuserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA71FA649CA5F56A99055BB /* SimulatedDiffuserService.swift */; };
+		5FEBC6953CEB3BDC03B5B546 /* AppLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98453AE632C26B765FFAAD /* AppLinks.swift */; };
+		6523E3A74801E71DBE78EADD /* DiffuserCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B046FC774A59DF513150045 /* DiffuserCodec.swift */; };
+		6A900E8C2EABFE7A15EE5F62 /* AddDiffuserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E615936B0B122C795D3B2E99 /* AddDiffuserView.swift */; };
+		70675861DA5D8D281315C830 /* FirmwareUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1653ADF305EC9905C37956D4 /* FirmwareUpdate.swift */; };
+		752691170EE37A502D5DF717 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FAB3460AFD2A7993A30688 /* AppFont.swift */; };
+		764C2F8AE5B78BC11F664796 /* CoreBluetoothTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9580E2E37EB647DDB71F8C /* CoreBluetoothTransport.swift */; };
+		76D4DBDAC61EE61A1485AE98 /* DiffuserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994647A3C3628939D2C3F2A6 /* DiffuserStore.swift */; };
+		83262B297D4D40EAB5D07AA9 /* SectionText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9396E5390323608BF06B630E /* SectionText.swift */; };
+		9174DB79932E69FD9BF6E404 /* DiffuserControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793B3C0A7C9729F6B1669B5 /* DiffuserControlView.swift */; };
+		930F9628749FE271C3F1F802 /* CombinedDiffuserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658E33EBE967BCDC7EDDCC6 /* CombinedDiffuserService.swift */; };
+		9773A99BC87AB305424AC17D /* DiffuserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0503F7778114B0E53B504DD /* DiffuserDetailView.swift */; };
+		992AE76EC975AF902F70E107 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D0601C83CF09347CE5045 /* WelcomeView.swift */; };
+		9E30ABD1BD220A0B20906C28 /* DiffuserStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEAF90484ADA2117C935220 /* DiffuserStoreTests.swift */; };
+		A609EA5EC8B365778129B3F3 /* BluetoothDiffuserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B5A12D3B91310A47E0E17 /* BluetoothDiffuserServiceTests.swift */; };
+		AB348FE43F3CCBEF7C6AB6E0 /* ConnectionManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09615FDAF17A110066CDE7AC /* ConnectionManagementTests.swift */; };
+		AC8F3B779BA673141646D67F /* Diffuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E66A97F5961588B5BAE4CA /* Diffuser.swift */; };
+		B0DBFCF387A3FA31BBF99460 /* DiffuserStoreFailureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A10C74DAAE01946804800F0 /* DiffuserStoreFailureTests.swift */; };
+		B20227F41B8A11D11A718F29 /* AuraDriveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50096549853A934871D244DD /* AuraDriveApp.swift */; };
+		B4E4B71C7A8A5760A38912B5 /* ColorContrastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E744ABDCC46A3B8AC41BBF8 /* ColorContrastTests.swift */; };
+		B578A4BBF4DB655B346E9590 /* ConnectionState+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC6FE3176B6F6DBA6E72B8 /* ConnectionState+Display.swift */; };
+		B5B4444466D56CB876461997 /* AppFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A2C4DAC04D550F80526E8 /* AppFlowUITests.swift */; };
+		BAF6772D17E26D6F6BDB439A /* FirmwareUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC77ED92E8C37B392B6433B /* FirmwareUpdateTests.swift */; };
+		C29DE292EAAF1A7F06F48235 /* FirmwareUpdateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2222580969FDA38AF64D1DF /* FirmwareUpdateSection.swift */; };
+		C5A027050F4CD98941356EF3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8B097ED357F55EBE730A4 /* SettingsView.swift */; };
+		DB761E3287F0BF65CDF2A1FE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC651BD70C10BA6F402B92 /* Card.swift */; };
+		DF699CF27C590518AF3CCB92 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605DFDC6BE4A2178225A64C /* PrivacyPolicyView.swift */; };
+		E07F05FBEE9D44F6AB11EDD5 /* FirmwareUpdateMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC0583FC4A93034914C67C /* FirmwareUpdateMachineTests.swift */; };
+		E4121CF546A6251FA083B316 /* MotionSafeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C91E6A65FBF5623BE29642 /* MotionSafeAnimation.swift */; };
+		E46E72B5F1C2E34A0475ABA9 /* MockBLETransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8688B9D89E3C154B0B03CA9 /* MockBLETransport.swift */; };
+		EEF68213897ABCEA646C568B /* DiffuserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F4D438558EE22E25B75742 /* DiffuserListView.swift */; };
+		F149BB8F8AE5B6F38A768956 /* DesignSystemPreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4261AC04B26A21E97FB9B89 /* DesignSystemPreviews.swift */; };
+		F896B6CA2E0D1DAF643B7A8D /* DiffuserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A44E41C2E428386EF3A3EC /* DiffuserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1199D609DF22FFBBE0662C81 /* PBXContainerItemProxy */ = {
+		07F356D91E8EC68DFA299D42 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C5E648B89C98207B90CC6A4C /* Project object */;
+			containerPortal = 7353A1C7D9D79DB93946FE04 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E66EF0F9B59768649C52D92C;
+			remoteGlobalIDString = 784F2B80D1B3B5F39D5ADF28;
 			remoteInfo = AuraDrive;
 		};
-		1F67350E0ACA3BC3F726BEC5 /* PBXContainerItemProxy */ = {
+		32CD8FFDE862822CF63EB845 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C5E648B89C98207B90CC6A4C /* Project object */;
+			containerPortal = 7353A1C7D9D79DB93946FE04 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E66EF0F9B59768649C52D92C;
+			remoteGlobalIDString = 784F2B80D1B3B5F39D5ADF28;
 			remoteInfo = AuraDrive;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01A1D7DC9724961A56D04542 /* DiffuserDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserDetailView.swift; sourceTree = "<group>"; };
-		083702E4C0BA06F1D99F9A26 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		12145F22FC2E98D724A8C36C /* AuraDriveApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuraDriveApp.swift; sourceTree = "<group>"; };
-		190C79368756F3CE41C5416F /* DiffuserStoreFailureTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserStoreFailureTests.swift; sourceTree = "<group>"; };
-		289E7D8B454BF0145B8D7780 /* DiffuserCodec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserCodec.swift; sourceTree = "<group>"; };
-		29AD3FAC3139086B761FEA1A /* BluetoothStatusNotice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BluetoothStatusNotice.swift; sourceTree = "<group>"; };
-		2EDF9CC2B2343DE8078822A7 /* DiffuserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserService.swift; sourceTree = "<group>"; };
-		33F347E3E42D988ACF7EF824 /* AuraDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuraDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		36A32FB59FB895ABE549C99B /* PlaceholderDiffuserCodecTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceholderDiffuserCodecTests.swift; sourceTree = "<group>"; };
-		37191AB9334264B963C97947 /* MotionSafeAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MotionSafeAnimation.swift; sourceTree = "<group>"; };
-		3BDB0F4E6D8A73CD03D72504 /* AppFlowUITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppFlowUITests.swift; sourceTree = "<group>"; };
-		4113AE9DF5804235339F8D1F /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
-		475F4B5775E296C8465FB1A2 /* AuraDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuraDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B69943041FEAFCC6B6B884A /* AppLinks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppLinks.swift; sourceTree = "<group>"; };
-		5D2E1AD8A61832E0FA299743 /* SectionText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SectionText.swift; sourceTree = "<group>"; };
-		6AFDE078970E76507ADC585A /* DiffuserStoreTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserStoreTests.swift; sourceTree = "<group>"; };
-		6B272AE96B34BE89E9EBB8B5 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
-		6BDCE052A268011C6319A436 /* TestSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TestSupport.swift; sourceTree = "<group>"; };
-		6DAD78E38024D7747FD0F17C /* Card.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		7378FC443A5B1CF87CEDC5A0 /* StatusBadge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
-		75E8D276BFFDEDB82159D40B /* RootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		82884DFB21E371F32F338329 /* DesignSystemPreviews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DesignSystemPreviews.swift; sourceTree = "<group>"; };
-		89C31E5F23B5D738B0FF17CD /* AppColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
-		8E2952AB7A536A7663884F13 /* BLETransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BLETransport.swift; sourceTree = "<group>"; };
-		9CE07A7EB2D4039B396E7B2D /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A0EB63DE0DE1E4A0082DE7F6 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
-		A1FCD4C4DF62D0FA220FAA1F /* ConnectionState+Display.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ConnectionState+Display.swift"; sourceTree = "<group>"; };
-		A75EE2CF28017258DE493AF9 /* BluetoothDiffuserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BluetoothDiffuserService.swift; sourceTree = "<group>"; };
-		A9E10F203F3E7E0FDEDE6D33 /* AuraDriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuraDriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADB456E09E1287A61AC8832B /* CombinedDiffuserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CombinedDiffuserService.swift; sourceTree = "<group>"; };
-		B1E8C84969C78C6A4387E8C3 /* BluetoothDiffuserServiceTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BluetoothDiffuserServiceTests.swift; sourceTree = "<group>"; };
-		BB2A14746316BC06180C80D5 /* ButtonStyles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
-		BBAA06887586B8F7D34E3D02 /* DiffuserStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserStore.swift; sourceTree = "<group>"; };
-		BF9F065362AB3CF173C9A75F /* ConnectionManagementTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConnectionManagementTests.swift; sourceTree = "<group>"; };
-		BFC1055EC5D70493819A16AD /* PlaceholderDiffuserCodec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceholderDiffuserCodec.swift; sourceTree = "<group>"; };
-		C92594FD983E80F5C9BE514F /* AddDiffuserView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddDiffuserView.swift; sourceTree = "<group>"; };
-		C9C40CE3E8AD801031B69F2D /* CoreBluetoothTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CoreBluetoothTransport.swift; sourceTree = "<group>"; };
-		D0E88281DDA017C6AD049332 /* MockBLETransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MockBLETransport.swift; sourceTree = "<group>"; };
-		D218F632BA243041C8D03A57 /* Diffuser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Diffuser.swift; sourceTree = "<group>"; };
-		D764853108FB10699D7D214A /* WelcomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		E051DEBC8931A38F950675D4 /* DiffuserControlView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserControlView.swift; sourceTree = "<group>"; };
-		E92820AEE13DF9205A6B8F82 /* SimulatedDiffuserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimulatedDiffuserService.swift; sourceTree = "<group>"; };
-		F2AA0466A67B31DC3B359E36 /* DiffuserListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserListView.swift; sourceTree = "<group>"; };
-		F451FB00A7AF45011D4DEA9D /* ColorContrastTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorContrastTests.swift; sourceTree = "<group>"; };
-		F82D011BF54F2D8DD46E988E /* LowFragranceNotifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LowFragranceNotifier.swift; sourceTree = "<group>"; };
-		FDBA3EE125D6753E443606C7 /* AppFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
-		FFB9F34ED3746DA65C7853C4 /* DiffuserPersistence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserPersistence.swift; sourceTree = "<group>"; };
+		04B94DC48321AF8AD4B3B31C /* BLETransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BLETransport.swift; sourceTree = "<group>"; };
+		09615FDAF17A110066CDE7AC /* ConnectionManagementTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConnectionManagementTests.swift; sourceTree = "<group>"; };
+		0E744ABDCC46A3B8AC41BBF8 /* ColorContrastTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorContrastTests.swift; sourceTree = "<group>"; };
+		127A470D66E44198277D4F87 /* TestSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TestSupport.swift; sourceTree = "<group>"; };
+		1653ADF305EC9905C37956D4 /* FirmwareUpdate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirmwareUpdate.swift; sourceTree = "<group>"; };
+		17FC651BD70C10BA6F402B92 /* Card.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		20A59439878EC8EB5BF999FD /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		32E66A97F5961588B5BAE4CA /* Diffuser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Diffuser.swift; sourceTree = "<group>"; };
+		3CD8B097ED357F55EBE730A4 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4A10C74DAAE01946804800F0 /* DiffuserStoreFailureTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserStoreFailureTests.swift; sourceTree = "<group>"; };
+		4B046FC774A59DF513150045 /* DiffuserCodec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserCodec.swift; sourceTree = "<group>"; };
+		4DC00D427837371CA90FB7CC /* StatusBadge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
+		50096549853A934871D244DD /* AuraDriveApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuraDriveApp.swift; sourceTree = "<group>"; };
+		57AAC8AD2C44EC89E2381511 /* RootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		58A44E41C2E428386EF3A3EC /* DiffuserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserService.swift; sourceTree = "<group>"; };
+		5E9580E2E37EB647DDB71F8C /* CoreBluetoothTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CoreBluetoothTransport.swift; sourceTree = "<group>"; };
+		6E941EA05DA3B5512B49CBDD /* AuraDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuraDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EA71FA649CA5F56A99055BB /* SimulatedDiffuserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimulatedDiffuserService.swift; sourceTree = "<group>"; };
+		7066BCE0D9C470E3F3A90E6D /* AuraDriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuraDriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		712B2E8BFC76C4BF3D565C21 /* BluetoothStatusNotice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BluetoothStatusNotice.swift; sourceTree = "<group>"; };
+		7C519543089B3E99C7AFA0C0 /* AppColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		9396E5390323608BF06B630E /* SectionText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SectionText.swift; sourceTree = "<group>"; };
+		9658E33EBE967BCDC7EDDCC6 /* CombinedDiffuserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CombinedDiffuserService.swift; sourceTree = "<group>"; };
+		994647A3C3628939D2C3F2A6 /* DiffuserStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserStore.swift; sourceTree = "<group>"; };
+		9B33058D05FA29CD1152D2A6 /* ButtonStyles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		9FDA21EF72B4B7709B9CA0DC /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1359EE3882008448A8AF92A /* AuraDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuraDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0503F7778114B0E53B504DD /* DiffuserDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserDetailView.swift; sourceTree = "<group>"; };
+		B7D664B78E3892ABC7DC8901 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		B8DC6FE3176B6F6DBA6E72B8 /* ConnectionState+Display.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ConnectionState+Display.swift"; sourceTree = "<group>"; };
+		BC8A2C4DAC04D550F80526E8 /* AppFlowUITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppFlowUITests.swift; sourceTree = "<group>"; };
+		C3FAB3460AFD2A7993A30688 /* AppFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		C793B3C0A7C9729F6B1669B5 /* DiffuserControlView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserControlView.swift; sourceTree = "<group>"; };
+		CB98453AE632C26B765FFAAD /* AppLinks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppLinks.swift; sourceTree = "<group>"; };
+		CCC77ED92E8C37B392B6433B /* FirmwareUpdateTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirmwareUpdateTests.swift; sourceTree = "<group>"; };
+		D00B5A12D3B91310A47E0E17 /* BluetoothDiffuserServiceTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BluetoothDiffuserServiceTests.swift; sourceTree = "<group>"; };
+		D04D0601C83CF09347CE5045 /* WelcomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		D2222580969FDA38AF64D1DF /* FirmwareUpdateSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirmwareUpdateSection.swift; sourceTree = "<group>"; };
+		D2E7A24E1F0067D61D8B4157 /* DiffuserPersistence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserPersistence.swift; sourceTree = "<group>"; };
+		D5F4D438558EE22E25B75742 /* DiffuserListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserListView.swift; sourceTree = "<group>"; };
+		D605DFDC6BE4A2178225A64C /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		D8688B9D89E3C154B0B03CA9 /* MockBLETransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MockBLETransport.swift; sourceTree = "<group>"; };
+		D98D20AFC3BA24232FBCF3B6 /* PlaceholderDiffuserCodecTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceholderDiffuserCodecTests.swift; sourceTree = "<group>"; };
+		DCEC0583FC4A93034914C67C /* FirmwareUpdateMachineTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirmwareUpdateMachineTests.swift; sourceTree = "<group>"; };
+		E615936B0B122C795D3B2E99 /* AddDiffuserView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddDiffuserView.swift; sourceTree = "<group>"; };
+		E75F4AF9B0C0EDCC6A03EEA7 /* LowFragranceNotifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LowFragranceNotifier.swift; sourceTree = "<group>"; };
+		EE9C58A91E3F67C472434BDD /* BluetoothDiffuserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BluetoothDiffuserService.swift; sourceTree = "<group>"; };
+		F1C91E6A65FBF5623BE29642 /* MotionSafeAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MotionSafeAnimation.swift; sourceTree = "<group>"; };
+		F4261AC04B26A21E97FB9B89 /* DesignSystemPreviews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DesignSystemPreviews.swift; sourceTree = "<group>"; };
+		F8CF4AD1B8E9D32FFC61124D /* PlaceholderDiffuserCodec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceholderDiffuserCodec.swift; sourceTree = "<group>"; };
+		FEEAF90484ADA2117C935220 /* DiffuserStoreTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiffuserStoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		82D5A8DEF8ABEA75B2AC55EF /* Frameworks */ = {
+		60B64C43AB0300DE679A40D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B63A7B8846A00DE78C1E1F82 /* Frameworks */ = {
+		77737431F18123584E6543DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F80080CEAE0176CB5E5CBEAE /* Frameworks */ = {
+		C9101C11A92B56A182B702FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -146,300 +154,286 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0DE56D85FD4155D0E418A063 /* App */ = {
+		0E50E5C8BFA4AE7AF48A2AF9 /* DiffuserList */ = {
 			isa = PBXGroup;
 			children = (
-				5B69943041FEAFCC6B6B884A /* AppLinks.swift */,
-				12145F22FC2E98D724A8C36C /* AuraDriveApp.swift */,
-				75E8D276BFFDEDB82159D40B /* RootView.swift */,
+				B8DC6FE3176B6F6DBA6E72B8 /* ConnectionState+Display.swift */,
+				D5F4D438558EE22E25B75742 /* DiffuserListView.swift */,
+			);
+			name = DiffuserList;
+			path = DiffuserList;
+			sourceTree = "<group>";
+		};
+		138AA7EFA99DFCA4AA907623 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				396B19E88EA0985C0AA2375D /* Bluetooth */,
+				D2E7A24E1F0067D61D8B4157 /* DiffuserPersistence.swift */,
+				58A44E41C2E428386EF3A3EC /* DiffuserService.swift */,
+				994647A3C3628939D2C3F2A6 /* DiffuserStore.swift */,
+				E75F4AF9B0C0EDCC6A03EEA7 /* LowFragranceNotifier.swift */,
+				6EA71FA649CA5F56A99055BB /* SimulatedDiffuserService.swift */,
+			);
+			name = Services;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2C01A2B92C0F5A3720F51F01 /* AddDiffuser */ = {
+			isa = PBXGroup;
+			children = (
+				E615936B0B122C795D3B2E99 /* AddDiffuserView.swift */,
+			);
+			name = AddDiffuser;
+			path = AddDiffuser;
+			sourceTree = "<group>";
+		};
+		396B19E88EA0985C0AA2375D /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				04B94DC48321AF8AD4B3B31C /* BLETransport.swift */,
+				EE9C58A91E3F67C472434BDD /* BluetoothDiffuserService.swift */,
+				9658E33EBE967BCDC7EDDCC6 /* CombinedDiffuserService.swift */,
+				5E9580E2E37EB647DDB71F8C /* CoreBluetoothTransport.swift */,
+				4B046FC774A59DF513150045 /* DiffuserCodec.swift */,
+				D8688B9D89E3C154B0B03CA9 /* MockBLETransport.swift */,
+				F8CF4AD1B8E9D32FFC61124D /* PlaceholderDiffuserCodec.swift */,
+			);
+			name = Bluetooth;
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		3F65E15420A82384ED10971A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E941EA05DA3B5512B49CBDD /* AuraDrive.app */,
+				A1359EE3882008448A8AF92A /* AuraDriveTests.xctest */,
+				7066BCE0D9C470E3F3A90E6D /* AuraDriveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52E37AEF6C55233BDB9C1A30 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				D04D0601C83CF09347CE5045 /* WelcomeView.swift */,
+			);
+			name = Welcome;
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		5C99187999CEDB1A5426D89B /* AuraDriveTests */ = {
+			isa = PBXGroup;
+			children = (
+				D00B5A12D3B91310A47E0E17 /* BluetoothDiffuserServiceTests.swift */,
+				0E744ABDCC46A3B8AC41BBF8 /* ColorContrastTests.swift */,
+				09615FDAF17A110066CDE7AC /* ConnectionManagementTests.swift */,
+				4A10C74DAAE01946804800F0 /* DiffuserStoreFailureTests.swift */,
+				FEEAF90484ADA2117C935220 /* DiffuserStoreTests.swift */,
+				DCEC0583FC4A93034914C67C /* FirmwareUpdateMachineTests.swift */,
+				CCC77ED92E8C37B392B6433B /* FirmwareUpdateTests.swift */,
+				D98D20AFC3BA24232FBCF3B6 /* PlaceholderDiffuserCodecTests.swift */,
+				127A470D66E44198277D4F87 /* TestSupport.swift */,
+			);
+			name = AuraDriveTests;
+			path = AuraDriveTests;
+			sourceTree = "<group>";
+		};
+		66DBF1D940CEB8FB4D3B0EE3 = {
+			isa = PBXGroup;
+			children = (
+				7778CDB44DC1561F3E0440E2 /* Frameworks */,
+				BD2EFB15D702825F0DD8BD20 /* AuraDrive */,
+				5C99187999CEDB1A5426D89B /* AuraDriveTests */,
+				F8FF089D1130D857BBB89064 /* AuraDriveUITests */,
+				3F65E15420A82384ED10971A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		712B2B8D91B30A0D7BAC5919 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				712B2E8BFC76C4BF3D565C21 /* BluetoothStatusNotice.swift */,
+			);
+			name = Shared;
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7778CDB44DC1561F3E0440E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB2C542D8F6CC6ABEC0ACF84 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78A11092519C98556B85C4BD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9FDA21EF72B4B7709B9CA0DC /* Assets.xcassets */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9483EBF2E2039540C7EEEAAF /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				7C519543089B3E99C7AFA0C0 /* AppColor.swift */,
+				C3FAB3460AFD2A7993A30688 /* AppFont.swift */,
+				20A59439878EC8EB5BF999FD /* Layout.swift */,
+			);
+			name = Theme;
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		99DCF1331B3B0E0286AF0254 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CB98453AE632C26B765FFAAD /* AppLinks.swift */,
+				50096549853A934871D244DD /* AuraDriveApp.swift */,
+				57AAC8AD2C44EC89E2381511 /* RootView.swift */,
 			);
 			name = App;
 			path = App;
 			sourceTree = "<group>";
 		};
-		20EAD934EF2856E7931721B2 /* AuraDrive */ = {
+		A526950F70CA48DF64DF5B85 /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				0DE56D85FD4155D0E418A063 /* App */,
-				2E026709DAA9EE4B6BDC7A8D /* DesignSystem */,
-				84AF2FA4ECDC7BF6780C01E0 /* Features */,
-				E416683A619ECD8A7751C8E0 /* Models */,
-				6A96BE521B7A5101D1934FB0 /* Resources */,
-				4DE39D8A3909E765097B5F11 /* Services */,
+				C793B3C0A7C9729F6B1669B5 /* DiffuserControlView.swift */,
+				B0503F7778114B0E53B504DD /* DiffuserDetailView.swift */,
+				D2222580969FDA38AF64D1DF /* FirmwareUpdateSection.swift */,
+			);
+			name = Control;
+			path = Control;
+			sourceTree = "<group>";
+		};
+		A8DC6BACE3CD27DBB3F22D38 /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				B7D664B78E3892ABC7DC8901 /* AccessibilityIdentifiers.swift */,
+				F1C91E6A65FBF5623BE29642 /* MotionSafeAnimation.swift */,
+			);
+			name = Accessibility;
+			path = Accessibility;
+			sourceTree = "<group>";
+		};
+		B92070172A0C6F607731A6F1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9B33058D05FA29CD1152D2A6 /* ButtonStyles.swift */,
+				17FC651BD70C10BA6F402B92 /* Card.swift */,
+				9396E5390323608BF06B630E /* SectionText.swift */,
+				4DC00D427837371CA90FB7CC /* StatusBadge.swift */,
+			);
+			name = Components;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BD2EFB15D702825F0DD8BD20 /* AuraDrive */ = {
+			isa = PBXGroup;
+			children = (
+				99DCF1331B3B0E0286AF0254 /* App */,
+				D619CAB4288038F538EF211C /* DesignSystem */,
+				F6C383F2C5F413129A61721F /* Features */,
+				F31AF371EC58734215297264 /* Models */,
+				78A11092519C98556B85C4BD /* Resources */,
+				138AA7EFA99DFCA4AA907623 /* Services */,
 			);
 			name = AuraDrive;
 			path = AuraDrive;
 			sourceTree = "<group>";
 		};
-		2DD475BDCCB5E8AF1778EE4F /* iOS */ = {
+		D619CAB4288038F538EF211C /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				A8DC6BACE3CD27DBB3F22D38 /* Accessibility */,
+				B92070172A0C6F607731A6F1 /* Components */,
+				F4261AC04B26A21E97FB9B89 /* DesignSystemPreviews.swift */,
+				9483EBF2E2039540C7EEEAAF /* Theme */,
+			);
+			name = DesignSystem;
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		DB2C542D8F6CC6ABEC0ACF84 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		2E026709DAA9EE4B6BDC7A8D /* DesignSystem */ = {
+		F31AF371EC58734215297264 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F0534606C39BAB64D847C9D5 /* Accessibility */,
-				2F06D56CC3FF0172BF438D69 /* Components */,
-				82884DFB21E371F32F338329 /* DesignSystemPreviews.swift */,
-				5BBAF87052A0D68166A9FF34 /* Theme */,
-			);
-			name = DesignSystem;
-			path = DesignSystem;
-			sourceTree = "<group>";
-		};
-		2F06D56CC3FF0172BF438D69 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				BB2A14746316BC06180C80D5 /* ButtonStyles.swift */,
-				6DAD78E38024D7747FD0F17C /* Card.swift */,
-				5D2E1AD8A61832E0FA299743 /* SectionText.swift */,
-				7378FC443A5B1CF87CEDC5A0 /* StatusBadge.swift */,
-			);
-			name = Components;
-			path = Components;
-			sourceTree = "<group>";
-		};
-		3446C4F4EB9EF6F6259D67C5 /* AuraDriveUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3BDB0F4E6D8A73CD03D72504 /* AppFlowUITests.swift */,
-			);
-			name = AuraDriveUITests;
-			path = AuraDriveUITests;
-			sourceTree = "<group>";
-		};
-		4DE39D8A3909E765097B5F11 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				5EB3558F8E1A30B7C340E1DA /* Bluetooth */,
-				FFB9F34ED3746DA65C7853C4 /* DiffuserPersistence.swift */,
-				2EDF9CC2B2343DE8078822A7 /* DiffuserService.swift */,
-				BBAA06887586B8F7D34E3D02 /* DiffuserStore.swift */,
-				F82D011BF54F2D8DD46E988E /* LowFragranceNotifier.swift */,
-				E92820AEE13DF9205A6B8F82 /* SimulatedDiffuserService.swift */,
-			);
-			name = Services;
-			path = Services;
-			sourceTree = "<group>";
-		};
-		5BBAF87052A0D68166A9FF34 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				89C31E5F23B5D738B0FF17CD /* AppColor.swift */,
-				FDBA3EE125D6753E443606C7 /* AppFont.swift */,
-				4113AE9DF5804235339F8D1F /* Layout.swift */,
-			);
-			name = Theme;
-			path = Theme;
-			sourceTree = "<group>";
-		};
-		5EB3558F8E1A30B7C340E1DA /* Bluetooth */ = {
-			isa = PBXGroup;
-			children = (
-				8E2952AB7A536A7663884F13 /* BLETransport.swift */,
-				A75EE2CF28017258DE493AF9 /* BluetoothDiffuserService.swift */,
-				ADB456E09E1287A61AC8832B /* CombinedDiffuserService.swift */,
-				C9C40CE3E8AD801031B69F2D /* CoreBluetoothTransport.swift */,
-				289E7D8B454BF0145B8D7780 /* DiffuserCodec.swift */,
-				D0E88281DDA017C6AD049332 /* MockBLETransport.swift */,
-				BFC1055EC5D70493819A16AD /* PlaceholderDiffuserCodec.swift */,
-			);
-			name = Bluetooth;
-			path = Bluetooth;
-			sourceTree = "<group>";
-		};
-		5F60AA5D9D2995928F9E6E31 /* AuraDriveTests */ = {
-			isa = PBXGroup;
-			children = (
-				B1E8C84969C78C6A4387E8C3 /* BluetoothDiffuserServiceTests.swift */,
-				F451FB00A7AF45011D4DEA9D /* ColorContrastTests.swift */,
-				BF9F065362AB3CF173C9A75F /* ConnectionManagementTests.swift */,
-				190C79368756F3CE41C5416F /* DiffuserStoreFailureTests.swift */,
-				6AFDE078970E76507ADC585A /* DiffuserStoreTests.swift */,
-				36A32FB59FB895ABE549C99B /* PlaceholderDiffuserCodecTests.swift */,
-				6BDCE052A268011C6319A436 /* TestSupport.swift */,
-			);
-			name = AuraDriveTests;
-			path = AuraDriveTests;
-			sourceTree = "<group>";
-		};
-		6A96BE521B7A5101D1934FB0 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9CE07A7EB2D4039B396E7B2D /* Assets.xcassets */,
-			);
-			name = Resources;
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		84AF2FA4ECDC7BF6780C01E0 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				F43523597A0878C485654D17 /* AddDiffuser */,
-				8DEFF3BD77DD762CC7F0F851 /* Control */,
-				A4C75BB857BF4C95B1905FB9 /* DiffuserList */,
-				D0465DC256932BE8AC9CC511 /* Settings */,
-				AD44D52403113A17E637F690 /* Shared */,
-				F8C09DD9C28FF8ACFCD7699C /* Welcome */,
-			);
-			name = Features;
-			path = Features;
-			sourceTree = "<group>";
-		};
-		8DEFF3BD77DD762CC7F0F851 /* Control */ = {
-			isa = PBXGroup;
-			children = (
-				E051DEBC8931A38F950675D4 /* DiffuserControlView.swift */,
-				01A1D7DC9724961A56D04542 /* DiffuserDetailView.swift */,
-			);
-			name = Control;
-			path = Control;
-			sourceTree = "<group>";
-		};
-		942E59E9A79FCF4EDA52AE11 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				475F4B5775E296C8465FB1A2 /* AuraDrive.app */,
-				33F347E3E42D988ACF7EF824 /* AuraDriveTests.xctest */,
-				A9E10F203F3E7E0FDEDE6D33 /* AuraDriveUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A4C75BB857BF4C95B1905FB9 /* DiffuserList */ = {
-			isa = PBXGroup;
-			children = (
-				A1FCD4C4DF62D0FA220FAA1F /* ConnectionState+Display.swift */,
-				F2AA0466A67B31DC3B359E36 /* DiffuserListView.swift */,
-			);
-			name = DiffuserList;
-			path = DiffuserList;
-			sourceTree = "<group>";
-		};
-		AD44D52403113A17E637F690 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				29AD3FAC3139086B761FEA1A /* BluetoothStatusNotice.swift */,
-			);
-			name = Shared;
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		D0465DC256932BE8AC9CC511 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				A0EB63DE0DE1E4A0082DE7F6 /* PrivacyPolicyView.swift */,
-				083702E4C0BA06F1D99F9A26 /* SettingsView.swift */,
-			);
-			name = Settings;
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		D215C6FE84841605C1D1CCE8 = {
-			isa = PBXGroup;
-			children = (
-				FDDB42D942D5C5BB650137DD /* Frameworks */,
-				20EAD934EF2856E7931721B2 /* AuraDrive */,
-				5F60AA5D9D2995928F9E6E31 /* AuraDriveTests */,
-				3446C4F4EB9EF6F6259D67C5 /* AuraDriveUITests */,
-				942E59E9A79FCF4EDA52AE11 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		E416683A619ECD8A7751C8E0 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D218F632BA243041C8D03A57 /* Diffuser.swift */,
+				32E66A97F5961588B5BAE4CA /* Diffuser.swift */,
+				1653ADF305EC9905C37956D4 /* FirmwareUpdate.swift */,
 			);
 			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
-		F0534606C39BAB64D847C9D5 /* Accessibility */ = {
+		F4A9CDDCF7E4865C9131933D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				6B272AE96B34BE89E9EBB8B5 /* AccessibilityIdentifiers.swift */,
-				37191AB9334264B963C97947 /* MotionSafeAnimation.swift */,
+				D605DFDC6BE4A2178225A64C /* PrivacyPolicyView.swift */,
+				3CD8B097ED357F55EBE730A4 /* SettingsView.swift */,
 			);
-			name = Accessibility;
-			path = Accessibility;
+			name = Settings;
+			path = Settings;
 			sourceTree = "<group>";
 		};
-		F43523597A0878C485654D17 /* AddDiffuser */ = {
+		F6C383F2C5F413129A61721F /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				C92594FD983E80F5C9BE514F /* AddDiffuserView.swift */,
+				2C01A2B92C0F5A3720F51F01 /* AddDiffuser */,
+				A526950F70CA48DF64DF5B85 /* Control */,
+				0E50E5C8BFA4AE7AF48A2AF9 /* DiffuserList */,
+				F4A9CDDCF7E4865C9131933D /* Settings */,
+				712B2B8D91B30A0D7BAC5919 /* Shared */,
+				52E37AEF6C55233BDB9C1A30 /* Welcome */,
 			);
-			name = AddDiffuser;
-			path = AddDiffuser;
+			name = Features;
+			path = Features;
 			sourceTree = "<group>";
 		};
-		F8C09DD9C28FF8ACFCD7699C /* Welcome */ = {
+		F8FF089D1130D857BBB89064 /* AuraDriveUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D764853108FB10699D7D214A /* WelcomeView.swift */,
+				BC8A2C4DAC04D550F80526E8 /* AppFlowUITests.swift */,
 			);
-			name = Welcome;
-			path = Welcome;
-			sourceTree = "<group>";
-		};
-		FDDB42D942D5C5BB650137DD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2DD475BDCCB5E8AF1778EE4F /* iOS */,
-			);
-			name = Frameworks;
+			name = AuraDriveUITests;
+			path = AuraDriveUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		02BF9866C67B685C285FE866 /* AuraDriveUITests */ = {
+		39DB9AE838AD82A586A7EEDD /* AuraDriveUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B5AB87C8C808715364F6BB5 /* Build configuration list for PBXNativeTarget "AuraDriveUITests" */;
+			buildConfigurationList = A25A07B90C8432F3F449CE14 /* Build configuration list for PBXNativeTarget "AuraDriveUITests" */;
 			buildPhases = (
-				5080B741C21A3C69F429C58F /* Sources */,
-				82D5A8DEF8ABEA75B2AC55EF /* Frameworks */,
-				25B12CD83E7C3810A32DD07C /* Resources */,
+				27A3EE07E027473A0FC46F01 /* Sources */,
+				77737431F18123584E6543DC /* Frameworks */,
+				228D76E903427162DEA2220A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CD584A51C68073CD14182A0D /* PBXTargetDependency */,
+				C38DFD264508A2529C5E59A7 /* PBXTargetDependency */,
 			);
 			name = AuraDriveUITests;
 			productName = AuraDriveUITests;
-			productReference = A9E10F203F3E7E0FDEDE6D33 /* AuraDriveUITests.xctest */;
+			productReference = 7066BCE0D9C470E3F3A90E6D /* AuraDriveUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		8B7A91A7C36A25C133581ACB /* AuraDriveTests */ = {
+		784F2B80D1B3B5F39D5ADF28 /* AuraDrive */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 544223DDF6A654BDEF5976CC /* Build configuration list for PBXNativeTarget "AuraDriveTests" */;
+			buildConfigurationList = 07DB2AE8B1A0716186ACD38E /* Build configuration list for PBXNativeTarget "AuraDrive" */;
 			buildPhases = (
-				18C29545AD494059C3600CF7 /* Sources */,
-				F80080CEAE0176CB5E5CBEAE /* Frameworks */,
-				5924CFDF65776738263C880F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EA4672DC734A3A136418858B /* PBXTargetDependency */,
-			);
-			name = AuraDriveTests;
-			productName = AuraDriveTests;
-			productReference = 33F347E3E42D988ACF7EF824 /* AuraDriveTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E66EF0F9B59768649C52D92C /* AuraDrive */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 756DC79D99CF305C657A0370 /* Build configuration list for PBXNativeTarget "AuraDrive" */;
-			buildPhases = (
-				6BF04DBB72559B5B929A7C90 /* Sources */,
-				B63A7B8846A00DE78C1E1F82 /* Frameworks */,
-				B3C822161E4AE4C9F88D8D2E /* Resources */,
+				08D1113975028AA934480D41 /* Sources */,
+				C9101C11A92B56A182B702FC /* Frameworks */,
+				D7A6DA8E0D8D89C502796853 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -447,32 +441,50 @@
 			);
 			name = AuraDrive;
 			productName = AuraDrive;
-			productReference = 475F4B5775E296C8465FB1A2 /* AuraDrive.app */;
+			productReference = 6E941EA05DA3B5512B49CBDD /* AuraDrive.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F286B943E17B493C5BA73A61 /* AuraDriveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7348D82D32458D3ABD60B707 /* Build configuration list for PBXNativeTarget "AuraDriveTests" */;
+			buildPhases = (
+				C449F7D8C5023E8FCE9B618D /* Sources */,
+				60B64C43AB0300DE679A40D6 /* Frameworks */,
+				8817E4F5E3735B908959AAD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1547E8F93253F34F5F8482B5 /* PBXTargetDependency */,
+			);
+			name = AuraDriveTests;
+			productName = AuraDriveTests;
+			productReference = A1359EE3882008448A8AF92A /* AuraDriveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C5E648B89C98207B90CC6A4C /* Project object */ = {
+		7353A1C7D9D79DB93946FE04 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					02BF9866C67B685C285FE866 = {
+					39DB9AE838AD82A586A7EEDD = {
 						CreatedOnToolsVersion = 16.0;
-						TestTargetID = E66EF0F9B59768649C52D92C;
+						TestTargetID = 784F2B80D1B3B5F39D5ADF28;
 					};
-					8B7A91A7C36A25C133581ACB = {
+					784F2B80D1B3B5F39D5ADF28 = {
 						CreatedOnToolsVersion = 16.0;
-						TestTargetID = E66EF0F9B59768649C52D92C;
 					};
-					E66EF0F9B59768649C52D92C = {
+					F286B943E17B493C5BA73A61 = {
 						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 784F2B80D1B3B5F39D5ADF28;
 					};
 				};
 			};
-			buildConfigurationList = 77227CB196DBABD76DFDF818 /* Build configuration list for PBXProject "AuraDrive" */;
+			buildConfigurationList = 57892898F02A2238EE72C140 /* Build configuration list for PBXProject "AuraDrive" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -480,130 +492,244 @@
 				en,
 				Base,
 			);
-			mainGroup = D215C6FE84841605C1D1CCE8;
+			mainGroup = 66DBF1D940CEB8FB4D3B0EE3;
 			minimizedProjectReferenceProxies = 0;
 			preferredProjectObjectVersion = 100;
-			productRefGroup = 942E59E9A79FCF4EDA52AE11 /* Products */;
+			productRefGroup = 3F65E15420A82384ED10971A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E66EF0F9B59768649C52D92C /* AuraDrive */,
-				8B7A91A7C36A25C133581ACB /* AuraDriveTests */,
-				02BF9866C67B685C285FE866 /* AuraDriveUITests */,
+				784F2B80D1B3B5F39D5ADF28 /* AuraDrive */,
+				F286B943E17B493C5BA73A61 /* AuraDriveTests */,
+				39DB9AE838AD82A586A7EEDD /* AuraDriveUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		25B12CD83E7C3810A32DD07C /* Resources */ = {
+		228D76E903427162DEA2220A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5924CFDF65776738263C880F /* Resources */ = {
+		8817E4F5E3735B908959AAD6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B3C822161E4AE4C9F88D8D2E /* Resources */ = {
+		D7A6DA8E0D8D89C502796853 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DAA38473D7D4B602AE0CC94 /* Assets.xcassets in Resources */,
+				4F53341C89FBC3438B595A68 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		18C29545AD494059C3600CF7 /* Sources */ = {
+		08D1113975028AA934480D41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06CA286A5DE1E35E600E03DF /* BluetoothDiffuserServiceTests.swift in Sources */,
-				F7C62A7307D1016E181FB2BF /* ColorContrastTests.swift in Sources */,
-				25EA3482C1263F484C6C1B3E /* ConnectionManagementTests.swift in Sources */,
-				75E01E8675DC39763A20D38C /* DiffuserStoreFailureTests.swift in Sources */,
-				ACA96CF7A6C456015DD06C29 /* DiffuserStoreTests.swift in Sources */,
-				5523B6E05D09D998C5770DFB /* PlaceholderDiffuserCodecTests.swift in Sources */,
-				6065AD7BCFE668BA2BA42BDF /* TestSupport.swift in Sources */,
+				5FEBC6953CEB3BDC03B5B546 /* AppLinks.swift in Sources */,
+				B20227F41B8A11D11A718F29 /* AuraDriveApp.swift in Sources */,
+				5AD7593883890969FFC42F2F /* RootView.swift in Sources */,
+				4C574DEC6714035889561B5F /* AccessibilityIdentifiers.swift in Sources */,
+				E4121CF546A6251FA083B316 /* MotionSafeAnimation.swift in Sources */,
+				3D3627CB2EB4E47E8E547811 /* ButtonStyles.swift in Sources */,
+				DB761E3287F0BF65CDF2A1FE /* Card.swift in Sources */,
+				83262B297D4D40EAB5D07AA9 /* SectionText.swift in Sources */,
+				016B9E0CE370C7E212E2126D /* StatusBadge.swift in Sources */,
+				F149BB8F8AE5B6F38A768956 /* DesignSystemPreviews.swift in Sources */,
+				002BDF7ABAFEE9B2117EA25F /* AppColor.swift in Sources */,
+				752691170EE37A502D5DF717 /* AppFont.swift in Sources */,
+				151760CA93AC3D3A51A36565 /* Layout.swift in Sources */,
+				6A900E8C2EABFE7A15EE5F62 /* AddDiffuserView.swift in Sources */,
+				9174DB79932E69FD9BF6E404 /* DiffuserControlView.swift in Sources */,
+				9773A99BC87AB305424AC17D /* DiffuserDetailView.swift in Sources */,
+				C29DE292EAAF1A7F06F48235 /* FirmwareUpdateSection.swift in Sources */,
+				B578A4BBF4DB655B346E9590 /* ConnectionState+Display.swift in Sources */,
+				EEF68213897ABCEA646C568B /* DiffuserListView.swift in Sources */,
+				DF699CF27C590518AF3CCB92 /* PrivacyPolicyView.swift in Sources */,
+				C5A027050F4CD98941356EF3 /* SettingsView.swift in Sources */,
+				313A7D3429D0D9EEC4A2FA7E /* BluetoothStatusNotice.swift in Sources */,
+				992AE76EC975AF902F70E107 /* WelcomeView.swift in Sources */,
+				AC8F3B779BA673141646D67F /* Diffuser.swift in Sources */,
+				70675861DA5D8D281315C830 /* FirmwareUpdate.swift in Sources */,
+				3C5E517E26BEF85695773704 /* BLETransport.swift in Sources */,
+				323AD7406BBB8CAD113E9061 /* BluetoothDiffuserService.swift in Sources */,
+				930F9628749FE271C3F1F802 /* CombinedDiffuserService.swift in Sources */,
+				764C2F8AE5B78BC11F664796 /* CoreBluetoothTransport.swift in Sources */,
+				6523E3A74801E71DBE78EADD /* DiffuserCodec.swift in Sources */,
+				E46E72B5F1C2E34A0475ABA9 /* MockBLETransport.swift in Sources */,
+				081D71E078B297AF99D51A82 /* PlaceholderDiffuserCodec.swift in Sources */,
+				37627BE9CE9D408997C25FDF /* DiffuserPersistence.swift in Sources */,
+				F896B6CA2E0D1DAF643B7A8D /* DiffuserService.swift in Sources */,
+				76D4DBDAC61EE61A1485AE98 /* DiffuserStore.swift in Sources */,
+				0899951FAFC42F90AC6A88D5 /* LowFragranceNotifier.swift in Sources */,
+				5F615C759B50CFB7EEF1B797 /* SimulatedDiffuserService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5080B741C21A3C69F429C58F /* Sources */ = {
+		27A3EE07E027473A0FC46F01 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76CF036706947791FF94F240 /* AccessibilityIdentifiers.swift in Sources */,
-				4DAEFB1695A569E20D24D4D1 /* AppFlowUITests.swift in Sources */,
+				06443EAA218894D27D8C91AE /* AccessibilityIdentifiers.swift in Sources */,
+				B5B4444466D56CB876461997 /* AppFlowUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6BF04DBB72559B5B929A7C90 /* Sources */ = {
+		C449F7D8C5023E8FCE9B618D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F7C6A3FD1AEFC75581880FB /* AppLinks.swift in Sources */,
-				DE76FFB0CD4D4C6CD8C821CC /* AuraDriveApp.swift in Sources */,
-				9A288C9F16E8D12E944C84EA /* RootView.swift in Sources */,
-				0FDF3D079189E173B495527C /* AccessibilityIdentifiers.swift in Sources */,
-				0B50DA71DA3AAE8212728E9F /* MotionSafeAnimation.swift in Sources */,
-				E37607B45858CFB5AC984C60 /* ButtonStyles.swift in Sources */,
-				BE9B06A3765CF6A025F098A5 /* Card.swift in Sources */,
-				9BF5B30F0271056F4167B216 /* SectionText.swift in Sources */,
-				CC2D5A9A2897CC1C19F1D25E /* StatusBadge.swift in Sources */,
-				290F14F7D9A91D84582A0D5B /* DesignSystemPreviews.swift in Sources */,
-				5BA42B0CCAE705A9B7D0CEB9 /* AppColor.swift in Sources */,
-				1997959A9067412FDE8A75CD /* AppFont.swift in Sources */,
-				EB6EEFA01BD7F310C19B08D2 /* Layout.swift in Sources */,
-				34F6914E2383A255285F8FAF /* AddDiffuserView.swift in Sources */,
-				E396FCD07BF94D6CD22A9AE3 /* DiffuserControlView.swift in Sources */,
-				C7CC75004F8F42EBC4BE83D3 /* DiffuserDetailView.swift in Sources */,
-				316B765C4C593615ABDA58DD /* ConnectionState+Display.swift in Sources */,
-				69715692938C3E40D35DFDE6 /* DiffuserListView.swift in Sources */,
-				21AAB835001BABD49F0A8830 /* PrivacyPolicyView.swift in Sources */,
-				55750C2E214D62F0C7C81746 /* SettingsView.swift in Sources */,
-				5B1B2A053FCDB5E355B55133 /* BluetoothStatusNotice.swift in Sources */,
-				C02A2298552E11F85E80B2D8 /* WelcomeView.swift in Sources */,
-				19165009C1007B69654B6155 /* Diffuser.swift in Sources */,
-				40633C3ADC885FC230479C7A /* BLETransport.swift in Sources */,
-				04C319F8C6812E5BFD50F34A /* BluetoothDiffuserService.swift in Sources */,
-				5CB7A00590A2A1A334486DD3 /* CombinedDiffuserService.swift in Sources */,
-				51371380403ECC82950C3EDF /* CoreBluetoothTransport.swift in Sources */,
-				A60045D0D1149479D8301AE7 /* DiffuserCodec.swift in Sources */,
-				6B23069E18C7F87C710CF4DB /* MockBLETransport.swift in Sources */,
-				3D08C6610DA2AAD093020CC8 /* PlaceholderDiffuserCodec.swift in Sources */,
-				1E29223E799E6499C14E18F8 /* DiffuserPersistence.swift in Sources */,
-				140F42115DA2B54AD090B72F /* DiffuserService.swift in Sources */,
-				0B54AC45328A053864BF7452 /* DiffuserStore.swift in Sources */,
-				22D418578688AA3647D841C5 /* LowFragranceNotifier.swift in Sources */,
-				95DB7E64F4F7B6B30E202928 /* SimulatedDiffuserService.swift in Sources */,
+				A609EA5EC8B365778129B3F3 /* BluetoothDiffuserServiceTests.swift in Sources */,
+				B4E4B71C7A8A5760A38912B5 /* ColorContrastTests.swift in Sources */,
+				AB348FE43F3CCBEF7C6AB6E0 /* ConnectionManagementTests.swift in Sources */,
+				B0DBFCF387A3FA31BBF99460 /* DiffuserStoreFailureTests.swift in Sources */,
+				9E30ABD1BD220A0B20906C28 /* DiffuserStoreTests.swift in Sources */,
+				E07F05FBEE9D44F6AB11EDD5 /* FirmwareUpdateMachineTests.swift in Sources */,
+				BAF6772D17E26D6F6BDB439A /* FirmwareUpdateTests.swift in Sources */,
+				0E5AF32F50871013A7D9DEE5 /* PlaceholderDiffuserCodecTests.swift in Sources */,
+				498AAA7219873B1EF169E4E1 /* TestSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CD584A51C68073CD14182A0D /* PBXTargetDependency */ = {
+		1547E8F93253F34F5F8482B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AuraDrive;
-			target = E66EF0F9B59768649C52D92C /* AuraDrive */;
-			targetProxy = 1199D609DF22FFBBE0662C81 /* PBXContainerItemProxy */;
+			target = 784F2B80D1B3B5F39D5ADF28 /* AuraDrive */;
+			targetProxy = 32CD8FFDE862822CF63EB845 /* PBXContainerItemProxy */;
 		};
-		EA4672DC734A3A136418858B /* PBXTargetDependency */ = {
+		C38DFD264508A2529C5E59A7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AuraDrive;
-			target = E66EF0F9B59768649C52D92C /* AuraDrive */;
-			targetProxy = 1F67350E0ACA3BC3F726BEC5 /* PBXContainerItemProxy */;
+			target = 784F2B80D1B3B5F39D5ADF28 /* AuraDrive */;
+			targetProxy = 07F356D91E8EC68DFA299D42 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		284ADF9C7803DBC2C08E82E6 /* Debug */ = {
+		015D970C615022DE088AB648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = AuraDrive;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		043963945E9A1E3194C26658 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AuraDrive;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "AuraDrive uses Bluetooth to connect to and control your car fragrance diffuser.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0B86ACCA89CE0E659F58F10A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AuraDrive;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "AuraDrive uses Bluetooth to connect to and control your car fragrance diffuser.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		329877FB3617984C73298B4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = AuraDrive;
+			};
+			name = Debug;
+		};
+		3EB48939857CA63D6495EA00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -666,7 +792,7 @@
 			};
 			name = Debug;
 		};
-		32098AD960B1118F47CB3A60 /* Release */ = {
+		594E9386F94FE4F783D9A31A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -688,42 +814,7 @@
 			};
 			name = Release;
 		};
-		3AD2483612D7BD57A27A9B63 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = AuraDrive;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "AuraDrive uses Bluetooth to connect to and control your car fragrance diffuser.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		7408FDD4F1FDAF198969C9B7 /* Release */ = {
+		7C5BFCC19CDEBB36D1BB8B74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -779,48 +870,7 @@
 			};
 			name = Release;
 		};
-		87FDB636320749EA6AC4E96D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive.uitests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = AuraDrive;
-			};
-			name = Debug;
-		};
-		E1AF26D98B57574BDEB5B1A4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive.uitests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = AuraDrive;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		F25869DDA55D7C02B75592AE /* Debug */ = {
+		94A865C79144B6142E9A1FAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -841,80 +891,46 @@
 			};
 			name = Debug;
 		};
-		F913C5932A28B39041CA21C1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = AuraDrive;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "AuraDrive uses Bluetooth to connect to and control your car fragrance diffuser.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.auradrive;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		544223DDF6A654BDEF5976CC /* Build configuration list for PBXNativeTarget "AuraDriveTests" */ = {
+		07DB2AE8B1A0716186ACD38E /* Build configuration list for PBXNativeTarget "AuraDrive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				32098AD960B1118F47CB3A60 /* Release */,
-				F25869DDA55D7C02B75592AE /* Debug */,
+				043963945E9A1E3194C26658 /* Release */,
+				0B86ACCA89CE0E659F58F10A /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		756DC79D99CF305C657A0370 /* Build configuration list for PBXNativeTarget "AuraDrive" */ = {
+		57892898F02A2238EE72C140 /* Build configuration list for PBXProject "AuraDrive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3AD2483612D7BD57A27A9B63 /* Release */,
-				F913C5932A28B39041CA21C1 /* Debug */,
+				3EB48939857CA63D6495EA00 /* Debug */,
+				7C5BFCC19CDEBB36D1BB8B74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77227CB196DBABD76DFDF818 /* Build configuration list for PBXProject "AuraDrive" */ = {
+		7348D82D32458D3ABD60B707 /* Build configuration list for PBXNativeTarget "AuraDriveTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				284ADF9C7803DBC2C08E82E6 /* Debug */,
-				7408FDD4F1FDAF198969C9B7 /* Release */,
+				594E9386F94FE4F783D9A31A /* Release */,
+				94A865C79144B6142E9A1FAE /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B5AB87C8C808715364F6BB5 /* Build configuration list for PBXNativeTarget "AuraDriveUITests" */ = {
+		A25A07B90C8432F3F449CE14 /* Build configuration list for PBXNativeTarget "AuraDriveUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1AF26D98B57574BDEB5B1A4 /* Release */,
-				87FDB636320749EA6AC4E96D /* Debug */,
+				015D970C615022DE088AB648 /* Release */,
+				329877FB3617984C73298B4E /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C5E648B89C98207B90CC6A4C /* Project object */;
+	rootObject = 7353A1C7D9D79DB93946FE04 /* Project object */;
 }

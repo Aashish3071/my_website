@@ -17,6 +17,17 @@ protocol DiffuserService: AnyObject {
     func disconnect(from id: UUID)
     func send(_ command: DiffuserCommand, to id: UUID) async throws
     func readStatus(of id: UUID) async throws -> DiffuserStatus
+
+    // MARK: Firmware updates
+
+    /// Tells the diffuser an update is coming. Returns how many bytes to send per chunk.
+    func beginFirmwareUpdate(on id: UUID, image: FirmwareImage) async throws -> Int
+    func sendFirmwareChunk(_ chunk: Data, offset: Int, to id: UUID) async throws
+    /// Asks the diffuser to check the firmware it received and install it.
+    /// Throws `commandRejected` if the check fails.
+    func finishFirmwareUpdate(on id: UUID) async throws
+    /// Abandons an update in progress. The diffuser keeps its current firmware.
+    func abortFirmwareUpdate(on id: UUID)
 }
 
 enum DiffuserServiceEvent: Equatable, Sendable {

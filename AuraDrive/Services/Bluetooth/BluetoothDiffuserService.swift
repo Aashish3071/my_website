@@ -20,6 +20,8 @@ final class BluetoothDiffuserService: DiffuserService {
     private let codec: any DiffuserCodec
     private let scanDuration: Duration
     private let responseTimeout: Duration
+    /// Checking and installing firmware can take a while.
+    private let firmwareFinishTimeout: Duration
     private var connected: Set<UUID> = []
     private var waiters: [Waiter] = []
 
@@ -27,12 +29,14 @@ final class BluetoothDiffuserService: DiffuserService {
         transport: any BLETransport,
         codec: any DiffuserCodec = PlaceholderDiffuserCodec(),
         scanDuration: Duration = .seconds(4),
-        responseTimeout: Duration = .seconds(3)
+        responseTimeout: Duration = .seconds(3),
+        firmwareFinishTimeout: Duration = .seconds(30)
     ) {
         self.transport = transport
         self.codec = codec
         self.scanDuration = scanDuration
         self.responseTimeout = responseTimeout
+        self.firmwareFinishTimeout = firmwareFinishTimeout
         transport.eventHandler = { [weak self] event in
             self?.handle(event)
         }
@@ -72,10 +76,7 @@ final class BluetoothDiffuserService: DiffuserService {
     }
 
     func send(_ command: DiffuserCommand, to id: UUID) async throws {
-        guard connected.contains(id) else { throw DiffuserServiceError.notConnected }
-        if case .rejected = try await request(.command(command), to: id) {
-            throw DiffuserServiceError.commandRejected
-        }
+        try await sendExpectingDone(.command(command), to: id)
     }
 
     func readStatus(of id: UUID) async throws -> DiffuserStatus {
@@ -86,10 +87,48 @@ final class BluetoothDiffuserService: DiffuserService {
         return status
     }
 
+    // MARK: Firmware updates
+
+    func beginFirmwareUpdate(on id: UUID, image: FirmwareImage) async throws -> Int {
+        try await sendExpectingDone(
+            .firmwareUpdateBegin(size: image.data.count, checksum: image.checksum, version: image.version),
+            to: id
+        )
+        return codec.maxFirmwareChunkSize
+    }
+
+    func sendFirmwareChunk(_ chunk: Data, offset: Int, to id: UUID) async throws {
+        try await sendExpectingDone(.firmwareChunk(offset: offset, bytes: chunk), to: id)
+    }
+
+    func finishFirmwareUpdate(on id: UUID) async throws {
+        try await sendExpectingDone(.firmwareUpdateFinish, to: id, timeout: firmwareFinishTimeout)
+    }
+
+    func abortFirmwareUpdate(on id: UUID) {
+        guard connected.contains(id) else { return }
+        Task { [weak self] in
+            _ = try? await self?.request(.firmwareUpdateAbort, to: id)
+        }
+    }
+
     // MARK: Requests and replies
 
-    private func request(_ request: DiffuserRequest, to id: UUID) async throws -> DiffuserMessage {
+    /// Sends a request that is answered with Done or Refused.
+    private func sendExpectingDone(_ request: DiffuserRequest, to id: UUID, timeout: Duration? = nil) async throws {
+        guard connected.contains(id) else { throw DiffuserServiceError.notConnected }
+        if case .rejected = try await self.request(request, to: id, timeout: timeout) {
+            throw DiffuserServiceError.commandRejected
+        }
+    }
+
+    private func request(
+        _ request: DiffuserRequest,
+        to id: UUID,
+        timeout: Duration? = nil
+    ) async throws -> DiffuserMessage {
         let data = try codec.encode(request)
+        let responseTimeout = timeout ?? self.responseTimeout
         return try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<DiffuserMessage, any Error>) in
             let waiterID = UUID()
             let timeout = Task { [weak self, responseTimeout] in

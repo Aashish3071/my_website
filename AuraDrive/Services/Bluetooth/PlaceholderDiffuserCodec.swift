@@ -17,14 +17,23 @@ import Foundation
 /// | 04     | to diffuser  | Cartridge replaced   | none                                      |
 /// | 10     | to diffuser  | Ask for status       | none                                      |
 /// | 11     | to diffuser  | Ask for firmware     | none                                      |
+/// | 20     | to diffuser  | Begin update         | size (4), CRC-32 (4), version (UTF-8)     |
+/// | 21     | to diffuser  | Firmware piece       | offset (4), up to 128 bytes               |
+/// | 22     | to diffuser  | Finish update        | none                                      |
+/// | 23     | to diffuser  | Abandon update       | none                                      |
 /// | 81     | from         | Status               | on/off, intensity, fragrance 0–100 %      |
 /// | 82     | from         | Firmware version     | UTF-8 text                                |
 /// | 90     | from         | Done                 | opcode of the command                     |
 /// | 91     | from         | Refused              | opcode of the command, error code         |
 ///
-/// Two-byte numbers are big-endian.
+/// Numbers of two or four bytes are big-endian. Every firmware message is
+/// answered with Done or Refused.
 struct PlaceholderDiffuserCodec: DiffuserCodec {
     static let header: UInt8 = 0xA5
+    static let firmwareChunkSize = 128
+    static let maxVersionLength = 32
+
+    var maxFirmwareChunkSize: Int { Self.firmwareChunkSize }
 
     enum Opcode {
         static let power: UInt8 = 0x01
@@ -33,6 +42,10 @@ struct PlaceholderDiffuserCodec: DiffuserCodec {
         static let resetFragrance: UInt8 = 0x04
         static let status: UInt8 = 0x10
         static let firmwareVersion: UInt8 = 0x11
+        static let firmwareBegin: UInt8 = 0x20
+        static let firmwareChunk: UInt8 = 0x21
+        static let firmwareFinish: UInt8 = 0x22
+        static let firmwareAbort: UInt8 = 0x23
         static let statusReply: UInt8 = 0x81
         static let firmwareVersionReply: UInt8 = 0x82
         static let acknowledged: UInt8 = 0x90
@@ -60,6 +73,23 @@ struct PlaceholderDiffuserCodec: DiffuserCodec {
             return frame(Opcode.status, [])
         case .firmwareVersion:
             return frame(Opcode.firmwareVersion, [])
+        case .firmwareUpdateBegin(let size, let checksum, let version):
+            let versionBytes = Array(version.utf8)
+            guard let size32 = UInt32(exactly: size), size32 > 0,
+                  !versionBytes.isEmpty, versionBytes.count <= Self.maxVersionLength else {
+                throw DiffuserCodecError.valueOutOfRange
+            }
+            return frame(Opcode.firmwareBegin, Self.bytes(size32) + Self.bytes(checksum) + versionBytes)
+        case .firmwareChunk(let offset, let bytes):
+            guard let offset32 = UInt32(exactly: offset),
+                  (1...Self.firmwareChunkSize).contains(bytes.count) else {
+                throw DiffuserCodecError.valueOutOfRange
+            }
+            return frame(Opcode.firmwareChunk, Self.bytes(offset32) + [UInt8](bytes))
+        case .firmwareUpdateFinish:
+            return frame(Opcode.firmwareFinish, [])
+        case .firmwareUpdateAbort:
+            return frame(Opcode.firmwareAbort, [])
         }
     }
 
@@ -125,6 +155,27 @@ struct PlaceholderDiffuserCodec: DiffuserCodec {
         case Opcode.firmwareVersion:
             guard payload.isEmpty else { throw DiffuserCodecError.invalidPayload }
             return .firmwareVersion
+        case Opcode.firmwareBegin:
+            guard payload.count > 8,
+                  let version = String(bytes: payload[8...], encoding: .utf8) else {
+                throw DiffuserCodecError.invalidPayload
+            }
+            return .firmwareUpdateBegin(
+                size: Int(Self.uint32(payload, at: 0)),
+                checksum: Self.uint32(payload, at: 4),
+                version: version
+            )
+        case Opcode.firmwareChunk:
+            guard payload.count > 4, payload.count - 4 <= Self.firmwareChunkSize else {
+                throw DiffuserCodecError.invalidPayload
+            }
+            return .firmwareChunk(offset: Int(Self.uint32(payload, at: 0)), bytes: Data(payload[4...]))
+        case Opcode.firmwareFinish:
+            guard payload.isEmpty else { throw DiffuserCodecError.invalidPayload }
+            return .firmwareUpdateFinish
+        case Opcode.firmwareAbort:
+            guard payload.isEmpty else { throw DiffuserCodecError.invalidPayload }
+            return .firmwareUpdateAbort
         default:
             throw DiffuserCodecError.unknownOpcode(opcode)
         }
@@ -174,6 +225,15 @@ struct PlaceholderDiffuserCodec: DiffuserCodec {
         [UInt8(value >> 8), UInt8(value & 0xFF)]
     }
 
+    private static func bytes(_ value: UInt32) -> [UInt8] {
+        [UInt8(value >> 24), UInt8((value >> 16) & 0xFF), UInt8((value >> 8) & 0xFF), UInt8(value & 0xFF)]
+    }
+
+    private static func uint32(_ bytes: [UInt8], at index: Int) -> UInt32 {
+        UInt32(bytes[index]) << 24 | UInt32(bytes[index + 1]) << 16
+            | UInt32(bytes[index + 2]) << 8 | UInt32(bytes[index + 3])
+    }
+
     private static func opcode(for kind: DiffuserRequest.Kind) -> UInt8 {
         switch kind {
         case .power: Opcode.power
@@ -182,6 +242,10 @@ struct PlaceholderDiffuserCodec: DiffuserCodec {
         case .resetFragrance: Opcode.resetFragrance
         case .status: Opcode.status
         case .firmwareVersion: Opcode.firmwareVersion
+        case .firmwareBegin: Opcode.firmwareBegin
+        case .firmwareChunk: Opcode.firmwareChunk
+        case .firmwareFinish: Opcode.firmwareFinish
+        case .firmwareAbort: Opcode.firmwareAbort
         }
     }
 
@@ -193,6 +257,10 @@ struct PlaceholderDiffuserCodec: DiffuserCodec {
         case Opcode.resetFragrance: .resetFragrance
         case Opcode.status: .status
         case Opcode.firmwareVersion: .firmwareVersion
+        case Opcode.firmwareBegin: .firmwareBegin
+        case Opcode.firmwareChunk: .firmwareChunk
+        case Opcode.firmwareFinish: .firmwareFinish
+        case Opcode.firmwareAbort: .firmwareAbort
         default: nil
         }
     }
