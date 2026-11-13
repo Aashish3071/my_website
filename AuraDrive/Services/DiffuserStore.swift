@@ -12,8 +12,10 @@ final class DiffuserStore {
     private(set) var connectionStates: [UUID: ConnectionState] = [:]
     private(set) var bluetoothAvailability: BluetoothAvailability
     private(set) var firmwareUpdates: [UUID: FirmwareUpdateMachine] = [:]
-    /// Set when something fails. The root view shows it in an alert.
+    /// Set when something fails. The frontmost screen shows it in an alert.
     var errorMessage: String?
+    /// Screens that can show the error alert, oldest first. Only the last shows it.
+    private(set) var alertHosts: [UUID] = []
 
     @ObservationIgnored private let service: any DiffuserService
     @ObservationIgnored private let persistence: DiffuserPersistence
@@ -46,6 +48,27 @@ final class DiffuserStore {
         service.onEvent = { [weak self] event in
             self?.handle(event)
         }
+        // Reconnect to saved diffusers whenever they come in range, for example
+        // when the user gets in the car, even if the app isn't open.
+        for diffuser in diffusers where !diffuser.isDemo {
+            service.connectWhenNearby(diffuser.id)
+        }
+    }
+
+    // MARK: Error alerts
+
+    func registerAlertHost(_ id: UUID) {
+        alertHosts.removeAll { $0 == id }
+        alertHosts.append(id)
+    }
+
+    func unregisterAlertHost(_ id: UUID) {
+        alertHosts.removeAll { $0 == id }
+    }
+
+    /// Whether the screen `host` should show the error alert now.
+    func showsError(in host: UUID) -> Bool {
+        errorMessage != nil && alertHosts.last == host
     }
 
     // MARK: Reading
@@ -124,8 +147,15 @@ final class DiffuserStore {
             connectionStates[id] = diffuser(withID: id) == nil ? nil : .disconnected
             if !(error is CancellationError) {
                 report(error)
+                waitUntilNearby(id)
             }
         }
+    }
+
+    /// Asks to be connected whenever the diffuser is next in range.
+    private func waitUntilNearby(_ id: UUID) {
+        guard let diffuser = diffuser(withID: id), !diffuser.isDemo else { return }
+        service.connectWhenNearby(id)
     }
 
     /// Reads the latest values from the diffuser, such as the fragrance level.
@@ -393,6 +423,18 @@ final class DiffuserStore {
         case .statusChanged(let id, let status):
             guard connectionState(for: id) == .connected else { return }
             apply(status, to: id)
+
+        case .reconnected(let id, let status):
+            guard let diffuser = diffuser(withID: id) else {
+                // Forgotten in the meantime.
+                service.disconnect(from: id)
+                return
+            }
+            stopReconnecting(id)
+            apply(status, to: id)
+            connectionStates[id] = .connected
+            autoReconnectIDs.insert(id)
+            announce("\(diffuser.name) reconnected")
         }
     }
 
@@ -416,6 +458,8 @@ final class DiffuserStore {
             if let name = self.diffuser(withID: id)?.name {
                 self.announce("Couldn't reconnect to \(name)")
             }
+            // Still reconnects later, as soon as it's back in range.
+            self.waitUntilNearby(id)
         }
     }
 

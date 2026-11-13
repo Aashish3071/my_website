@@ -71,6 +71,14 @@ Screens ─ DiffuserStore ─ DiffuserService
 apart), waits while Bluetooth is off and reconnects when it comes back on, and shows a notice
 with a link to Settings when Bluetooth is off or not allowed.
 
+**Background reconnection:** saved diffusers are reconnected whenever they come in range, for
+example when the user gets in the car, even with the app in the background or closed. The app
+leaves a connection request with iOS that never times out (`connectWhenNearby`); iOS completes it
+and, if the app was closed, relaunches it in the background and hands the connection back through
+state restoration. This uses the `bluetooth-central` background mode in `AuraDrive/Info.plist`.
+At launch the app only starts Bluetooth for this if the user has already allowed it, so it never
+causes a permission prompt by itself. It can only be tried for real on an iPhone with a diffuser.
+
 **Placeholders to replace with the manufacturer's protocol document:**
 
 - `Services/Bluetooth/BLETransport.swift`, `DiffuserBLEIdentifiers`: service and characteristic
@@ -93,9 +101,8 @@ only. Real firmware has to come from the manufacturer, and the update messages i
 
 **Not yet tested on hardware.** The simulator has no Bluetooth, so `CoreBluetoothTransport` is
 only known to compile. Everything above it is tested against `MockBLETransport`. Still to do:
-writing messages longer than the Bluetooth packet size, faster firmware transfer (the
-placeholder waits for a reply after every 128-byte chunk), and reconnecting while the app is in
-the background.
+writing messages longer than the Bluetooth packet size, and faster firmware transfer (the
+placeholder waits for a reply after every 128-byte chunk).
 
 ## Renaming the app
 

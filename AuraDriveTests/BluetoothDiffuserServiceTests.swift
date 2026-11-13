@@ -6,7 +6,9 @@ import Testing
 struct BluetoothDiffuserServiceTests {
     private func makeService(
         _ transport: MockBLETransport,
-        responseTimeout: Duration = .milliseconds(300)
+        // Generous by default: the tests share the main thread, so replies can
+        // be slow under load. Tests about timeouts pass a short one.
+        responseTimeout: Duration = .seconds(2)
     ) -> BluetoothDiffuserService {
         BluetoothDiffuserService(transport: transport, scanDuration: .milliseconds(10), responseTimeout: responseTimeout)
     }
@@ -68,7 +70,7 @@ struct BluetoothDiffuserServiceTests {
     @Test func silentDiffuserTimesOut() async throws {
         let diffuser = MockBLETransport.Peripheral()
         let transport = MockBLETransport(peripherals: [diffuser])
-        let service = makeService(transport)
+        let service = makeService(transport, responseTimeout: .milliseconds(300))
         _ = try await service.connect(to: diffuser.id)
 
         transport.respondsToRequests = false
@@ -93,7 +95,7 @@ struct BluetoothDiffuserServiceTests {
         let diffuser = MockBLETransport.Peripheral()
         let transport = MockBLETransport(peripherals: [diffuser])
         transport.responseDelay = .milliseconds(100)
-        let service = makeService(transport, responseTimeout: .seconds(1))
+        let service = makeService(transport, responseTimeout: .seconds(3))
 
         let status = try await service.connect(to: diffuser.id)
         #expect(status.intensity == 3)

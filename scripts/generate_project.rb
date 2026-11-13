@@ -61,6 +61,8 @@ settings = {
   app => common.merge(
     'PRODUCT_NAME' => '$(TARGET_NAME)',
     'PRODUCT_BUNDLE_IDENTIFIER' => 'com.yourcompany.auradrive',
+    # Merged with the generated Info.plist; holds the Bluetooth background mode.
+    'INFOPLIST_FILE' => 'AuraDrive/Info.plist',
     'ASSETCATALOG_COMPILER_APPICON_NAME' => 'AppIcon',
     'ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME' => 'AccentColor',
     'ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS' => 'NO',

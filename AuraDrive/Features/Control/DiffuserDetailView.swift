@@ -74,6 +74,7 @@ struct DiffuserDetailView: View {
                 name = store.diffuser(withID: diffuserID)?.name ?? ""
             }
         }
+        .showsStoreErrors()
     }
 
     private func saveName() {

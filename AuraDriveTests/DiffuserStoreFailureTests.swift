@@ -26,6 +26,8 @@ private final class FakeDiffuserService: DiffuserService {
         disconnectCount += 1
     }
 
+    func connectWhenNearby(_ id: UUID) {}
+
     func send(_ command: DiffuserCommand, to id: UUID) async throws {
         try await Task.sleep(for: sendDelay)
         if failingCommands(command) {

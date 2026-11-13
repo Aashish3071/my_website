@@ -48,6 +48,7 @@ struct SettingsView: View {
                 }
             }
         }
+        .showsStoreErrors()
     }
 
     private var alertsSection: some View {
@@ -104,4 +105,5 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+        .environment(DiffuserStore.preview())
 }

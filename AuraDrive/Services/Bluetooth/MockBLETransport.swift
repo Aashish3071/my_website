@@ -37,6 +37,8 @@ final class MockBLETransport: BLETransport {
     private(set) var availability: BluetoothAvailability
     private(set) var peripherals: [UUID: Peripheral] = [:]
     private(set) var connectedIDs: Set<UUID> = []
+    /// Diffusers the app asked to connect to whenever they come in range.
+    private(set) var waitingForRange: Set<UUID> = []
     /// Every request the app sent, in order.
     private(set) var writtenRequests: [DiffuserRequest] = []
 
@@ -83,6 +85,14 @@ final class MockBLETransport: BLETransport {
         eventHandler?(.disconnected(id))
     }
 
+    /// Brings a diffuser into range. If the app is waiting for it, it connects.
+    func bringIntoRange(_ id: UUID) {
+        guard availability == .poweredOn, peripherals[id] != nil,
+              waitingForRange.remove(id) != nil else { return }
+        connectedIDs.insert(id)
+        eventHandler?(.connected(id))
+    }
+
     /// Makes the diffuser report its state without being asked.
     func pushStatus(from id: UUID) {
         guard let peripheral = peripherals[id], connectedIDs.contains(id) else { return }
@@ -109,6 +119,7 @@ final class MockBLETransport: BLETransport {
         try await Task.sleep(for: connectDelay)
         try requirePoweredOn()
         guard peripherals[id] != nil else { throw DiffuserServiceError.deviceNotFound }
+        waitingForRange.remove(id)
         if failingConnectAttempts > 0 {
             failingConnectAttempts -= 1
             throw DiffuserServiceError.couldNotConnect
@@ -116,7 +127,13 @@ final class MockBLETransport: BLETransport {
         connectedIDs.insert(id)
     }
 
+    func connectWhenNearby(_ id: UUID) {
+        guard !connectedIDs.contains(id) else { return }
+        waitingForRange.insert(id)
+    }
+
     func disconnect(_ id: UUID) {
+        waitingForRange.remove(id)
         guard connectedIDs.remove(id) != nil else { return }
         // CoreBluetooth reports a disconnect even when the app asked for it.
         Task { [weak self] in
