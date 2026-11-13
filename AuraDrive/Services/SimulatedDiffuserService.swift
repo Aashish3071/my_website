@@ -67,6 +67,9 @@ final class SimulatedDiffuserService: DiffuserService {
         isConnected = false
     }
 
+    /// The demo diffuser is always in range, so there is nothing to wait for.
+    func connectWhenNearby(_ id: UUID) {}
+
     func send(_ command: DiffuserCommand, to id: UUID) async throws {
         try await Task.sleep(for: responseDelay / 2)
         guard id == Self.demoDiffuser.id, isConnected else { throw DiffuserServiceError.notConnected }

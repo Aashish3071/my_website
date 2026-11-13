@@ -55,17 +55,38 @@ final class BluetoothDiffuserService: DiffuserService {
         try await transport.connect(id)
         connected.insert(id)
         do {
-            // Not every diffuser may report its firmware, so this one is optional.
-            var version: String?
-            if case .firmwareVersion(let value)? = try? await request(.firmwareVersion, to: id) {
-                version = value
-            }
-            var status = try await readStatus(of: id)
-            status.firmwareVersion = version
-            return status
+            return try await readInitialStatus(of: id)
         } catch {
             disconnect(from: id)
             throw error
+        }
+    }
+
+    func connectWhenNearby(_ id: UUID) {
+        transport.connectWhenNearby(id)
+    }
+
+    /// Reads what the app needs right after connecting.
+    private func readInitialStatus(of id: UUID) async throws -> DiffuserStatus {
+        // Not every diffuser may report its firmware, so this one is optional.
+        var version: String?
+        if case .firmwareVersion(let value)? = try? await request(.firmwareVersion, to: id) {
+            version = value
+        }
+        var status = try await readStatus(of: id)
+        status.firmwareVersion = version
+        return status
+    }
+
+    /// A diffuser connected on its own (see `connectWhenNearby`).
+    private func finishBackgroundConnection(_ id: UUID) async {
+        do {
+            let status = try await readInitialStatus(of: id)
+            onEvent?(.reconnected(id, status))
+        } catch {
+            disconnect(from: id)
+            // Keep waiting: it may answer properly next time it's in range.
+            transport.connectWhenNearby(id)
         }
     }
 
@@ -170,6 +191,13 @@ final class BluetoothDiffuserService: DiffuserService {
                 finish(waiter.id, with: .success(message))
             } else if case .status(let status) = message, connected.contains(id) {
                 onEvent?(.statusChanged(id, status))
+            }
+
+        case .connected(let id):
+            guard !connected.contains(id) else { return }
+            connected.insert(id)
+            Task { [weak self] in
+                await self?.finishBackgroundConnection(id)
             }
 
         case .disconnected(let id):

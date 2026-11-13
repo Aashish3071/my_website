@@ -37,6 +37,7 @@ struct AddDiffuserView: View {
                 await search()
             }
         }
+        .showsStoreErrors()
     }
 
     private var searching: some View {

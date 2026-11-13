@@ -21,6 +21,25 @@ final class AppFlowUITests: XCTestCase {
         try auditAccessibility(of: app)
     }
 
+    // MARK: Launch
+
+    /// Starts the app the way a user does. The other tests pass a switch that
+    /// leaves Bluetooth out; this one runs the real start-up path.
+    @MainActor
+    func testAppLaunchesWithBluetoothAvailable() throws {
+        let app = XCUIApplication()
+        app.launch()
+
+        let welcome = app.staticTexts[AccessibilityID.Welcome.title]
+        let list = app.buttons[AccessibilityID.DiffuserList.addButton]
+        let deadline = Date().addingTimeInterval(20)
+        while !(welcome.exists || list.exists), Date() < deadline {
+            RunLoop.current.run(until: Date().addingTimeInterval(0.5))
+        }
+        XCTAssertTrue(welcome.exists || list.exists, "The app didn't show its first screen")
+        XCTAssertEqual(app.state, .runningForeground)
+    }
+
     // MARK: Main flow
 
     @MainActor

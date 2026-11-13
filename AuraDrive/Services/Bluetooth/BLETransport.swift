@@ -28,6 +28,9 @@ enum BLETransportEvent: Equatable, Sendable {
     case received(UUID, Data)
     /// The link to the device closed, whether or not the app asked for it.
     case disconnected(UUID)
+    /// A connection requested with `connectWhenNearby`, or restored by iOS after
+    /// it relaunched the app, is now ready for `write`.
+    case connected(UUID)
 }
 
 /// Moves bytes to and from diffusers. It knows nothing about what the bytes
@@ -43,6 +46,9 @@ protocol BLETransport: AnyObject {
     /// Connects and gets the device ready for `write`. Throws if that fails or times out.
     func connect(_ id: UUID) async throws
     func disconnect(_ id: UUID)
+    /// Asks for a connection as soon as the device is in range, with no time
+    /// limit, even while the app is in the background. Reported with `.connected`.
+    func connectWhenNearby(_ id: UUID)
     /// Sends one complete message to the device.
     func write(_ data: Data, to id: UUID) async throws
 }

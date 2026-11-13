@@ -38,6 +38,10 @@ final class CombinedDiffuserService: DiffuserService {
         service(for: id).disconnect(from: id)
     }
 
+    func connectWhenNearby(_ id: UUID) {
+        service(for: id).connectWhenNearby(id)
+    }
+
     func send(_ command: DiffuserCommand, to id: UUID) async throws {
         try await service(for: id).send(command, to: id)
     }

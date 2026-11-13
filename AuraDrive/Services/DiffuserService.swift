@@ -15,6 +15,9 @@ protocol DiffuserService: AnyObject {
     func discover() async throws -> [DiscoveredDiffuser]
     func connect(to id: UUID) async throws -> DiffuserStatus
     func disconnect(from id: UUID)
+    /// Connects automatically whenever the diffuser comes in range, even with
+    /// the app in the background. Reported with `.reconnected`.
+    func connectWhenNearby(_ id: UUID)
     func send(_ command: DiffuserCommand, to id: UUID) async throws
     func readStatus(of id: UUID) async throws -> DiffuserStatus
 
@@ -36,6 +39,8 @@ enum DiffuserServiceEvent: Equatable, Sendable {
     case connectionLost(UUID)
     /// The diffuser reported a change on its own, for example a button press on the device.
     case statusChanged(UUID, DiffuserStatus)
+    /// A diffuser came back in range and connected without the app asking right then.
+    case reconnected(UUID, DiffuserStatus)
 }
 
 enum DiffuserServiceError: LocalizedError, Equatable {
