@@ -10,7 +10,8 @@ struct ConnectionManagementTests {
         let service = BluetoothDiffuserService(
             transport: transport,
             scanDuration: .milliseconds(10),
-            responseTimeout: .milliseconds(300)
+            // Generous: the tests share the main thread, so replies can be slow under load.
+            responseTimeout: .seconds(2)
         )
         return DiffuserStore(
             service: service,

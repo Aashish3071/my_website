@@ -6,12 +6,17 @@ import Testing
 /// Bluetooth service and the mock link.
 @MainActor
 struct BackgroundReconnectionTests {
-    private func makeStore(_ transport: MockBLETransport, defaults: UserDefaults) -> DiffuserStore {
+    private func makeStore(
+        _ transport: MockBLETransport,
+        defaults: UserDefaults,
+        // Generous by default: the tests share the main thread, so replies can be slow under load.
+        responseTimeout: Duration = .seconds(2)
+    ) -> DiffuserStore {
         DiffuserStore(
             service: BluetoothDiffuserService(
                 transport: transport,
                 scanDuration: .milliseconds(10),
-                responseTimeout: .milliseconds(200)
+                responseTimeout: responseTimeout
             ),
             persistence: DiffuserPersistence(defaults: defaults),
             reconnectDelays: [.milliseconds(20), .milliseconds(20)]
@@ -76,7 +81,8 @@ struct BackgroundReconnectionTests {
         let earlier = makeStore(MockBLETransport(peripherals: [diffuser]), defaults: defaults)
         earlier.add(DiscoveredDiffuser(id: diffuser.id, name: diffuser.name, firmwareVersion: "Unknown"))
         let transport = MockBLETransport(peripherals: [diffuser])
-        let store = makeStore(transport, defaults: defaults)
+        // Short on purpose: this test waits for the requests to time out.
+        let store = makeStore(transport, defaults: defaults, responseTimeout: .milliseconds(200))
 
         transport.respondsToRequests = false
         transport.bringIntoRange(diffuser.id)

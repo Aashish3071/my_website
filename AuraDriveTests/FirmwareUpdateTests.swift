@@ -30,8 +30,9 @@ struct FirmwareUpdateTests {
         let service = BluetoothDiffuserService(
             transport: transport,
             scanDuration: .milliseconds(10),
-            responseTimeout: .milliseconds(500),
-            firmwareFinishTimeout: .seconds(1)
+            // Generous: the tests share the main thread, so replies can be slow under load.
+            responseTimeout: .seconds(2),
+            firmwareFinishTimeout: .seconds(3)
         )
         return DiffuserStore(
             service: service,
